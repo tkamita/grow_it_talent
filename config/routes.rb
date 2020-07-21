@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :user do
     get 'top' => 'homes#top', as: 'top'
+    get 'about' => 'homes#about', as: 'about'
   end
   
   

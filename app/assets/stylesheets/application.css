@@ -710,3 +710,196 @@
   color: #95989A;
   line-height: 32px;
 }
+
+.about {
+  font-size: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template: "......" "header" 500px "......" "center" 2350px "......" "footer" 120px "......";
+}
+
+.about header {
+  grid-area: header;
+  display: grid;
+  grid-template: "header header header header" 200px "center center user-log corpo-log" 200px "footer footer footer footer" 100px / auto auto auto auto;
+}
+
+.about header h3 {
+  grid-area: header;
+}
+
+.about header .user-log {
+  grid-area: user-log;
+}
+
+.about header .user-log p {
+  margin: 0;
+}
+
+.about header .corpo-log {
+  grid-area: corpo-log;
+}
+
+.about header .corpo-log p {
+  margin: 0;
+}
+
+.about main {
+  grid-area: center;
+  display: grid;
+  grid-template: "header header header header header" 100px "subttl subttl subttl subttl subttl" 100px "...... conven ...... gitt   ......" 500px "cap    cap    cap    cap    cap   " 100px "...... featur featur featur ......" 600px "flow   flow   flow   flow   flow  " 100px "...... card-1 card-1 card-1 ......" 200px "...... card-2 card-2 card-2 ......" 200px "...... card-3 card-3 card-3 ......" 350px "...... ...... regest ...... ......" 100px;
+}
+
+.about main h3 {
+  grid-area: header;
+  font-size: 25px;
+  text-align: center;
+  background-color: gainsboro;
+  padding: 13px;
+}
+
+.about main .sub-ttl {
+  grid-area: subttl;
+  text-align: center;
+}
+
+.about main .conventional {
+  grid-area: conven;
+  border: solid 1px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.about main .gitt {
+  grid-area: gitt;
+  border: solid 1px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.about main .cap {
+  grid-area: cap;
+  text-align: center;
+  background-color: #041a31;
+  padding: 60px;
+  line-height: 5px;
+  color: white;
+}
+
+.about main .feature {
+  grid-area: featur;
+  margin: 100px auto;
+  border: solid 2px;
+  border-radius: 6px;
+  background: #f5f4f4;
+  width: 70%;
+  padding: 40px;
+}
+
+.about main .feature p {
+  margin: 0;
+  text-align: center;
+}
+
+.about main .feature .detail {
+  font-size: 20px;
+  padding: 40px;
+  text-align: left;
+}
+
+.about main .flow {
+  grid-area: flow;
+  text-align: center;
+  background-color: #041a31;
+  padding: 60px;
+  line-height: 5px;
+  color: white;
+}
+
+.about main .card-1 {
+  grid-area: card-1;
+  margin: 120px auto 0;
+  border: solid 2px;
+  border-radius: 6px;
+  background: #f5f4f4;
+  width: 40%;
+  height: 176px;
+}
+
+.about main .card-1 p {
+  margin: 0;
+  text-align: center;
+  font-size: 25px;
+}
+
+.about main .card-1 .detail {
+  font-size: 15px;
+  padding: 10px;
+  text-align: left;
+}
+
+.about main .card-2 {
+  grid-area: card-2;
+  margin: 120px auto;
+  border: solid 2px;
+  border-radius: 6px;
+  background: #f5f4f4;
+  width: 40%;
+  height: 176px;
+}
+
+.about main .card-2 p {
+  margin: 0;
+  text-align: center;
+  font-size: 25px;
+}
+
+.about main .card-2 .detail {
+  font-size: 15px;
+  padding: 10px;
+  text-align: left;
+}
+
+.about main .card-3 {
+  grid-area: card-3;
+  margin: 120px auto;
+  border: solid 2px;
+  border-radius: 6px;
+  background: #f5f4f4;
+  width: 40%;
+  height: 176px;
+}
+
+.about main .card-3 p {
+  margin: 0;
+  text-align: center;
+  font-size: 25px;
+}
+
+.about main .card-3 .detail {
+  font-size: 15px;
+  padding: 10px;
+  text-align: left;
+}
+
+.about main .regest {
+  grid-area: regest;
+  text-align: center;
+  border: solid;
+  border-radius: 50px;
+  height: 47px;
+  background-color: beige;
+}
+
+.about footer {
+  grid-area: footer;
+  background-color: gainsboro;
+  display: grid;
+  grid-template: "...... ...... header ...... ......" 40px "...... header header header ......" 40px "...... ...... header ...... ......" 40px;
+}
+
+.about footer .header {
+  grid-area: header;
+}
