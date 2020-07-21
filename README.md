@@ -1,24 +1,27 @@
-# README
+# Grow IT Talent
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+実務未経験者の転職サイト。
+求職者が応募するのではなく、企業が求職者にオファーを送る。
+求職者はこれまでの学習経過やポートフォリオを投稿して、企業にアピールする。
+企業はたくさんの応募書類に目を通すのではなく、オファーをすることで未経験者のポテンシャルを
+面接前に把握することができる。
 
-Things you may want to cover:
+### サイトテーマ
+プログラミング実務未経験者の採用サイト
 
-* Ruby version
+### テーマを選んだ理由
+キャリアアドバイザーの方に書類選考の通過が難しいと伺い、これまでの学習過程や現在のスキルをもとに面接してもらえるサービスがあれば嬉しいなと思ったため。
 
-* System dependencies
+### ターゲットユーザ
+IT業界未経験者
 
-* Configuration
+### 主な利用シーン
+就職活動
 
-* Database creation
+## 設計書
 
-* Database initialization
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1T0ycCT5xuryc0fDudG3Jlwze1-XKh1GgYAZ89GjOiWY/edit?usp=sharing
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
