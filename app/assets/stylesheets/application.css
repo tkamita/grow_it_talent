@@ -903,3 +903,321 @@
 .about footer .header {
   grid-area: header;
 }
+
+.newreg {
+  font-size: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template: "...... ...... ......" "header header header" 200px "...... ...... ......" "...... center ......" auto "...... ...... ......" 50px "footer footer footer" 120px "...... ...... ......" / 15% 70% 15%;
+}
+
+.newreg header {
+  grid-area: header;
+  display: grid;
+  grid-template: "header header header" 35px "...... center userlo" 165px / 33% 34% 33%;
+}
+
+.newreg header .backcl {
+  grid-area: header;
+  background-color: #012554;
+}
+
+.newreg header .logo {
+  grid-area: center;
+  text-align: center;
+  padding: 60px;
+}
+
+.newreg header .loggin {
+  grid-area: userlo;
+  text-align: right;
+  padding: 60px;
+  font-size: 18px;
+}
+
+.newreg main {
+  grid-area: center;
+  display: grid;
+  grid-template: "title  title  title " 35px "form   form   form  " auto / 33% 34% 33%;
+}
+
+.newreg main .title {
+  grid-area: title;
+  margin: 0;
+  font-size: 28px;
+  border-bottom: solid;
+  line-height: 10px;
+}
+
+.newreg main .formrg {
+  grid-area: form;
+}
+
+.newreg main .formrg table {
+  width: 70%;
+  margin: 10px auto;
+}
+
+.newreg main .formrg table td {
+  font-size: 18px;
+}
+
+.newreg main .formrg h2 {
+  grid-area: namett;
+  font-size: 20px;
+  padding: 50px 0 0px 150px;
+}
+
+.newreg main .formrg h2 span {
+  font-size: 12px;
+  background-color: red;
+  color: #f7f7f5;
+  line-height: 0px;
+  padding: 4px;
+  margin-left: 10px;
+}
+
+.newreg main .formrg .lastnm {
+  grid-area: lastnm;
+  padding-left: 150px;
+}
+
+.newreg main .formrg .lastnm label {
+  font-size: 18px;
+}
+
+.newreg main .formrg .firstn {
+  grid-area: firstn;
+  padding-right: 150px;
+}
+
+.newreg main .formrg .firstn label {
+  font-size: 18px;
+}
+
+.newreg main .formrg .lastkn {
+  grid-area: lastkn;
+  padding-left: 150px;
+}
+
+.newreg main .formrg .lastkn label {
+  font-size: 18px;
+}
+
+.newreg main .formrg .firstkana {
+  grid-area: firstk;
+  padding-right: 150px;
+}
+
+.newreg main .formrg .firstkana label {
+  font-size: 18px;
+}
+
+.newreg main .formrg .gender {
+  grid-area: gender;
+  font-size: 18px;
+  padding-left: 150px;
+}
+
+.newreg main .formrg .gender span {
+  font-size: 12px;
+  background-color: red;
+  color: #f7f7f5;
+  line-height: 0px;
+  padding: 4px;
+  margin-left: 10px;
+}
+
+.newreg main .formrg .gender input {
+  margin-left: 10px;
+}
+
+.newreg main .formrg .gender .form {
+  width: 76%;
+}
+
+.newreg main .formrg .birthd {
+  grid-area: birthd;
+  font-size: 18px;
+  padding-left: 150px;
+}
+
+.newreg main .formrg .birthd span {
+  font-size: 12px;
+  background-color: red;
+  color: #f7f7f5;
+  line-height: 0px;
+  padding: 4px;
+  margin-left: 10px;
+}
+
+.newreg main .formrg .birthd select {
+  margin-top: 10px;
+}
+
+.newreg main .formrg .birthd .year {
+  height: 40px;
+  font-size: 18px;
+  width: 352px;
+  border-radius: 7px;
+}
+
+.newreg main .formrg .birthd .month, .newreg main .formrg .birthd .day {
+  height: 40px;
+  font-size: 18px;
+  width: 176px;
+  border-radius: 7px;
+}
+
+.newreg main .formrg .birthd .form {
+  width: 76%;
+}
+
+.newreg main .formrg .profimg {
+  grid-area: proimg;
+}
+
+.newreg main .formrg .profimg .picture {
+  margin-left: 150px;
+  background-color: cornflowerblue;
+  width: 160px;
+  height: 160px;
+}
+
+.newreg main .formrg .profimg input {
+  margin-left: 150px;
+}
+
+.newreg main .formrg .submit {
+  grid-area: submit;
+  width: 280px;
+  background-color: #6fab13;
+  border-radius: 7px;
+  height: 60px;
+  font-size: 22px;
+  color: white;
+  margin: 40px auto;
+  text-align: center;
+  line-height: 57px;
+}
+
+.newreg main .formrg .form {
+  border: solid 1px;
+  height: 38px;
+  width: 95%;
+  border-radius: 7px;
+}
+
+.newreg main .new_applicant {
+  grid-area: form;
+}
+
+.newreg main .new_applicant .uselog {
+  display: grid;
+  grid-template: "firstp firstp firstp firstp" 100px "second second second second" 100px "...... submit submit ......" 100px "bar    bar    bar    bar   " 50px "...... regest regest ......" 100px / 25% 25% 25% 25%;
+}
+
+.newreg main .new_applicant .uselog .firstp {
+  grid-area: firstp;
+  font-size: 18px;
+  padding-left: 150px;
+}
+
+.newreg main .new_applicant .uselog .firstp span {
+  font-size: 12px;
+  background-color: red;
+  color: #f7f7f5;
+  line-height: 0px;
+  padding: 4px;
+  margin-left: 10px;
+}
+
+.newreg main .new_applicant .uselog .firstp input {
+  margin-left: 10px;
+}
+
+.newreg main .new_applicant .uselog .firstp .form {
+  width: 76%;
+}
+
+.newreg main .new_applicant .uselog .second {
+  grid-area: second;
+  font-size: 18px;
+  padding-left: 150px;
+}
+
+.newreg main .new_applicant .uselog .second span {
+  font-size: 12px;
+  background-color: red;
+  color: #f7f7f5;
+  line-height: 0px;
+  padding: 4px;
+  margin-left: 10px;
+}
+
+.newreg main .new_applicant .uselog .second select {
+  margin-top: 10px;
+}
+
+.newreg main .new_applicant .uselog .second .year {
+  height: 40px;
+  font-size: 18px;
+  width: 352px;
+  border-radius: 7px;
+}
+
+.newreg main .new_applicant .uselog .second .month, .newreg main .new_applicant .uselog .second .day {
+  height: 40px;
+  font-size: 18px;
+  width: 176px;
+  border-radius: 7px;
+}
+
+.newreg main .new_applicant .uselog .second .form {
+  width: 76%;
+}
+
+.newreg main .new_applicant .uselog .submit {
+  grid-area: submit;
+  width: 280px;
+  background-color: #6fab13;
+  border-radius: 7px;
+  height: 60px;
+  font-size: 22px;
+  color: white;
+  margin: 40px auto;
+  text-align: center;
+  line-height: 57px;
+}
+
+.newreg main .new_applicant .uselog .bar {
+  grid-area: bar;
+  border-bottom: solid 1px;
+}
+
+.newreg main .new_applicant .uselog .regest {
+  grid-area: regest;
+  width: 280px;
+  background-color: #ab3613;
+  border-radius: 7px;
+  height: 60px;
+  font-size: 22px;
+  color: white;
+  margin: 40px auto;
+  text-align: center;
+  line-height: 57px;
+}
+
+.newreg main .new_applicant .uselog .form {
+  border: solid 1px;
+  height: 38px;
+  width: 95%;
+  border-radius: 7px;
+}
+
+.newreg footer {
+  grid-area: footer;
+  background-color: #F3F3F3;
+}

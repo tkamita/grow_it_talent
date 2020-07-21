@@ -858,3 +858,301 @@
                 }
           }
         }
+
+.newreg {
+  font-size: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template:
+      "...... ...... ......"
+      "header header header" 200px
+      "...... ...... ......"
+      "...... center ......" auto
+      "...... ...... ......" 50px
+      "footer footer footer" 120px
+      "...... ...... ......"
+      / 15% 70% 15% ;
+      header {
+        grid-area: header;
+        display: grid;
+        grid-template:
+            "header header header" 35px
+            "...... center userlo" 165px
+            / 33% 34% 33% ;
+            .backcl {
+              grid-area: header;
+              background-color: #012554;
+            }
+            .logo {
+              grid-area: center;
+              text-align: center;
+              padding: 60px;
+            }
+            .loggin {
+              grid-area: userlo;
+              text-align: right;
+              padding: 60px;
+              font-size: 18px;
+            }
+      }
+      main {
+        grid-area: center;
+        display: grid;
+        grid-template:
+            "title  title  title " 35px
+            "form   form   form  " auto
+            / 33% 34% 33% ;
+            .title {
+              grid-area: title;
+              margin: 0;
+              font-size: 28px;
+              border-bottom: solid;
+              line-height: 10px;
+            }
+            .formrg {
+              grid-area: form;
+              // display: grid;
+              // grid-template:
+              //     "namett namett namett namett" 100px
+              //     "lastnm lastnm firstn firstn" 100px
+              //     "lastkn lastkn firstk firstk" 100px
+              //     "gender gender gender gender" 100px
+              //     "birthd birthd birthd birthd" 100px
+              //     "proimg proimg proimg proimg" auto
+              //     "...... ...... ...... ......" auto
+              //     "...... submit submit ......" 100px
+              //     / 25% 25% 25% 25% ;
+                  table {
+                    width: 70%;
+                    margin: 10px auto;
+                    td {
+                      font-size: 18px;
+                    }
+                  }
+                  h2 {
+                    grid-area: namett;
+                    font-size: 20px;
+                    padding: 50px 0 0px 150px;
+                    span {
+                      font-size: 12px;
+                      background-color: red;
+                      color: #f7f7f5;
+                      line-height: 0px;
+                      padding: 4px;
+                      margin-left: 10px;
+                    }
+                  }
+                  .lastnm {
+                    grid-area: lastnm;
+                    padding-left: 150px;
+                    label {
+                      font-size: 18px;
+                    }
+                  }
+                  .firstn {
+                    grid-area: firstn;
+                    padding-right: 150px;
+                    label {
+                      font-size: 18px;
+                    }
+                  }
+                  .lastkn {
+                    grid-area: lastkn;
+                    padding-left: 150px;
+                    label {
+                      font-size: 18px;
+                    }
+                  }
+                  .firstkana {
+                    grid-area: firstk;
+                    padding-right: 150px;
+                    label {
+                      font-size: 18px;
+                    }
+                  }
+                  .gender {
+                    grid-area: gender;
+                    font-size: 18px;
+                    padding-left: 150px;
+                    span {
+                      font-size: 12px;
+                      background-color: red;
+                      color: #f7f7f5;
+                      line-height: 0px;
+                      padding: 4px;
+                      margin-left: 10px;
+                    }
+                    input {
+                      margin-left: 10px;
+                    }
+                    .form {
+                      width: 76%;
+                    }
+                  }
+                  .birthd {
+                    grid-area: birthd;
+                    font-size: 18px;
+                    padding-left: 150px;
+                    span {
+                      font-size: 12px;
+                      background-color: red;
+                      color: #f7f7f5;
+                      line-height: 0px;
+                      padding: 4px;
+                      margin-left: 10px;
+                    }
+                    select {
+                      margin-top: 10px;
+                    }
+                    .year {
+                      height: 40px;
+                      font-size: 18px;
+                      width: 352px;
+                      border-radius: 7px;
+                    }
+                    .month, .day{
+                      height: 40px;
+                      font-size: 18px;
+                      width: 176px;
+                      border-radius: 7px;
+                    }
+                    .form {
+                      width: 76%;
+                    }
+                  }
+                  .profimg {
+                    grid-area: proimg;
+                    .picture {
+                      margin-left: 150px;
+                      background-color: cornflowerblue;
+                      width: 160px;
+                      height: 160px;
+                    }
+                    input {
+                      margin-left: 150px;
+                    }
+                  }
+                  .submit {
+                    grid-area: submit;
+                    width: 280px;
+                    background-color: #6fab13;
+                    border-radius: 7px;
+                    height: 60px;
+                    font-size: 22px;
+                    color: white;
+                    margin: 40px auto;
+                    text-align: center;
+                    line-height: 57px;
+                  }
+                  .form {
+                    border: solid 1px;
+                    height: 38px;
+                    width: 95%;
+                    border-radius: 7px;
+                  }
+            }
+            .new_applicant {
+              grid-area: form;
+              .uselog {
+                display: grid;
+                grid-template:
+                  "firstp firstp firstp firstp" 100px
+                  "second second second second" 100px
+                  "...... submit submit ......" 100px
+                  "bar    bar    bar    bar   " 50px
+                  "...... regest regest ......" 100px
+                  / 25% 25% 25% 25% ;
+                  .firstp {
+                    grid-area: firstp;
+                    font-size: 18px;
+                    padding-left: 150px;
+                    span {
+                      font-size: 12px;
+                      background-color: red;
+                      color: #f7f7f5;
+                      line-height: 0px;
+                      padding: 4px;
+                      margin-left: 10px;
+                    }
+                    input {
+                      margin-left: 10px;
+                    }
+                    .form {
+                      width: 76%;
+                    }
+                  }
+                  .second {
+                    grid-area: second;
+                    font-size: 18px;
+                    padding-left: 150px;
+                    span {
+                      font-size: 12px;
+                      background-color: red;
+                      color: #f7f7f5;
+                      line-height: 0px;
+                      padding: 4px;
+                      margin-left: 10px;
+                    }
+                    select {
+                      margin-top: 10px;
+                    }
+                    .year {
+                      height: 40px;
+                      font-size: 18px;
+                      width: 352px;
+                      border-radius: 7px;
+                    }
+                    .month, .day{
+                      height: 40px;
+                      font-size: 18px;
+                      width: 176px;
+                      border-radius: 7px;
+                    }
+                    .form {
+                      width: 76%;
+                    }
+                  }
+                  .submit {
+                    grid-area: submit;
+                    width: 280px;
+                    background-color: #6fab13;
+                    border-radius: 7px;
+                    height: 60px;
+                    font-size: 22px;
+                    color: white;
+                    margin: 40px auto;
+                    text-align: center;
+                    line-height: 57px;
+                  }
+                  .bar {
+                    grid-area: bar;
+                    border-bottom: solid 1px;
+                  }
+                  .regest {
+                    grid-area: regest;
+                    width: 280px;
+                    background-color: #ab3613;
+                    border-radius: 7px;
+                    height: 60px;
+                    font-size: 22px;
+                    color: white;
+                    margin: 40px auto;
+                    text-align: center;
+                    line-height: 57px;
+                  }
+                  .form {
+                    border: solid 1px;
+                    height: 38px;
+                    width: 95%;
+                    border-radius: 7px;
+                  }
+              }
+            }
+      }
+      footer {
+        grid-area: footer;
+        background-color: #F3F3F3;
+      }
+}
