@@ -371,6 +371,67 @@
         .learn-rec {
           grid-area: item-1;
           background-color: white;
+          .qual-form {
+            font-size: 20px;
+            font-weight: 500;
+            .form {
+              font-size: 18px;
+              width: 400px;
+              height: 30px;
+              margin: 15px;
+            }
+          }
+          .save {
+            margin: 0 0 40px 280px;
+            .transmission {
+              margin: 0 auto;
+              width: 100px;
+              height: 40px;
+              font-size: 18px;
+              line-height: 39px;
+              border-radius: 12px;
+            }
+          }
+          .messa {
+            border: solid 1px;
+            border-radius: 5px;
+            margin: 50px 70px;
+            height: 150px;
+            font-size: 18px;
+          }
+          .transmission {
+            width: 200px;
+            background-color: #6fab13;
+            border-radius: 7px;
+            height: 50px;
+            font-size: 22px;
+            color: white;
+            margin: 40px auto;
+            text-align: center;
+            line-height: 53px;
+          }
+          h6 {
+            margin: 10px 40px;
+            font-size: 20px;
+          }
+          .text-box {
+            margin: 20px 50px;
+            border: solid 1px;
+            border-radius: 4px;
+            font-size: 20px;
+          }
+          table {
+            font-size: 18px;
+            width: 90%;
+            margin: 40px auto;
+            .period {
+              width: 16%;
+            }
+            td {
+              padding: 10px;
+              font-size: 14px;
+            }
+          }
           .prof-box {
             margin: 20px 80px;
             img {
@@ -960,17 +1021,6 @@
             }
             .formrg {
               grid-area: form;
-              // display: grid;
-              // grid-template:
-              //     "namett namett namett namett" 100px
-              //     "lastnm lastnm firstn firstn" 100px
-              //     "lastkn lastkn firstk firstk" 100px
-              //     "gender gender gender gender" 100px
-              //     "birthd birthd birthd birthd" 100px
-              //     "proimg proimg proimg proimg" auto
-              //     "...... ...... ...... ......" auto
-              //     "...... submit submit ......" 100px
-              //     / 25% 25% 25% 25% ;
                   table {
                     width: 70%;
                     margin: 10px auto;

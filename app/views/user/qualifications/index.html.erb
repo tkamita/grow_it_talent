@@ -1,0 +1,48 @@
+<body class="public-scene">
+  <%= render partial: '/template/header' %>
+  <%= render partial: '/template/nav' %>
+  <main class="post">
+    <div class="learn-rec">
+      <%= form_with model: @qualification, url: user_qualifications_path, method: :post, local: true do |f| %>
+        <table style="width: 70%; margin: 10px auto;">
+          <tr>
+            <td class="qual-form">
+              <label for="date">取得日</label><br>
+              <%= f.text_field :acquition_date, :placeholder =>"例）2000年5月", class: 'form' %>
+            </td>
+          </tr>
+          <tr>
+            <td class="qual-form">
+              <label for="name">資格名</label><br>
+              <%= f.text_field :name, :placeholder =>"例）基本情報技術者", class: 'form' %>
+            </td>
+          </tr>
+        </table>
+        <%= f.hidden_field :applicant_id, :value => current_applicant.id %>
+        <div class="save">
+          <%= f.submit "保存", class: 'transmission' %>
+        </div>
+      <% end %>
+      <h6>資格情報一覧</h6>
+      <table border="1" style="border-collapse: collapse">
+        <% if @qualifications.any? %>
+          <% @qualifications.each do |q| %>
+            <tr>
+              <th class="period">取得日</th>
+              <th colspan="2">資格名</th>
+            </tr>
+            <tr>
+              <td><%= q.acquition_date %></td>
+              <td><%= q.name %></td>
+              <td style="width: 12%;">
+                <%= link_to "編集", edit_user_qualification_path(q) %>
+                <%= link_to "削除", user_qualification_path(q), method: :delete %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
+  </main>
+  <%= render partial: '/template/footer' %>
+</body>

@@ -383,6 +383,78 @@
   background-color: white;
 }
 
+.public-scene .post .learn-rec .qual-form {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.public-scene .post .learn-rec .qual-form .form {
+  font-size: 18px;
+  width: 400px;
+  height: 30px;
+  margin: 15px;
+}
+
+.public-scene .post .learn-rec .save {
+  margin: 0 0 40px 280px;
+}
+
+.public-scene .post .learn-rec .save .transmission {
+  margin: 0 auto;
+  width: 100px;
+  height: 40px;
+  font-size: 18px;
+  line-height: 39px;
+  border-radius: 12px;
+}
+
+.public-scene .post .learn-rec .messa {
+  border: solid 1px;
+  border-radius: 5px;
+  margin: 50px 70px;
+  height: 150px;
+  font-size: 18px;
+}
+
+.public-scene .post .learn-rec .transmission {
+  width: 200px;
+  background-color: #6fab13;
+  border-radius: 7px;
+  height: 50px;
+  font-size: 22px;
+  color: white;
+  margin: 40px auto;
+  text-align: center;
+  line-height: 53px;
+}
+
+.public-scene .post .learn-rec h6 {
+  margin: 10px 40px;
+  font-size: 20px;
+}
+
+.public-scene .post .learn-rec .text-box {
+  margin: 20px 50px;
+  border: solid 1px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.public-scene .post .learn-rec table {
+  font-size: 18px;
+  width: 90%;
+  margin: 40px auto;
+}
+
+.public-scene .post .learn-rec table .period {
+  width: 16%;
+}
+
+.public-scene .post .learn-rec table td {
+  padding: 10px;
+  font-size: 14px;
+}
+
 .public-scene .post .learn-rec .prof-box {
   margin: 20px 80px;
 }

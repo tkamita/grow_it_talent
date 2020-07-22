@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   namespace :user do
     root 'homes#about'
     get 'top' => 'homes#top', as: 'top'
+    resources :qualifications, except: [:show, :new]
     resource :applicants, only: [:show, :edit, :update]
-    resources :qualifications, except: [:show, new]
   end
   
   
