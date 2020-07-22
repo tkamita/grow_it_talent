@@ -684,7 +684,7 @@
   grid-area: right;
   font-size: 18px;
   display: grid;
-  grid-template: "item-1" 130px "......" 15px "item-2" 130px "......" 15px "item-3" 130px;
+  grid-template: "item-1" 165px "......" 15px "item-2" 130px "......" 15px "item-3" 130px;
 }
 
 .public-scene nav ul {

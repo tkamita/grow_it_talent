@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  applicant_id: 1
+  name: MyString
+  acquition_date: MyString
+
+two:
+  applicant_id: 1
+  name: MyString
+  acquition_date: MyString
