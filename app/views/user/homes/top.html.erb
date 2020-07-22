@@ -4,10 +4,22 @@
       Grow IT Talent
     </div>
     <div class="head-item">
-      <div class="notification">通知アイコン</div>
-      <div class="picture">プロフィール写真</div>
-      <div class="carender">スケジュール</div>
-      <div class="logout">ログアウト</div>
+      <div class="notification">
+        <div class="image-profile">
+        </div>
+      </div>
+      <div class="picture">
+        <div class="image-bell">
+        </div>
+        <P>通知</p>
+      </div>
+      <div class="carender">
+        <%= link_to destroy_applicant_session_path, method: :delete do %>
+          <div class="image-logout">
+          </div>
+          <p>ログアウト</p>
+        <% end %>
+      </div>
     </div>
   </header>
   <nav>

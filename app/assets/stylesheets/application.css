@@ -13,6 +13,19 @@
  *= require_tree .
  *= require_self
  */
+.image-logout {
+  background-image: url(logout.jpeg);
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+}
+
+.image-logout p {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+}
+
 .public-scene {
   font-size: 2rem;
   background-color: #E9E9E9;
@@ -46,31 +59,59 @@
   grid-area: item-1;
   height: 68px;
   padding: 5px;
-  background-color: #b0c955;
-  font-size: 18px;
+}
+
+.public-scene header .head-item .notification .image-profile {
+  background-image: url(profile.jpeg);
+  margin: 0 auto;
+  width: 65px;
+  height: 57px;
 }
 
 .public-scene header .head-item .picture {
   grid-area: item-2;
   height: 68px;
   padding: 5px;
-  background-color: #d4a0a0;
-  font-size: 18px;
+}
+
+.public-scene header .head-item .picture .image-bell {
+  background-image: url(bell.jpeg);
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+}
+
+.public-scene header .head-item .picture p {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+  color: black;
 }
 
 .public-scene header .head-item .carender {
   grid-area: item-3;
   height: 68px;
   padding: 5px;
-  background-color: #9dd89b;
-  font-size: 18px;
+}
+
+.public-scene header .head-item .carender .image-logout {
+  background-image: url(logout.jpeg);
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+}
+
+.public-scene header .head-item .carender p {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+  color: black;
 }
 
 .public-scene header .head-item .logout {
   grid-area: item-4;
   height: 68px;
   padding: 5px;
-  background-color: #5c70cc;
   font-size: 18px;
 }
 
