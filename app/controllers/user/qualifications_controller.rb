@@ -15,16 +15,21 @@ class User::QualificationsController < ApplicationController
     end
   end
 
-  def edit
-    
-  end
-
   def update
-    
+    @qualification = Qualification.find(params[:id])
+    if @qualification.update(qualification_params)
+      redirect_to user_qualifications_path
+    else
+      @qualifications = current_applicant.qualifications
+      @qualification = Qualification.new
+      render :index
+    end
   end
 
   def destroy
-    
+    @qualification = Qualification.find(params[:id])
+    @qualification.destroy
+    redirect_to user_qualifications_path
   end
   
   private

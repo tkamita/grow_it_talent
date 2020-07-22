@@ -27,18 +27,28 @@
       <table border="1" style="border-collapse: collapse">
         <% if @qualifications.any? %>
           <% @qualifications.each do |q| %>
-            <tr>
-              <th class="period">取得日</th>
-              <th colspan="2">資格名</th>
-            </tr>
-            <tr>
-              <td><%= q.acquition_date %></td>
-              <td><%= q.name %></td>
-              <td style="width: 12%;">
-                <%= link_to "編集", edit_user_qualification_path(q) %>
-                <%= link_to "削除", user_qualification_path(q), method: :delete %>
-              </td>
-            </tr>
+            <%= form_with model: q, url: user_qualification_path(q), method: :patch, local: true do |f| %>
+              <tr>
+                <th class="period">取得日</th>
+                <th colspan="2">資格名</th>
+              </tr>
+              <tr>
+                <td rowspan="2">
+                  <%= f.text_field :acquition_date, :placeholder =>"q.acquition_date", class: 'form' %>
+                </td>
+                <td rowspan="2">
+                  <%= f.text_field :name, :placeholder =>"q.name", class: 'form' %>
+                </td>
+                <td style="width: 12%;">
+                  <%= f.submit "保存" %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= link_to "削除", user_qualification_path(q), method: :delete, class: 'small-delete' %>
+                </td>
+              </tr>
+            <% end %>
           <% end %>
         <% end %>
       </table>

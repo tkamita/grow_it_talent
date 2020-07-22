@@ -395,6 +395,16 @@
   margin: 15px;
 }
 
+.public-scene .post .learn-rec .small-delete {
+  padding: 1px 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: -internal-light-dark(#767676, #c3c3c3);
+  border-image: initial;
+  color: black;
+  text-decoration: none;
+}
+
 .public-scene .post .learn-rec .save {
   margin: 0 0 40px 280px;
 }
