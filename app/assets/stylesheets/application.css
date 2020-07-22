@@ -40,13 +40,20 @@
   grid-area: header;
   background-color: white;
   display: grid;
-  grid-template: "...... ...... ...... ...... ......" 20px "logo   ...... ...... ...... item-1" 60px "...... ...... ...... ...... ......" 20px / 20% 20% 20% 20% 20%;
+  grid-template: "logo   ...... ...... ...... ......" 20px "logo   ...... ...... ...... item-1" 60px "logo   ...... ...... ...... ......" 20px / 20% 20% 20% 20% 20%;
 }
 
 .public-scene header .logo {
   grid-area: logo;
-  width: 240px;
+  width: 400px;
   margin-left: 25px;
+}
+
+.public-scene header .logo .c-logo {
+  background-image: url(logo.jpeg);
+  background-size: cover;
+  width: 100%;
+  height: 99%;
 }
 
 .public-scene header .head-item {
