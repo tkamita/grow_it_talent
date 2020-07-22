@@ -1,0 +1,28 @@
+<header>
+  <div class="logo">
+    <%= link_to user_top_path do %>
+      <div class="c-logo">
+      </div>
+    <% end %>
+  </div>
+  <div class="head-item">
+    <div class="notification">
+      <%= link_to user_applicants_path do %>
+        <div class="image-profile">
+        </div>
+      <% end %>
+    </div>
+    <div class="picture">
+      <div class="image-bell">
+      </div>
+      <P>通知</p>
+    </div>
+    <div class="carender">
+      <%= link_to destroy_applicant_session_path, method: :delete do %>
+        <div class="image-logout">
+        </div>
+        <p>ログアウト</p>
+      <% end %>
+    </div>
+  </div>
+</header>

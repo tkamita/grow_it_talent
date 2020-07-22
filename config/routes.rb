@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :user do
     root 'homes#about'
     get 'top' => 'homes#top', as: 'top'
+    resource :applicants, only: [:show, :edit, :update]
   end
   
   

@@ -1,0 +1,163 @@
+<body class="public-scene">
+  <%= render partial: '/template/header' %>
+  <nav>
+    <div class="first-box">
+      <div class="widget-header">
+        <h3>プロフィール</h3>
+      </div>
+      <ul>
+        <li>
+          <%= link_to 'プロフィール編集', edit_user_applicants_path, style: 'color: black; text-decoration: none;' %>
+        </li>
+        <li>
+          職務経歴編集
+        </li>
+      </ul>
+    </div>
+    <div class="second-box">
+      <div class="widget-header">
+        <h3>投稿</h3>
+      </div>
+      <ul>
+        <li>
+          学習記事
+        </li>
+        <li>
+          ポートフォリオ
+        </li>
+      </ul>
+    </div>
+    <div class="third-box">
+      <div class="widget-header">
+        <h3>企業とのコンタクト</h3>
+      </div>
+      <ul>
+        <li>
+          オファーリスト
+        </li>
+        <li>
+          メッセージリスト
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main class="user-info">
+    <div class="basic-info">
+      <img src="https://app.offerbox.jp/assets/img/common/studentnoimage_student.gif">
+      <table>
+        <tr>
+          <td>ふりがな</td>
+          <th>たなかたろう</th>
+        </tr>
+        <tr>
+          <td>氏名</td>
+          <th>田中太郎</th>
+        </tr>
+        <tr>
+          <td>生年月日</td>
+          <th>19○○年○○月○○日（満○○歳）</th>
+        </tr>
+        <tr>
+          <td>性別</td>
+          <th>男性</th>
+        </tr>
+        <tr>
+          <td>郵便番号</td>
+          <th>100-1000</th>
+        </tr>
+        <tr>
+          <td>ふりがな</td>
+          <th>hogehogehoge</th>
+        </tr>
+        <tr>
+          <td>住所</td>
+          <th>HOGEHOGEHOGE</th>
+        </tr>
+        <tr>
+          <td>TEL</td>
+          <th>09000000000</th>
+        </tr>
+        <tr>
+          <td>email</td>
+          <th>HOGEHOGE@mail.com</th>
+        </tr>
+      </table>
+    </div>
+    <div class="ability">
+      <h4>プログラミングスキル</h4>
+      <div class="text-box">
+        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+      </div>
+    </div>
+    <div class="pr">
+      <h4>プロフィール（PR）</h4>
+      <h6>自己PR</h6>
+      <div class="text-box">
+        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+      </div>
+      <h6>私の将来像</h6>
+      <div class="text-box">
+        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+      </div>
+    </div>
+    <div class="qualification">
+      <h4>語学・資格</h4>
+      <div class="quali-box">
+        <ul>
+          <li>hoge</li>
+          <li>hoge</li>
+          <li>hoge</li>
+          <li>hoge</li>
+          <li>hoge</li>
+        </ul>
+      </div>
+    </div>
+    <div class="desire">
+      <h4>希望する企業タイプ</h4>
+      <div class="desire-box">
+        セレクトボックス　メガベンチャー
+      </div>
+      <h4>転職の軸</h4>
+      <div class="desire-box">
+        セレクトボックス
+      </div>
+      <h4>希望条件</h4>
+      <div class="desire-box">
+        タグ　チェックボックス
+      </div>
+      <h4>希望勤務地</h4>
+      <div class="desire-box">
+        セレクトボックス
+      </div>
+      <h4>勤務開始可能日</h4>
+      <div class="desire-box">
+        ーーーーーーーー
+      </div>
+    </div>
+    <div class="item-6">
+      
+    </div>
+    <div class="item-7">
+      <h4>転職活動状況</h4>
+      <div class="desire-box">
+        ラジオボタン
+        活動中　活動終了
+      </div>
+    </div>
+    <div class="submit">
+      編集
+    </div>
+  </main>
+  <footer>
+    <p class="copy">Copyright © GrowIT/Talent All Rights Reserved.</p>
+  </footer>
+</body>

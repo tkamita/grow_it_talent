@@ -171,6 +171,7 @@
         .basic-info {
           grid-area: item-1;
           background-color: white;
+          width: 80%;
           display: grid;
           grid-template: 
           "item-1 item-2 item-2" 30px
@@ -202,6 +203,7 @@
         .ability {
           grid-area: item-2;
           background-color: white;
+          width: 80%;
           h4 {
             font-size: 22px;
             margin: 30px 40px 10px;
@@ -230,6 +232,7 @@
         .pr {
           grid-area: item-3;
           background-color: white;
+          width: 80%;
           h4 {
             font-size: 22px;
             margin: 30px 40px 30px;
@@ -261,6 +264,7 @@
         .desire {
           grid-area: item-5;
           background-color: white;
+          width: 80%;
           h4 {
             font-size: 22px;
             margin: 30px 40px 10px;
@@ -276,6 +280,7 @@
         .qualification {
           grid-area: item-4;
           background-color: white;
+          width: 80%;
           h4 {
             font-size: 22px;
             margin: 30px 40px 10px;
@@ -300,6 +305,7 @@
         .item-6 {
           grid-area: item-6;
           background-color: white;
+          width: 80%;
           h4 {
             font-size: 22px;
             margin: 30px 40px 10px;
@@ -315,6 +321,7 @@
         .item-7 {
           grid-area: item-7;
           background-color: white;
+          width: 80%;
           h4 {
             font-size: 22px;
             margin: 30px 40px 10px;
@@ -634,11 +641,11 @@
         font-size: 18px;
         display: grid;
         grid-template: 
-        "item-1" auto
+        "item-1" 130px
         "......" 15px
-        "item-2" auto
+        "item-2" 130px
         "......" 15px
-        "item-3" auto;
+        "item-3" 130px;
         ul {
           list-style: none;
           padding: 0;

@@ -157,6 +157,7 @@
 .public-scene .user-info .basic-info {
   grid-area: item-1;
   background-color: white;
+  width: 80%;
   display: grid;
   grid-template: "item-1 item-2 item-2" 30px "item-1 item-3 item-3" 30px "item-1 item-4 item-4" 30px "item-7 item-5 item-5" 30px "item-8 item-6 item-6" 30px / 33% 34% 33%;
 }
@@ -186,6 +187,7 @@
 .public-scene .user-info .ability {
   grid-area: item-2;
   background-color: white;
+  width: 80%;
 }
 
 .public-scene .user-info .ability h4 {
@@ -220,6 +222,7 @@
 .public-scene .user-info .pr {
   grid-area: item-3;
   background-color: white;
+  width: 80%;
 }
 
 .public-scene .user-info .pr h4 {
@@ -258,6 +261,7 @@
 .public-scene .user-info .desire {
   grid-area: item-5;
   background-color: white;
+  width: 80%;
 }
 
 .public-scene .user-info .desire h4 {
@@ -276,6 +280,7 @@
 .public-scene .user-info .qualification {
   grid-area: item-4;
   background-color: white;
+  width: 80%;
 }
 
 .public-scene .user-info .qualification h4 {
@@ -305,6 +310,7 @@
 .public-scene .user-info .item-6 {
   grid-area: item-6;
   background-color: white;
+  width: 80%;
 }
 
 .public-scene .user-info .item-6 h4 {
@@ -323,6 +329,7 @@
 .public-scene .user-info .item-7 {
   grid-area: item-7;
   background-color: white;
+  width: 80%;
 }
 
 .public-scene .user-info .item-7 h4 {
@@ -677,7 +684,7 @@
   grid-area: right;
   font-size: 18px;
   display: grid;
-  grid-template: "item-1" auto "......" 15px "item-2" auto "......" 15px "item-3" auto;
+  grid-template: "item-1" 130px "......" 15px "item-2" 130px "......" 15px "item-3" 130px;
 }
 
 .public-scene nav ul {
