@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_055435) do
+ActiveRecord::Schema.define(version: 2020_07_23_060455) do
 
   create_table "applicants", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -64,6 +64,15 @@ ActiveRecord::Schema.define(version: 2020_07_23_055435) do
 
   create_table "pg_langs", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "applicant_id"
+    t.integer "pg_lang_id"
+    t.string "title"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
