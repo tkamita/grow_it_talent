@@ -5,6 +5,7 @@ class Applicant < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :qualifications, dependent: :destroy
+  has_many :posts, dependent: :destroy
   attachment :image
 
   validates :last_name, presence: true

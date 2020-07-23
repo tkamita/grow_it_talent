@@ -1,0 +1,27 @@
+<body class="public-scene">
+  <%= render partial: '/template/header' %>
+  <%= render partial: '/template/nav' %>
+  <main class="post">
+    <%= form_with model: @post, url: user_post_path(@post), method: :patch, local: true do |f| %>
+    <div class="learn-rec", style="padding-bottom: 100px;">
+      <div class="prof-box">
+        <%= attachment_image_tag current_applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image" %>
+        <div class="creat-ttl">
+          <p><%= current_applicant.full_name %> </p>
+          <p><span><%= l @post.created_at, format: :long %> </span></p>
+        </div>
+      </div>
+      <div class="title">
+        <h6><%= f.text_field :title %> </h6>
+      </div>
+      <div class="lang">
+        <%= f.collection_select :pg_lang_id, PgLang.all, :id, :name %>
+      </div>
+      <div class="text">
+        <%= f.text_area :content %>
+      </div>
+    </div>
+      <%= f.submit '保存', class: 'submit', style: 'margin-left: 260px;' %>
+    <% end %>
+  </main>
+</body>
