@@ -9,6 +9,7 @@
         <h4>学習記事投稿</h4>
         <%= f.label :title, 'タイトル' %>
         <%= f.text_field :title %>
+        <%= f.collection_select :pg_lang_id, PgLang.all, :id, :name %>
         <%= f.text_area :content, :placeholder =>"ここに記事内容を書いてください" %>
         <%= f.submit "投稿" %>
       <% end %>
