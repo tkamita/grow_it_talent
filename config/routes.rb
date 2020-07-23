@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   }
 
   namespace :public do
-    resource :corporations, only: [:show, :edit, :update, :index]
+    get 'top' => 'homes#top', as: 'top'
+    resource :corporations, only: [:show, :edit, :update]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
