@@ -12,8 +12,9 @@ Rails.application.routes.draw do
     get 'applicants/work' => 'applicants#work', as: 'work_history'
     get 'applicants/edit_work' => 'applicants#edit_work', as: 'edit_work_history'
     patch 'applicants/update_work' => 'applicants#update_work'
-    resources :qualifications, except: [:show, :new, :edit]
     resource :applicants, only: [:show, :edit, :update]
+    resources :qualifications, except: [:show, :new, :edit]
+    resources :posts, except: [:new]
   end
   
   
