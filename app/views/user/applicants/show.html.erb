@@ -2,47 +2,7 @@
   <%= render partial: '/template/header' %>
   <%= render partial: '/template/nav' %>
   <main class="user-info">
-    <div class="basic-info">
-      <%= attachment_image_tag current_applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image" %>
-      <table>
-        <tr>
-          <td>ふりがな</td>
-          <th><%= current_applicant.full_name_kana %></th>
-        </tr>
-        <tr>
-          <td>氏名</td>
-          <th><%= current_applicant.full_name %></th>
-        </tr>
-        <tr>
-          <td>生年月日</td>
-          <th><%= l current_applicant.birth_date %>（満<%= @age %>歳）</th>
-        </tr>
-        <tr>
-          <td>性別</td>
-          <th><%= current_applicant.gender %> </th>
-        </tr>
-        <tr>
-          <td>郵便番号</td>
-          <th><%= current_applicant.postal_code %></th>
-        </tr>
-        <tr>
-          <td>ふりがな</td>
-          <th><%= current_applicant.prefecture_kana %></th>
-        </tr>
-        <tr>
-          <td>住所</td>
-          <th><%= current_applicant.prefecture %><%= current_applicant.manicipal %><br><%= current_applicant.address_other %></th>
-        </tr>
-        <tr>
-          <td>TEL</td>
-          <th><%= current_applicant.phone_number %></th>
-        </tr>
-        <tr>
-          <td>email</td>
-          <th><%= current_applicant.email %></th>
-        </tr>
-      </table>
-    </div>
+    <%= render partial: '/template/user_info' %>
     <div class="ability">
       <h4>プログラミングスキル</h4>
       <div class="text-box">

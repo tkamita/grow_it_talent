@@ -26,6 +26,10 @@
   }
 }
 
+.basic-info {
+  height: 430px;
+}
+
  .public-scene {
   font-size: 2rem;
   background-color: #E9E9E9;
@@ -145,6 +149,220 @@
           grid-area: item-3;
           margin-right: 15px;
           background-color: white;
+        }
+      }
+      form {
+        .user-info {
+          grid-area: center;
+          margin-right: 30px;
+          display: grid;
+          grid-template: 
+          "item-1" 450px
+          "......" 15px
+          "item-2" auto
+          "......" 15px
+          "item-3" auto
+          "......" 15px
+          "item-4" auto
+          "......" 15px
+          "item-5" auto
+          "......" 15px
+          "item-6" auto
+          "......" 15px
+          "item-7" auto
+          "......" 15px
+          "item-8" auto
+          "......" 15px;
+          .basic-info {
+            grid-area: item-1;
+            background-color: white;
+            width: 80%;
+            display: grid;
+            grid-template: 
+            "item-1 item-2 item-2" 30px
+            "item-1 item-3 item-3" 30px
+            "item-1 item-4 item-4" 30px
+            "item-7 item-5 item-5" 30px
+            "item-8 item-6 item-6" 30px
+            / 33% 34% 33% ;
+            img {
+              grid-area: item-1;
+              height: 160px;
+              margin: 50px 0 0 90px;
+            }
+            table {
+              font-size: 18px;
+              margin-top: 50px;
+              width: 800px;
+            }
+            td {
+              width: 150px;
+              padding: 5px 0;
+            }
+            th {
+              text-align: left;
+              padding: 5px 0;
+            }
+            
+          }
+          .ability {
+            grid-area: item-2;
+            background-color: white;
+            width: 80%;
+            h4 {
+              font-size: 22px;
+              margin: 30px 40px 10px;
+              border-bottom: solid 2px rgba(197, 196, 196, 0.849);
+            }
+            .text-box {
+              margin: 20px 50px;
+              border: solid 1px;
+              border-radius: 4px;
+              font-size: 20px;
+            }
+            table {
+              font-size: 18px;
+              width: 70%;
+              margin: 40px auto;
+            }
+            td {
+              width: 150px;
+              padding: 5px 0;
+            }
+            th {
+              text-align: left;
+              padding: 5px 0;
+            }
+          }
+          .pr {
+            grid-area: item-3;
+            background-color: white;
+            width: 80%;
+            h4 {
+              font-size: 22px;
+              margin: 30px 40px 30px;
+              border-bottom: solid 2px rgba(197, 196, 196, 0.849);
+            }
+            h6 {
+              margin: 10px 40px;
+              font-size: 20px;
+            }
+            .text-box {
+              margin: 20px 50px;
+              border: solid 1px;
+              border-radius: 4px;
+              font-size: 20px;
+            }
+            table {
+              font-size: 18px;
+              width: 90%;
+              margin: 40px auto;
+              .period {
+                width: 16%;
+              }
+              td {
+                padding: 10px;
+                font-size: 14px;
+              }
+            }
+          }
+          .desire {
+            grid-area: item-5;
+            background-color: white;
+            width: 80%;
+            h4 {
+              font-size: 22px;
+              margin: 30px 40px 10px;
+              border-bottom: solid 2px rgba(197, 196, 196, 0.849);
+            }
+            .desire-box {
+              margin: 20px 50px;
+              border: solid 1px;
+              border-radius: 4px;
+              font-size: 20px;
+            }
+          }
+          .qualification {
+            grid-area: item-4;
+            background-color: white;
+            width: 80%;
+            h4 {
+              font-size: 22px;
+              margin: 30px 40px 10px;
+              border-bottom: solid 2px rgba(197, 196, 196, 0.849);
+            }
+            ul {
+              margin: 20px 70px;
+              list-style: none;
+              padding: 0;
+              li {
+                border-bottom: solid 1px;
+                font-size: 20px;
+              }
+            }
+            .desire-box {
+              margin: 20px 50px;
+              border: solid 1px;
+              border-radius: 4px;
+              font-size: 20px;
+            }
+          }
+          .item-6 {
+            grid-area: item-6;
+            background-color: white;
+            width: 80%;
+            h4 {
+              font-size: 22px;
+              margin: 30px 40px 10px;
+              border-bottom: solid 2px rgba(197, 196, 196, 0.849);
+            }
+            .desire-box {
+              margin: 20px 50px;
+              border: solid 1px;
+              border-radius: 4px;
+              font-size: 20px;
+            }
+          }
+          .item-7 {
+            grid-area: item-7;
+            background-color: white;
+            width: 80%;
+            h4 {
+              font-size: 22px;
+              margin: 30px 40px 10px;
+              border-bottom: solid 2px rgba(197, 196, 196, 0.849);
+            }
+            .desire-box {
+              margin: 20px 50px;
+              border: solid 1px;
+              border-radius: 4px;
+              font-size: 20px;
+            }
+          }
+          .submit {
+            grid-area: item-8;
+            width: 280px;
+            background-color: #6fab13;
+            border-radius: 7px;
+            height: 60px;
+            font-size: 22px;
+            color: white;
+            margin: 40px auto;
+            text-align: center;
+            line-height: 57px;
+          }
+          .save {
+            grid-area: item-8;
+            width: 280px;
+            background-color: red;
+            border-radius: 7px;
+            height: 60px;
+            font-size: 22px;
+            color: white;
+            margin: 40px 0 40px 260px;
+            text-align: center;
+            line-height: 57px;
+          }
         }
       }
       .user-info {

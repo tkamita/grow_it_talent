@@ -26,6 +26,10 @@
   text-align: center;
 }
 
+.basic-info {
+  height: 430px;
+}
+
 .public-scene {
   font-size: 2rem;
   background-color: #E9E9E9;
@@ -145,6 +149,230 @@
   grid-area: item-3;
   margin-right: 15px;
   background-color: white;
+}
+
+.public-scene form .user-info {
+  grid-area: center;
+  margin-right: 30px;
+  display: grid;
+  grid-template: "item-1" 450px "......" 15px "item-2" auto "......" 15px "item-3" auto "......" 15px "item-4" auto "......" 15px "item-5" auto "......" 15px "item-6" auto "......" 15px "item-7" auto "......" 15px "item-8" auto "......" 15px;
+}
+
+.public-scene form .user-info .basic-info {
+  grid-area: item-1;
+  background-color: white;
+  width: 80%;
+  display: grid;
+  grid-template: "item-1 item-2 item-2" 30px "item-1 item-3 item-3" 30px "item-1 item-4 item-4" 30px "item-7 item-5 item-5" 30px "item-8 item-6 item-6" 30px / 33% 34% 33%;
+}
+
+.public-scene form .user-info .basic-info img {
+  grid-area: item-1;
+  height: 160px;
+  margin: 50px 0 0 90px;
+}
+
+.public-scene form .user-info .basic-info table {
+  font-size: 18px;
+  margin-top: 50px;
+  width: 800px;
+}
+
+.public-scene form .user-info .basic-info td {
+  width: 150px;
+  padding: 5px 0;
+}
+
+.public-scene form .user-info .basic-info th {
+  text-align: left;
+  padding: 5px 0;
+}
+
+.public-scene form .user-info .ability {
+  grid-area: item-2;
+  background-color: white;
+  width: 80%;
+}
+
+.public-scene form .user-info .ability h4 {
+  font-size: 22px;
+  margin: 30px 40px 10px;
+  border-bottom: solid 2px rgba(197, 196, 196, 0.849);
+}
+
+.public-scene form .user-info .ability .text-box {
+  margin: 20px 50px;
+  border: solid 1px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.public-scene form .user-info .ability table {
+  font-size: 18px;
+  width: 70%;
+  margin: 40px auto;
+}
+
+.public-scene form .user-info .ability td {
+  width: 150px;
+  padding: 5px 0;
+}
+
+.public-scene form .user-info .ability th {
+  text-align: left;
+  padding: 5px 0;
+}
+
+.public-scene form .user-info .pr {
+  grid-area: item-3;
+  background-color: white;
+  width: 80%;
+}
+
+.public-scene form .user-info .pr h4 {
+  font-size: 22px;
+  margin: 30px 40px 30px;
+  border-bottom: solid 2px rgba(197, 196, 196, 0.849);
+}
+
+.public-scene form .user-info .pr h6 {
+  margin: 10px 40px;
+  font-size: 20px;
+}
+
+.public-scene form .user-info .pr .text-box {
+  margin: 20px 50px;
+  border: solid 1px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.public-scene form .user-info .pr table {
+  font-size: 18px;
+  width: 90%;
+  margin: 40px auto;
+}
+
+.public-scene form .user-info .pr table .period {
+  width: 16%;
+}
+
+.public-scene form .user-info .pr table td {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.public-scene form .user-info .desire {
+  grid-area: item-5;
+  background-color: white;
+  width: 80%;
+}
+
+.public-scene form .user-info .desire h4 {
+  font-size: 22px;
+  margin: 30px 40px 10px;
+  border-bottom: solid 2px rgba(197, 196, 196, 0.849);
+}
+
+.public-scene form .user-info .desire .desire-box {
+  margin: 20px 50px;
+  border: solid 1px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.public-scene form .user-info .qualification {
+  grid-area: item-4;
+  background-color: white;
+  width: 80%;
+}
+
+.public-scene form .user-info .qualification h4 {
+  font-size: 22px;
+  margin: 30px 40px 10px;
+  border-bottom: solid 2px rgba(197, 196, 196, 0.849);
+}
+
+.public-scene form .user-info .qualification ul {
+  margin: 20px 70px;
+  list-style: none;
+  padding: 0;
+}
+
+.public-scene form .user-info .qualification ul li {
+  border-bottom: solid 1px;
+  font-size: 20px;
+}
+
+.public-scene form .user-info .qualification .desire-box {
+  margin: 20px 50px;
+  border: solid 1px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.public-scene form .user-info .item-6 {
+  grid-area: item-6;
+  background-color: white;
+  width: 80%;
+}
+
+.public-scene form .user-info .item-6 h4 {
+  font-size: 22px;
+  margin: 30px 40px 10px;
+  border-bottom: solid 2px rgba(197, 196, 196, 0.849);
+}
+
+.public-scene form .user-info .item-6 .desire-box {
+  margin: 20px 50px;
+  border: solid 1px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.public-scene form .user-info .item-7 {
+  grid-area: item-7;
+  background-color: white;
+  width: 80%;
+}
+
+.public-scene form .user-info .item-7 h4 {
+  font-size: 22px;
+  margin: 30px 40px 10px;
+  border-bottom: solid 2px rgba(197, 196, 196, 0.849);
+}
+
+.public-scene form .user-info .item-7 .desire-box {
+  margin: 20px 50px;
+  border: solid 1px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.public-scene form .user-info .submit {
+  grid-area: item-8;
+  width: 280px;
+  background-color: #6fab13;
+  border-radius: 7px;
+  height: 60px;
+  font-size: 22px;
+  color: white;
+  margin: 40px auto;
+  text-align: center;
+  line-height: 57px;
+}
+
+.public-scene form .user-info .save {
+  grid-area: item-8;
+  width: 280px;
+  background-color: red;
+  border-radius: 7px;
+  height: 60px;
+  font-size: 22px;
+  color: white;
+  margin: 40px 0 40px 260px;
+  text-align: center;
+  line-height: 57px;
 }
 
 .public-scene .user-info {
