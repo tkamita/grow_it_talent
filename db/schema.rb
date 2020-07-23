@@ -63,16 +63,17 @@ ActiveRecord::Schema.define(version: 2020_07_23_060455) do
   end
 
   create_table "pg_langs", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_pg_langs_on_name"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.integer "applicant_id"
-    t.integer "pg_lang_id"
-    t.string "title"
-    t.text "content"
+    t.integer "applicant_id", null: false
+    t.integer "pg_lang_id", null: false
+    t.string "title", null: false
+    t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

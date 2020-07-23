@@ -4,7 +4,15 @@
   <main class="user-top">
     <div class="job-offer">企業オファー</div>
     <div class="schedule">メッセージ一覧</div>
-    <div class="study-post">学習記事投稿</div>
+    <div class="study-post">
+      <%= form_with model: @post, url: user_posts_path, method: :post do |f| %>
+        <h4>学習記事投稿</h4>
+        <%= f.label :title, 'タイトル' %>
+        <%= f.text_field :title %>
+        <%= f.text_area :content, :placeholder =>"ここに記事内容を書いてください" %>
+        <%= f.submit "投稿" %>
+      <% end %>
+    </div>
   </main>
   <%= render partial: '/template/footer' %>
 </body>
