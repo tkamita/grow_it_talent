@@ -1,11 +1,5 @@
 <body class="newreg">
-  <header>
-    <div class="backcl"></div>
-    <div class="logo">Grow IT Talent</div>
-    <div class="loggin">
-      <%= link_to "ログイン", new_session_path(resource_name) %>
-    </div>
-  </header>
+  <%= render partial: '/template/before_header' %>
   <main>
     <h1 class="title">　新規ユーザー登録</h1>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -40,9 +34,9 @@
       </div>
       <div class="birthd">
         <p>パスワード<span>必須</span><br>
-        <% if @minimum_password_length %>
+          <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> 文字以上)</em>
-        <% end %><br />
+          <% end %><br />
           <%= f.password_field :password, autocomplete: "new-password", class: 'form' %>
         </p>
       </div>
