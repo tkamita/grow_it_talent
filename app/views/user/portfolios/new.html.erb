@@ -1,0 +1,51 @@
+<body class="public-scene">
+  <%= render partial: '/template/header' %>
+  <%= render partial: '/template/nav' %>
+  <main class="post">
+    <%= form_with model: @portfolio, url: user_portfolios_path, local: true do |f| %>
+      <div class="learn-rec">
+        <div class="widget-header">
+          <h4>ポートフォリオ投稿</h4>
+        </div>
+        <div class="title">
+          <%= f.label :title, 'タイトル' %>
+          <h6><%= f.text_field :title %></h6>
+        </div>
+        <div class="lang">
+          <%= f.label :pg_lang_id, '使用言語' %>
+          <%= f.collection_select :pg_lang_id, PgLang.all, :id, :name %>
+        </div>
+        <div class="text">
+          <div class="text-box">
+            <%= f.label :content, '概要' %>
+            <%= f.text_area :content %>
+          </div>
+        </div>
+        <div class="title">
+          <%= f.label :theme, 'サイトテーマ' %>
+          <h6><%= f.text_field :theme %> </h6>
+        </div>
+        <div class="title">
+          <%= f.label :reason, 'テーマを選んだ理由' %>
+          <h6><%= f.text_area :reason %></h6>
+        </div>
+        <div class="title">
+          <h6><%= f.label :target, 'ターゲットユーザ' %> </h6>
+          <%= f.text_field :target %>
+        </div>
+        <div class="title">
+          <h6><%= f.label :scene, '主な利用シーン' %></h6>
+          <%= f.text_field :scene %>
+        </div>
+        <div class="title">
+          <h6><%= f.label :link_url, 'リンクURL' %></h6>
+          <%= f.text_area :link_url %>
+        </div>
+      </div>
+      <%= f.hidden_field :applicant_id, value: current_applicant.id %>
+      <div class="submit">
+        <%= f.submit '投稿' %>
+      </div>
+    <% end %>
+  </main>
+</body>
