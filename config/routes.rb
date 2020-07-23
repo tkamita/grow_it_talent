@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     sessions: 'public/sessions',
     registrations: 'public/registrations',
   }
+
+  namespace :public do
+    resource :corporations, only: [:show, :edit, :update, :index]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   devise_for :applicants, controllers: {
