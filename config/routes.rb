@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resource :applicants, only: [:show, :edit, :update]
     resources :qualifications, except: [:show, :new, :edit]
     resources :posts, except: [:new]
+    resources :portfolios
   end
   
   

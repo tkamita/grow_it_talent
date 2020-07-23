@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_060455) do
+ActiveRecord::Schema.define(version: 2020_07_23_094055) do
 
   create_table "applicants", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -67,6 +67,20 @@ ActiveRecord::Schema.define(version: 2020_07_23_060455) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_pg_langs_on_name"
+  end
+
+  create_table "portfolios", force: :cascade do |t|
+    t.integer "applicant_id", null: false
+    t.integer "pg_lang_id", null: false
+    t.string "title", null: false
+    t.text "content", null: false
+    t.string "theme"
+    t.text "reason"
+    t.string "target"
+    t.string "scene"
+    t.text "link_url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
