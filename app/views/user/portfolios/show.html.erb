@@ -1,0 +1,42 @@
+<body class="public-scene">
+  <%= render partial: '/template/header' %>
+  <%= render partial: '/template/nav' %>
+  <main class="post">
+    <div class="learn-rec">
+      <%= render partial: '/template/post_head', locals: { post: @portfolio } %>
+      <div class="title">
+        <h6>タイトル</h6>
+      </div>
+      <div class="lang">
+        使用言語　セレクトボックス
+      </div>
+      <div class="text">
+        <div class="text-box">
+          概要<br>
+          ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+          ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+          ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+          ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        </div>
+      </div>
+      <div class="title">
+        <h6>サイトテーマ</h6>
+      </div>
+      <div class="title">
+        <h6>テーマを選んだ理由</h6>
+      </div>
+      <div class="title">
+        <h6>ターゲットユーザ</h6>
+      </div>
+      <div class="title">
+        <h6>主な利用シーン</h6>
+      </div>
+      <div class="title">
+        <h6>リンクURL</h6>
+      </div>
+    </div>
+    <div class="submit">
+      編集
+    </div>
+  </main>
+</body>

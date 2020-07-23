@@ -17,12 +17,23 @@ class User::PortfoliosController < ApplicationController
     @portfolio = Portfolio.find(params[:id])
   end
 
-  def edit
+  def update
     @portfolio = Portfolio.find(params[:id])
+    if @portfolio.update(portfolio_params)
+      redirect_to user_portfolio_path(@portfolio)
+    else
+      render :show
+    end
+  end
+
+  def destroy
+    @portfolio = Portfolio.find(params[:id])
+    @portfolio.destroy
+    redirect_to user_portfolios_path
   end
 
   def index
-    @portfolios = Portfolio.all
+    @portfolios = current_applicant.portfolios
   end
   
   private
