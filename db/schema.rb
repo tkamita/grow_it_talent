@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_094055) do
+ActiveRecord::Schema.define(version: 2020_07_23_135203) do
 
   create_table "applicants", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -60,6 +60,50 @@ ActiveRecord::Schema.define(version: 2020_07_23_094055) do
     t.string "prefecture_kana", default: ""
     t.index ["email"], name: "index_applicants_on_email", unique: true
     t.index ["reset_password_token"], name: "index_applicants_on_reset_password_token", unique: true
+  end
+
+  create_table "corporations", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "name", null: false
+    t.string "president_name", default: ""
+    t.date "establish_day", default: "2000-01-01"
+    t.integer "quantity_emp", default: 1
+    t.integer "capital_stock", default: 0
+    t.string "title", default: ""
+    t.string "location", default: ""
+    t.text "content", default: ""
+    t.boolean "is_stock", default: false, null: false
+    t.text "business_description", default: ""
+    t.text "place_info", default: ""
+    t.text "require_competence", default: ""
+    t.string "work_location", default: ""
+    t.boolean "is_emp_status", default: true, null: false
+    t.integer "salary", default: 300
+    t.string "working_hour", default: ""
+    t.boolean "is_overtime", default: false, null: false
+    t.boolean "is_overtime_pay", default: true, null: false
+    t.text "commute_allowance", default: ""
+    t.string "day_off", default: ""
+    t.string "paid_vacation", default: ""
+    t.boolean "is_health_insurance", default: true, null: false
+    t.boolean "is_welfare_pension", default: true, null: false
+    t.boolean "is_emp_insurance", default: true, null: false
+    t.boolean "is_accident_insurance", default: true, null: false
+    t.boolean "is_dwelling", default: false, null: false
+    t.boolean "is_retire_payment", default: false, null: false
+    t.text "other_welfare", default: ""
+    t.integer "recruit_number", default: 1
+    t.integer "interview_number", default: 1
+    t.text "company_url", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_corporations_on_email", unique: true
+    t.index ["president_name"], name: "index_corporations_on_president_name", unique: true
+    t.index ["reset_password_token"], name: "index_corporations_on_reset_password_token", unique: true
   end
 
   create_table "pg_langs", force: :cascade do |t|
