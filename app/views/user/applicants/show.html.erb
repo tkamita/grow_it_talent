@@ -3,104 +3,98 @@
   <%= render partial: '/template/nav' %>
   <main class="user-info">
     <div class="basic-info">
-      <img src="https://app.offerbox.jp/assets/img/common/studentnoimage_student.gif">
+      <%= attachment_image_tag current_applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image" %>
       <table>
         <tr>
           <td>ふりがな</td>
-          <th>たなかたろう</th>
+          <th><%= current_applicant.full_name_kana %></th>
         </tr>
         <tr>
           <td>氏名</td>
-          <th>田中太郎</th>
+          <th><%= current_applicant.full_name %></th>
         </tr>
         <tr>
           <td>生年月日</td>
-          <th>19○○年○○月○○日（満○○歳）</th>
+          <th><%= l current_applicant.birth_date %>（満<%= @age %>歳）</th>
         </tr>
         <tr>
           <td>性別</td>
-          <th>男性</th>
+          <th><%= current_applicant.gender %> </th>
         </tr>
         <tr>
           <td>郵便番号</td>
-          <th>100-1000</th>
+          <th><%= current_applicant.postal_code %></th>
         </tr>
         <tr>
           <td>ふりがな</td>
-          <th>hogehogehoge</th>
+          <th><%= current_applicant.prefecture_kana %></th>
         </tr>
         <tr>
           <td>住所</td>
-          <th>HOGEHOGEHOGE</th>
+          <th><%= current_applicant.prefecture %><%= current_applicant.manicipal %><br><%= current_applicant.address_other %></th>
         </tr>
         <tr>
           <td>TEL</td>
-          <th>09000000000</th>
+          <th><%= current_applicant.phone_number %></th>
         </tr>
         <tr>
           <td>email</td>
-          <th>HOGEHOGE@mail.com</th>
+          <th><%= current_applicant.email %></th>
         </tr>
       </table>
     </div>
     <div class="ability">
       <h4>プログラミングスキル</h4>
       <div class="text-box">
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        <%= current_applicant.pg_skill %>
       </div>
     </div>
     <div class="pr">
       <h4>プロフィール（PR）</h4>
       <h6>自己PR</h6>
       <div class="text-box">
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        <%= current_applicant.self_pr %>
       </div>
       <h6>私の将来像</h6>
       <div class="text-box">
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        <%= current_applicant.vision %>
       </div>
     </div>
     <div class="qualification">
       <h4>語学・資格</h4>
       <div class="quali-box">
-        <ul>
-          <li>hoge</li>
-          <li>hoge</li>
-          <li>hoge</li>
-          <li>hoge</li>
-          <li>hoge</li>
-        </ul>
+        <% if current_applicant.qualifications.any? %>
+          <%= current_applicant.qualifications each do |q| %>
+            <ul>
+              <li><%= current_applicant.english_skill %></li>
+              <li><%= current_applicant.other_lang %></li>
+              <li><%= q.name %></li>
+            </ul>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <div class="desire">
       <h4>希望する企業タイプ</h4>
       <div class="desire-box">
-        セレクトボックス　メガベンチャー
+        <%= current_applicant.company_type %>
       </div>
       <h4>転職の軸</h4>
       <div class="desire-box">
-        セレクトボックス
+        <%= current_applicant.axis %>
       </div>
       <h4>希望条件</h4>
       <div class="desire-box">
+        <%=  %>
         タグ　チェックボックス
       </div>
       <h4>希望勤務地</h4>
       <div class="desire-box">
-        セレクトボックス
+        <%= current_applicant.work_location %>
       </div>
       <h4>勤務開始可能日</h4>
       <div class="desire-box">
-        ーーーーーーーー
+        <%= current_applicant.start_work %>
       </div>
     </div>
     <div class="item-6">
@@ -109,12 +103,15 @@
     <div class="item-7">
       <h4>転職活動状況</h4>
       <div class="desire-box">
-        ラジオボタン
-        活動中　活動終了
+        <% if current_applicant.is_selection? %>
+          <span class="text-active">転職活動中</span>
+        <% else %>
+          <span class="text-invalid">活動終了</span>							
+        <% end %>
       </div>
     </div>
     <div class="submit">
-      編集
+      <%= link_to '編集', edit_user_applicants_path, class: 'submit', style: 'text-decoration: none;' %>
     </div>
   </main>
   <%= render partial: '/template/footer' %>

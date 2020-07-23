@@ -15,35 +15,43 @@ class DeviseCreateApplicants < ActiveRecord::Migration[5.2]
       t.datetime :remember_created_at
 
 
-      t.string :last_name
-      t.string :first_name
-      t.string :last_furigana
-      t.string :first_furigana
-      t.boolean :is_gender
-      t.date :birth_date
-      t.string :image_id
-      t.string :postal_code
-      t.string :prefecture
-      t.string :manicipal
-      t.string :address_other
-      t.string :phone_number
+      t.string :last_name, null: false
+      t.string :first_name, null: false
+      t.string :last_furigana, null: false
+      t.string :first_furigana, null: false
+      t.integer :gender, default: 0
+      t.date :birth_date, default: Date.new(1989, 1, 1)
+      t.string :image_id, default: ""
+      t.string :postal_code, default: ""
+      t.string :prefecture, default: ""
+      t.string :manicipal, default: ""
+      t.string :address_other, default: ""
+      t.string :phone_number, default: ""
       t.integer :school_division, default: 0
-      t.string :school_name
-      t.string :faculty
-      t.string :academic_decipline
-      t.string :english_skill
-      t.string :other_lang
-      t.text :overview_w_history
+      t.string :school_name, default: ""
+      t.string :faculty, default: ""
+      t.string :academic_decipline, default: ""
+      t.string :english_skill, default: ""
+      t.string :other_lang, default: ""
+      t.text :overview_w_history, default: ""
       t.boolean :is_selection, null: false, default: true
-      t.date :s_work_date
+      t.string :start_work, default: ""
       t.integer :work_location, default: 0
       t.integer :axis, default: 0
       t.integer :company_type, default: 0
-      t.text :pg_skill
-      t.text :self_pr
-      t.text :vision
-
-
+      t.text :pg_skill, default: ""
+      t.text :self_pr, default: ""
+      t.text :vision, default: ""
+      t.string :term_1, default: ""
+      t.string :term_2, default: ""
+      t.string :term_3, default: ""
+      t.string :term_4, default: ""
+      t.string :term_5, default: ""
+      t.text :work_history_1, default: ""
+      t.text :work_history_2, default: ""
+      t.text :work_history_3, default: ""
+      t.text :work_history_4, default: ""
+      t.text :work_history_5, default: ""
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false

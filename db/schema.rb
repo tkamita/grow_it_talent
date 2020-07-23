@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_22_085304) do
+ActiveRecord::Schema.define(version: 2020_07_22_181142) do
 
   create_table "applicants", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -18,35 +18,46 @@ ActiveRecord::Schema.define(version: 2020_07_22_085304) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "last_name"
-    t.string "first_name"
-    t.string "last_furigana"
-    t.string "first_furigana"
-    t.boolean "is_gender"
-    t.date "birth_date"
-    t.string "image_id"
-    t.string "postal_code"
-    t.string "prefecture"
-    t.string "manicipal"
-    t.string "address_other"
-    t.string "phone_number"
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_furigana", null: false
+    t.string "first_furigana", null: false
+    t.integer "gender", default: 0
+    t.date "birth_date", default: "1989-01-01"
+    t.string "image_id", default: ""
+    t.string "postal_code", default: ""
+    t.string "prefecture", default: ""
+    t.string "manicipal", default: ""
+    t.string "address_other", default: ""
+    t.string "phone_number", default: ""
     t.integer "school_division", default: 0
-    t.string "school_name"
-    t.string "faculty"
-    t.string "academic_decipline"
-    t.string "english_skill"
-    t.string "other_lang"
-    t.text "overview_w_history"
+    t.string "school_name", default: ""
+    t.string "faculty", default: ""
+    t.string "academic_decipline", default: ""
+    t.string "english_skill", default: ""
+    t.string "other_lang", default: ""
+    t.text "overview_w_history", default: ""
     t.boolean "is_selection", default: true, null: false
-    t.date "s_work_date"
+    t.string "start_work", default: ""
     t.integer "work_location", default: 0
     t.integer "axis", default: 0
     t.integer "company_type", default: 0
-    t.text "pg_skill"
-    t.text "self_pr"
-    t.text "vision"
+    t.text "pg_skill", default: ""
+    t.text "self_pr", default: ""
+    t.text "vision", default: ""
+    t.string "term_1", default: ""
+    t.string "term_2", default: ""
+    t.string "term_3", default: ""
+    t.string "term_4", default: ""
+    t.string "term_5", default: ""
+    t.text "work_history_1", default: ""
+    t.text "work_history_2", default: ""
+    t.text "work_history_3", default: ""
+    t.text "work_history_4", default: ""
+    t.text "work_history_5", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "prefecture_kana", default: ""
     t.index ["email"], name: "index_applicants_on_email", unique: true
     t.index ["reset_password_token"], name: "index_applicants_on_reset_password_token", unique: true
   end
