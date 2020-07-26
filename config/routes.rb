@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resource :corporations, only: [:show, :edit, :update]
     resources :applicants, only: [:index, :show]
     resources :posts, only: [:index, :show]
+    resources :portfolios, only: [:index, :show]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

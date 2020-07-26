@@ -15,8 +15,9 @@ class Public::ApplicantsController < ApplicationController
 
 
   def work
+    @applicant = Applicant.find(params[:id])
     date_format = "%Y%m%d"
-    birthday = current_applicant.birth_date.to_date
+    birthday = @applicant.birth_date.to_date
     @age = (Date.today.strftime(date_format).to_i - birthday.strftime(date_format).to_i) / 10000
   end
 
