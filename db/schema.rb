@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_26_022839) do
+ActiveRecord::Schema.define(version: 2020_07_26_052955) do
 
   create_table "applicants", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -104,6 +104,13 @@ ActiveRecord::Schema.define(version: 2020_07_26_022839) do
     t.index ["email"], name: "index_corporations_on_email", unique: true
     t.index ["president_name"], name: "index_corporations_on_president_name", unique: true
     t.index ["reset_password_token"], name: "index_corporations_on_reset_password_token", unique: true
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.integer "applicant_id", null: false
+    t.integer "corporation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pg_langs", force: :cascade do |t|

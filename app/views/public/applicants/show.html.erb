@@ -113,5 +113,13 @@
         活動中　活動終了
       </div>
     </div>
+    <div class="submit">
+      <% if current_corporation.already_offered?(@applicant) %>
+        オファー済
+        <%= link_to 'いいねを取り消す', public_applicant_offer_path(@applicant), method: :delete %>
+      <% else %>
+        <%= link_to 'オファー', public_applicant_offers_path(@applicant), method: :post %>
+      <% end %>
+    </div>
   </main>
 </body>

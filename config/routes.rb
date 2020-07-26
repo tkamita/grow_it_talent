@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     get 'corporations/edit_job' => 'corporations#edit_job', as: 'edit_job_sheet'
     patch 'corporations/update_job' => 'corporations#update_job'
     resource :corporations, only: [:show, :edit, :update]
-    resources :applicants, only: [:index, :show]
+    resources :applicants, only: [:index, :show] do
+      resources :offers, only: [:create, :destroy]
+    end
     resources :posts, only: [:index, :show]
     resources :portfolios, only: [:index, :show]
     resources :sales, except: [:show, :new, :edit]
@@ -31,6 +33,7 @@ Rails.application.routes.draw do
     resources :qualifications, except: [:show, :new, :edit]
     resources :posts, except: [:new]
     resources :portfolios
+    resources :offers, only: [:index, :show]
   end
   
   

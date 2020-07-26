@@ -7,6 +7,8 @@ class Applicant < ApplicationRecord
   has_many :qualifications, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :portfolios, dependent: :destroy
+  has_many :offers, dependent: :destroy
+  has_many :offered_corporations, through: :offers, source: :corporation
   attachment :image
 
   validates :last_name, presence: true

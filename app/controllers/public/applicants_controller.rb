@@ -7,6 +7,7 @@ class Public::ApplicantsController < ApplicationController
   end
   
   def show
+    @offer = Offer.new
     @applicant = Applicant.find(params[:id])
     date_format = "%Y%m%d"
     birthday = @applicant.birth_date.to_date
