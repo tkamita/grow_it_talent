@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_26_074750) do
+ActiveRecord::Schema.define(version: 2020_07_26_130440) do
 
   create_table "applicants", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -113,6 +113,13 @@ ActiveRecord::Schema.define(version: 2020_07_26_074750) do
     t.index ["reset_password_token"], name: "index_corporations_on_reset_password_token", unique: true
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "room_id", null: false
+    t.text "content", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "offers", force: :cascade do |t|
     t.integer "applicant_id", null: false
     t.integer "corporation_id", null: false
@@ -154,6 +161,13 @@ ActiveRecord::Schema.define(version: 2020_07_26_074750) do
     t.integer "applicant_id", null: false
     t.string "name", null: false
     t.string "acquition_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer "applicant_id", null: false
+    t.integer "corporation_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

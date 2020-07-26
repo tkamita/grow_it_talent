@@ -7,6 +7,7 @@ class Public::ApplicantsController < ApplicationController
   end
   
   def show
+    @room = Room.find_by(applicant_id: params[:applicant_id], corporation_id: current_corporation.id)
     @offer = Offer.new
     @applicant = Applicant.find(params[:id])
     date_format = "%Y%m%d"

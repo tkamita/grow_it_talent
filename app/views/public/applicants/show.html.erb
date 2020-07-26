@@ -120,6 +120,15 @@
       <% else %>
         <%= link_to 'オファー', public_applicant_offers_path(@applicant), method: :post %>
       <% end %>
+      <% if current_corporation.already_room?(@applicant) %>
+        <%= link_to 'メッセージ', room_path(@applicant) %>
+      <% else %>
+        <%= form_with model: @room, url: rooms_path, method: :post, local: true do |f| %>
+          <%= f.hidden_field :applicant_id, :value => @applicant.id %>
+          <%= f.hidden_field :corporation_id, :value => current_corporation.id %>
+          <%= f.submit 'メッセージを送る' %>
+        <% end %>
+      <% end %>
     </div>
   </main>
 </body>

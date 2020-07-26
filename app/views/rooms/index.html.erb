@@ -1,0 +1,31 @@
+<body class="public-scene">
+  <% if applicant_signed_in? %>
+    <%= render partial: '/template/header' %>
+    <%= render partial: '/template/nav' %>
+  <% else %>
+    <%= render partial: '/template/public_header' %>
+    <%= render partial: '/template/public_nav' %>
+  <% end %>
+  <main class="post">
+    <div class="learn-rec">
+      <% @rooms.each do |room| %>
+        <ul>
+          <li>
+            <div class="creat-date">
+              <%= l created_at, format: :short %>
+            </div>
+            <div class="messa-ttl">
+              <% if applicant_signed_in? %>
+                <p><%= room.corporation.name %></p>
+              <% else %>
+                <p><%= room.applicant.full_name %></p>
+              <% end %>
+            </div>
+            <div class="offer">
+              <%= link_to 'メッセージを見る', room_path(room) %>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </main>
+</body>

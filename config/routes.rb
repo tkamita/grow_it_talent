@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  resources :rooms, only: [:show, :create, :index] do
+    resources :messages, only: [:create]
+  end
+  
+  
   devise_for :corporations, controllers: {
     sessions: 'public/sessions',
     registrations: 'public/registrations',

@@ -11,6 +11,8 @@ class Applicant < ApplicationRecord
   has_many :offered_corporations, through: :offers, source: :corporation
   has_many :applies, dependent: :destroy
   has_many :applied_corporations, through: :applies, source: :corporation
+  has_many :rooms, dependent: :destroy
+  has_many :room_corporations, through: :rooms, source: :corporation
   attachment :image
 
   validates :last_name, presence: true
@@ -21,6 +23,10 @@ class Applicant < ApplicationRecord
 
   def already_applied?(corporation)
     self.applies.exists?(corporation_id: corporation.id)
+  end
+
+  def already_room?(corporation)
+    self.rooms.exists?(corporation_id: corporation.id)
   end
 
   def full_name
