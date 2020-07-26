@@ -1,0 +1,57 @@
+<body class="public-scene">
+  <%= render partial: '/template/public_header' %>
+  <%= render partial: '/template/public_nav' %>
+  <main class="post">
+    <div class="learn-rec">
+      <%= form_with model: @sale, url: public_sales_path, method: :post, local: true do |f| %>
+        <table style="width: 70%; margin: 10px auto;">
+          <tr>
+            <td class="qual-form">
+              <label for="date">年度</label><br>
+              <%= f.text_field :financial_year, :placeholder =>"例）2000年", class: 'form' %>
+            </td>
+          </tr>
+          <tr>
+            <td class="qual-form">
+              <label for="name">売上高（百万円）</label><br>
+              <%= f.text_field :year_sales, :placeholder =>"例）基本情報技術者", class: 'form' %>
+            </td>
+          </tr>
+        </table>
+        <%= f.hidden_field :corporation_id, :value => current_corporation.id %>
+        <div class="save">
+          <%= f.submit "保存", class: 'transmission' %>
+        </div>
+      <% end %>
+      <h6>売上一覧</h6>
+      <table border="1" style="border-collapse: collapse">
+        <% if @sales.any? %>
+          <% @sales.each do |sale| %>
+            <%= form_with model: sale, url: user_qualification_path(sale), method: :patch, local: true do |f| %>
+              <tr>
+                <th class="period">年度</th>
+                <th colspan="2">売上高</th>
+              </tr>
+              <tr>
+                <td rowspan="2">
+                  <%= f.text_field :financial_year, :placeholder =>"", class: 'form' %>
+                </td>
+                <td rowspan="2">
+                  <%= f.text_field :year_sales, :placeholder =>"sale.year_sales", class: 'form' %>百万円
+                </td>
+                <td style="width: 12%;">
+                  <%= f.submit "保存" %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= link_to "削除", public_sale_path(sale), method: :delete, class: 'small-delete' %>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
+  </main>
+</body>
