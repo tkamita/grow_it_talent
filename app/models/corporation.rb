@@ -8,8 +8,8 @@ class Corporation < ApplicationRecord
   has_many :offers, dependent: :destroy
   has_many :offered_applicant, through: :offers, source: :applicant
   has_many :applies, dependent: :destroy
-  has_many :applied_applicant, through: :applies, source: :applicant
-  
+  has_many :applied_applicants, through: :applies, source: :applicant
+
   def already_offered?(applicant)
     self.offers.exists?(applicant_id: applicant.id)
   end

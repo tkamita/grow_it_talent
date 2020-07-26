@@ -1,0 +1,23 @@
+<body class="public-scene">
+  <%= render partial: '/template/header' %>
+  <%= render partial: '/template/nav' %>
+  <main class="post">
+    <div class="learn-rec">
+      <% @corporation.applied_applicants.each do |a| %>
+        <ul>
+          <li>
+            <div class="creat-date">
+              <%= l a.created_at, format: :short %>
+            </div>
+            <div class="creat-ttl">
+              <p><span><%= a.full_name %></span></p>
+            </div>
+            <div class="offer">
+              <%= link_to '詳しく見る', public_applicant_path(a) %>
+            </div>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </main>
+</body>
