@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   namespace :public do
     get 'top' => 'homes#top', as: 'top'
+    get 'corporations/edit_job' => 'corporations#edit_job', as: 'edit_job_sheet'
+    patch 'corporations/update_job' => 'corporations#update_job'
     resource :corporations, only: [:show, :edit, :update]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
