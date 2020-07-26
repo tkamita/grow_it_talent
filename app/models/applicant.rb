@@ -9,6 +9,8 @@ class Applicant < ApplicationRecord
   has_many :portfolios, dependent: :destroy
   has_many :offers, dependent: :destroy
   has_many :offered_corporations, through: :offers, source: :corporation
+  has_many :applies, dependent: :destroy
+  has_many :applied_corporations, through: :applies, source: :corporation
   attachment :image
 
   validates :last_name, presence: true
@@ -16,6 +18,10 @@ class Applicant < ApplicationRecord
   validates :last_furigana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :first_furigana, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :email, presence: true, uniqueness: true
+
+  def already_applied?(corporation)
+    self.applies.exists?(corporation_id: corporation.id)
+  end
 
   def full_name
     last_name + " " + first_name

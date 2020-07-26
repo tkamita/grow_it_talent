@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_26_052955) do
+ActiveRecord::Schema.define(version: 2020_07_26_074750) do
 
   create_table "applicants", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -60,6 +60,13 @@ ActiveRecord::Schema.define(version: 2020_07_26_052955) do
     t.string "prefecture_kana", default: ""
     t.index ["email"], name: "index_applicants_on_email", unique: true
     t.index ["reset_password_token"], name: "index_applicants_on_reset_password_token", unique: true
+  end
+
+  create_table "applies", force: :cascade do |t|
+    t.integer "applicant_id", null: false
+    t.integer "corporation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "corporations", force: :cascade do |t|

@@ -33,7 +33,10 @@ Rails.application.routes.draw do
     resources :qualifications, except: [:show, :new, :edit]
     resources :posts, except: [:new]
     resources :portfolios
-    resources :offers, only: [:index, :show]
+    resources :offers, only: [:index]
+    resources :corporations, only: [:show] do
+      resources :applies, only: [:create, :destroy]
+    end
   end
   
   

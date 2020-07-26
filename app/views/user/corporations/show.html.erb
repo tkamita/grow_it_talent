@@ -189,11 +189,14 @@
         </tr>
       </table>
     </div>
-    <div class="submit">
-      応募する
-    </div>
-    <div class="decline">
-      辞退する
-    </div>
+    <% if current_applicant.already_applied?(@corporation) %>
+      <div class="submit">
+        <%= link_to '辞退する', user_corporation_apply_path(@corporation), method: :delete %>
+      </div>
+    <% else %>
+      <div class="decline">
+        <%= link_to '応募する', user_corporation_applies_path(@corporation), method: :post %>
+      </div>
+    <% end %>
   </main>
 </body>
