@@ -4,18 +4,22 @@
   <main class="post">
     <div class="learn-rec">
       <% @portfolios.each do |p| %>
-        <ul>
-          <li>
-            <%= link_to user_portfolio_path(p) do %>
-              <%= attachment_image_tag current_applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image"  %>
-              <div class="creat-ttl">
+        <table style="border-collapse: collapse">
+          <tr style="border-bottom: solid 1px #E9E9E9;">
+            <td style="width: 15%;">
+              <%= attachment_image_tag current_applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image", style: "width: 60px;"  %>
+            </td>
+            <td>
+              <%= link_to user_portfolio_path(p) do %>
                 <p><%= p.title %></p>
                 <p><span><%= l p.created_at, format: :long %></span></p>
-              </div>
-            <% end %>
-            <%= link_to "削除", user_portfolio_path(p), method: :delete %>
-          </li>
-        </ul>
+              <% end %>
+            </td>
+            <td style="width: 12%;">
+              <%= link_to "削除", user_portfolio_path(p), method: :delete %>
+            </td>
+          </tr>
+        </table>
       <% end %>
     </div>
   </main>

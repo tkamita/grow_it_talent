@@ -4,33 +4,24 @@
   <main class="offerd">
     <div class="basic-info" style="height: auto;">
       <div class="title">
-        <h2>【東京】IT総合職 　★10月入社が可能な方★　Web面接可能</h2>
-        <h6>株式会社ホゲホゲ</h6>
+        <h2><%= @corporation.title %></h2>
+        <h6><%= @corporation.name %> </h6>
       </div>
       <h4>募集要項</h4>
       <table>
         <tr>
           <th>会社名</th>
           <td>
-            テーブル株式会社<br>
-            hogehoge<br>
-            テーブル株式会社<br>
-            hogehoge<br>
-            テーブル株式会社<br>
-            hogehoge<br>
+            <%= @corporation.name %>
           </td>
         </tr>
         <tr>
           <th>創業</th>
-          <td>1940年</td>
+          <td><%= l @corporation.establish_day %></td>
         </tr>
         <tr>
           <th>従業員数</th>
-          <td>500人</td>
-        </tr>
-        <tr>
-          <th>電話番号</th>
-          <td>000-000-0000</td>
+          <td><%= @corporation.quantity_emp %></td>
         </tr>
       </table>
       <h4>募集要項</h4>
@@ -38,40 +29,19 @@
         <tr>
           <th>仕事の内容</th>
           <td>
-            ドイツSAP社のパートナーである当社にて、企業向け基幹業務システムの
-            導入におけるコンサルタントから、SE、PG、サーバ・ネットワーク・セキ
-            ュリティエンジニアをご希望・適性に応じてご担当いただきます。
-
-            ★充実の教育制度：「基礎研修」「経験豊富な先輩エンジニアのOJT」
-            「トレーニング環境の整備」「上司との定期面談」などをご用意。
-            【仕事の特徴】
-            ■プライム案件・自社内開発100％★下請業務や客先常駐は一切なし！
-            ■当社独自のコンサルティング手法に共感いただいたお客様（500名以上
-            の中堅から上場大手企業が中心）からの案件が多数！
+            <%= @corporation.business_description %>
           </td>
         </tr>
         <tr>
           <th>配属先情報</th>
           <td>
-            経験・適性および相談の上、業務範囲を決定します。
-            スキルによって浜松本社での勤務を打診させて頂く可能性があります。
+            <%= @corporation.place_info %>
           </td>
         </tr>
         <tr>
           <th>必要な能力・経験</th>
           <td>
-            ITコンサル・ITエンジニアとしてチャレンジしていきたい方
-            ★エンジニア未経験者歓迎（システム知識なしOK）
-            ★ジョブローテーション・教育制度で、活躍できるプロへ育てます
-            【こんな方を求めています】
-            「前向きで、自ら積極的に行動していける方」
-            「チャレンジ精神が旺盛な方」「物事を論理的に考えていける方」
-            「柔軟な対応ができる方」「長期的に物事に取り組んでいける方」
-            ■歓迎する知識・経験…経理、生産管理、物流、購買、人事給与、営業、
-            経営管理など、基幹業務経験。
-            その他の条件
-            学歴
-            大学 大学院
+            <%= @corporation.require_competence %>
           </td>
         </tr>
       </table>
@@ -80,50 +50,93 @@
         <tr>
           <th>雇用形態</th>
           <td>
-            テーブル株式会社<br>
-            hogehoge<br>
-            テーブル株式会社<br>
-            hogehoge<br>
-            テーブル株式会社<br>
-            hogehoge<br>
+            <% if @corporation.is_emp_status == true %>
+              正社員
+            <% else %>
+              契約社員
+            <% end %>
           </td>
         </tr>
         <tr>
-          <th>給与</th>
-          <td>1940年</td>
+          <th>年収</th>
+          <td><%= @corporation.salary %>万円</td>
         </tr>
         <tr>
           <th>就業時間</th>
-          <td>500人</td>
+          <td><%= @corporation.working_hour %></td>
         </tr>
         <tr>
           <th>勤務地</th>
-          <td>000-000-0000</td>
+          <td><%= @corporation.work_location %></td>
         </tr>
         <tr>
           <th>通勤手当</th>
-          <td>000-000-0000</td>
+          <td><%= @corporation.commute_allowance %></td>
         </tr>
         <tr>
           <th>休日・休暇</th>
-          <td>000-000-0000</td>
-        </tr>
-        <tr>
-          <th>社会保険</th>
-          <td>000-000-0000</td>
+          <td><%= @corporation.day_off %></td>
         </tr>
       </table>
       <h4>制度・福利厚生</h4>
       <table>
         <tr>
+          <th>健康保険</th>
+          <td>
+            <% if @corporation.is_health_insurance == true %>
+              有
+            <% else %>
+              無
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th>厚生年金</th>
+          <td>
+            <% if @corporation.is_welfare_pension == true %>
+              有
+            <% else %>
+              無
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th>雇用保険</th>
+          <td>
+            <% if @corporation.is_emp_insurance == true %>
+              有
+            <% else %>
+              無
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th>労災保険</th>
+          <td>
+            <% if @corporation.is_accident_insurance == true %>
+              有
+            <% else %>
+              無
+            <% end %>
+          </td>
+        </tr>
+        <tr>
           <th>制度・福利厚生</th>
           <td>
             - 寮・社宅<br>
-            無<br><br>
+            <% if @corporation.is_dwelling == true %>
+              有<br><br>
+            <% else %>
+              無<br><br>
+            <% end %>
             - 退職金<br>
-            無<br><br>
+            <% if @corporation.is_retire_payment == true %>
+              有<br><br>
+            <% else %>
+              無<br><br>
+            <% end %>
             - その他制度<br>
-            hogehoge
+            <%= @corporation.other_welfare %>
           </td>
         </tr>
       </table>
@@ -131,61 +144,61 @@
       <table>
         <tr>
           <th>採用人数</th>
-          <td>1名</td>
+          <td><%= @corporation.recruit_number %>名</td>
         </tr>
         <tr>
           <th>面接回数</th>
-          <td>
-            1回
-          </td>
+          <td><%= @corporation.interview_number %>回</td>
         </tr>
       </table>
       <h4>企業情報</h4>
       <table>
         <tr>
           <th>企業名</th>
-          <td>株式会社hogehoge</td>
+          <td><%= @corporation.name %></td>
         </tr>
         <tr>
           <th>代表取締役社長</th>
-          <td>田中大輝</td>
+          <td><%= @corporation.president_name %></td>
         </tr>
         <tr>
           <th>設立</th>
-          <td>19oo年oo月oo日</td>
+          <td><%= l @corporation.establish_day %></td>
         </tr>
         <tr>
           <th>従業員数</th>
-          <td>150名</td>
+          <td><%= @corporation.quantity_emp %></td>
         </tr>
         <tr>
           <th>資本金</th>
-          <td>100百万円</td>
+          <td><%= @corporation.capital_stock %>百万円</td>
         </tr>
         <tr>
           <th>売上</th>
           <td>
-            テーブル使いたい
+            <% @corporation.sales.each do |sale| %>
+              <table style="margin: 0;">
+                <tr>
+                  <th>年度</th>
+                  <th>売上高</th>
+                </tr>
+                <tr>
+                  <td style="width: 55%;"><%= sale.financial_year %></td>
+                  <td><%= sale.year_sales %>百万円</td>
+                </tr>
+              </table>
+            <% end %>
           </td>
         </tr>
         <tr>
           <th>所在地</th>
           <td>
-            1010031<br>
-            東京都練馬区＝＝＝＝＝＝
-          </td>
-        </tr>
-        <tr>
-          <th>株式公開</th>
-          <td>
-            非公開
+            <%= @corporation.location %>
           </td>
         </tr>
         <tr>
           <th>企業URL</th>
-          <td>
-            〜〜〜〜〜〜〜〜〜
-          </td>
+          <td><%= @corporation.company_url %></td>
         </tr>
       </table>
     </div>

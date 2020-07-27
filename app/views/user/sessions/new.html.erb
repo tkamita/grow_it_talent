@@ -1,7 +1,7 @@
 <body class="newreg">
   <header>
     <div class="backcl"></div>
-    <div class="logo">Grow IT Talent</div>
+    <div class="logo"></div>
     <div class="loggin">
       <%= link_to "ログイン", new_session_path(resource_name) %>
     </div>
@@ -12,7 +12,7 @@
     <div class="uselog">
       <div class="firstp">
         <p>メールアドレス<span>必須</span><br>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form' %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form', style: 'margin: 0;' %>
         </p>
       </div>
       <div class="second">

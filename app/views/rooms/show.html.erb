@@ -1,104 +1,13 @@
 <body class="public-scene">
-  <header>
-    <div class="logo">
-      Grow IT Talent
-    </div>
-    <div class="head-item">
-      <div class="notification">通知アイコン</div>
-      <div class="picture">プロフィール写真</div>
-      <div class="carender">スケジュール</div>
-      <div class="logout">ログアウト</div>
-    </div>
-  </header>
-  <nav>
-    <div class="first-box">
-      <div class="widget-header">
-        <h3>プロフィール編集</h3>
-      </div>
-      <ul>
-        <li>
-          基本情報
-          <!-- <ul id="collapseBasic" class="collapse" aria-expanded="false" style="height: 0px;">
-            <li>
-              就職活動状況
-            </li>
-            <li>
-              名前・プロフィール写真
-            </li>
-            <li>
-              連絡先
-            </li>
-            <li>
-              学校・クラブ情報
-            </li>
-            <li>
-              語学・資格
-            </li>
-            <li>
-              希望条件
-            </li>
-          </ul> -->
-        </li>
-        <li>
-          ユニーク情報
-          <!-- <ul id="collapseUnique" class="collapse" aria-expanded="false" style="height: 0px;">
-            <li>
-              自分を象徴する画像                                       
-            </li>
-            <li>
-              過去のエピソード
-            </li>
-            <li>
-              自己PR
-            </li>
-            <li>
-              アピールポイント
-            </li>
-            <li>
-              留学                                                                                                           
-            </li>
-            <li>
-              動画で自己PR
-            </li>
-            <li>
-              研究内容・制作実績
-            </li>
-            <li>
-              インターン
-            </li>
-          </ul> -->
-        </li>
-      </ul>
-    </div>
-    <div class="second-box">
-      <div class="widget-header">
-        <h3>学習記録</h3>
-      </div>
-      <ul>
-        <li>
-          投稿する
-        </li>
-        <li>
-          今までの投稿
-        </li>
-      </ul>
-    </div>
-    <div class="third-box">
-      <div class="widget-header">
-        <h3>企業とのコンタクト</h3>
-      </div>
-      <ul>
-        <li>
-          オファーリスト
-        </li>
-        <li>
-          メッセージ一覧
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <% if applicant_signed_in? %>
+    <%= render partial: '/template/header' %>
+    <%= render partial: '/template/nav' %>
+  <% else %>
+    <%= render partial: '/template/public_header' %>
+    <%= render partial: '/template/public_nav' %>
+  <% end %>
   <main class="offerd">
-    <div class="basic-info">
+    <div class="basic-info" style="height: auto;">
       <div class="title">
         <h2>株式会社ホゲホゲ</h2>
       </div>
@@ -133,7 +42,4 @@
         ここに文章を入力
       </div>
   </main>
-  <footer>
-    <p class="copy">Copyright © GrowIT/Talent All Rights Reserved.</p>
-  </footer>
 </body>

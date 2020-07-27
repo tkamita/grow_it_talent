@@ -20,7 +20,7 @@ class User::PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to user_post_path(@post)
+      redirect_to user_posts_path
     else
       render :show
     end

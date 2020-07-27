@@ -5,32 +5,32 @@
     <%= render partial: '/template/user_info' %>
     <div class="ability">
       <h4>プログラミングスキル</h4>
-      <div class="text-box">
+      <div style="margin: 30px 50px; font-size: 20px;">
         <%= current_applicant.pg_skill %>
       </div>
     </div>
     <div class="pr">
       <h4>プロフィール（PR）</h4>
       <h6>自己PR</h6>
-      <div class="text-box">
+      <div style="margin: 30px 50px; font-size: 20px;">
         <%= current_applicant.self_pr %>
       </div>
       <h6>私の将来像</h6>
-      <div class="text-box">
+      <div style="margin: 30px 50px; font-size: 20px;">
         <%= current_applicant.vision %>
       </div>
     </div>
     <div class="qualification">
       <h4>語学・資格</h4>
       <div class="quali-box">
-        <% if current_applicant.qualifications.any? %>
-          <%= current_applicant.qualifications each do |q| %>
-            <ul>
-              <li><%= current_applicant.english_skill %></li>
-              <li><%= current_applicant.other_lang %></li>
-              <li><%= q.name %></li>
-            </ul>
-          <% end %>
+          <ul>
+            <li><%= current_applicant.english_skill %></li>
+            <li><%= current_applicant.other_lang %></li>
+          </ul>
+        <% current_applicant.qualifications.each do |q| %>
+          <ul>
+            <li><%= q.name %></li>
+          </ul>
         <% end %>
       </div>
     </div>

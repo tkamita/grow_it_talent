@@ -1,19 +1,20 @@
 <body class="about">
   <header>
-    <h3>Grow IT Talent</h3>
+    <h3></h3>
     <div class="user-log">
-      <p>応募者ログイン</p>
+      <p>
+        <%= link_to '新規登録', new_applicant_registration_path, style: 'color: white;' %>
+      </p>
     </div>
     <div class="corpo-log">
-      <p>企業ログイン</p>
-    </div>
-    <div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 813px;">
-      <ul class="js-bxslider1" id="bxslider1" style="width: auto; position: relative;">
-        <!-- ここに写真挿入スライド -->
-      </ul>
+      <p>
+        <%= link_to 'ログイン', new_applicant_session_path, style: 'color: white;' %>
+      </p>
     </div>
   </header>
   <main>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <h3>【初めての方へ】Grow IT Talentってどんなサービス？</h3>
     <h4 class="sub-ttl">従来の転職と真逆！企業からあなたに直接声がかかる仕組み！</h4>
     <div class="conventional">
@@ -44,6 +45,8 @@
       <p>選考がスタート！</p>
       <p class="detail">Grow IT Talentでは、人物をよくみて「相互理解」を深める少人数制の選考を推奨しており、ミスマッチ解決に取り組んでいます。オファーから始まり、1対1のコミュニケーションを重ね、企業との距離を縮めていくことができます。</p>
     </div>
-    <div class="regest">新規登録</div>
+    <div class="regest">
+      <%= link_to '新規登録', new_applicant_registration_path, style: 'color: white;' %>
+    </div>
   </main>
 </body>

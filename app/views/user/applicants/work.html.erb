@@ -8,19 +8,19 @@
       <table>
         <tr>
           <td>学校区分</td>
-          <th>大学</th>
+          <th><%= current_applicant.school_division %></th>
         </tr>
         <tr>
           <td>学校名</td>
-          <th>日本大学</th>
+          <th><%= current_applicant.school_name %></th>
         </tr>
         <tr>
           <td>学部</td>
-          <th>法学部</th>
+          <th><%= current_applicant.faculty %></th>
         </tr>
         <tr>
           <td>学科</td>
-          <th>法律学科</th>
+          <th><%= current_applicant.academic_decipline %></th>
         </tr>
       </table>
     </div>
@@ -28,10 +28,7 @@
       <h4>職務経歴</h4>
       <h6>職歴要約</h6>
       <div class="text-box">
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+        <%= current_applicant.overview_w_history %>
       </div>
       <h6>職務経歴</h6>
       <table border="1" style="border-collapse: collapse">
@@ -40,39 +37,39 @@
           <th>職務内容</th>
         </tr>
         <tr>
-          <td>2013年4月〜2015年3月</td>
+          <td><%= current_applicant.term_1 %> </td>
           <td>
-              ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-              ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-              ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-              ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+            <%= current_applicant.work_history_1 %>
           </td>
         </tr>
         <tr>
-          <td>2013年4月〜2015年3月</td>
+          <td><%= current_applicant.term_2 %> </td>
           <td>
-              ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-              ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-              ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-              ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+            <%= current_applicant.work_history_2 %>
           </td>
         </tr>
         <tr>
-          <td>2013年4月〜2015年3月</td>
+          <td><%= current_applicant.term_3 %> </td>
           <td>
-              ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-              ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-              ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-              ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
+            <%= current_applicant.work_history_3 %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= current_applicant.term_4 %> </td>
+          <td>
+            <%= current_applicant.work_history_4 %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= current_applicant.term_5 %> </td>
+          <td>
+            <%= current_applicant.work_history_5 %>
           </td>
         </tr>
       </table>
     </div>
     <div class="submit">
-      編集
+      <%= link_to '編集', user_edit_work_history_path, class: 'submit', style: 'text-decoration: none;' %>
     </div>
   </main>
-  <footer>
-    <p class="copy">Copyright © GrowIT/Talent All Rights Reserved.</p>
-  </footer>
 </body>

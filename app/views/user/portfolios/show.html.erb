@@ -2,41 +2,41 @@
   <%= render partial: '/template/header' %>
   <%= render partial: '/template/nav' %>
   <main class="post">
-    <div class="learn-rec">
+    <%= form_with model: @portfolio, url: user_portfolio_path(@portfolio), method: :patch, local: true do |f| %>
+    <div class="learn-rec" style="padding-bottom: 100px">
       <%= render partial: '/template/post_head', locals: { post: @portfolio } %>
-      <div class="title">
-        <h6>タイトル</h6>
+      <div class="title" style="border: none;">
+        <h6><%= f.text_field :title, style: 'width: 99%; height: 30px;' %> </h6>
       </div>
-      <div class="lang">
-        使用言語　セレクトボックス
+      <div class="lang" style="border: none;">
+        <%= f.collection_select :pg_lang_id, PgLang.all, :id, :name %>
       </div>
-      <div class="text">
-        <div class="text-box">
-          概要<br>
-          ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-          ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-          ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-          ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        </div>
+      <div class="text" style="border: none;">
+        概要<br>
+        <%= f.text_area :content, style: 'width: 99%; height: 200;' %>
       </div>
-      <div class="title">
+      <div class="title" style="border: none;">
         <h6>サイトテーマ</h6>
+        <h6><%= f.text_field :theme, style: 'width: 99%; height: 30px;' %> </h6>
       </div>
-      <div class="title">
+      <div class="title" style="border: none;">
         <h6>テーマを選んだ理由</h6>
+        <%= f.text_field :reason, style: 'width: 99%; height: 30px;' %>
       </div>
-      <div class="title">
+      <div class="title" style="border: none;">
         <h6>ターゲットユーザ</h6>
+        <%= f.text_field :target, style: 'width: 99%; height: 30px;' %>
       </div>
-      <div class="title">
+      <div class="title" style="border: none;">
         <h6>主な利用シーン</h6>
+        <%= f.text_field :scene, style: 'width: 99%; height: 30px;' %>
       </div>
-      <div class="title">
+      <div class="title" style="border: none;">
         <h6>リンクURL</h6>
+        <%= f.text_field :link_url, style: 'width: 99%; height: 30px;' %>
       </div>
     </div>
-    <div class="submit">
-      編集
-    </div>
+      <%= f.submit '保存', class: 'submit', style: 'margin-left: 260px;' %>
+    <% end %>
   </main>
 </body>

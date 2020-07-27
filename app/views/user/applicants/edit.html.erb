@@ -2,107 +2,102 @@
   <%= render partial: '/template/header' %>
   <%= render partial: '/template/nav', locals: { applicant: @applicant } %>
   <main class="user-info">
-    <div class="basic-info">
-      <img src="https://app.offerbox.jp/assets/img/common/studentnoimage_student.gif">
-      <table>
-        <tr>
-          <td>ふりがな</td>
-          <th>たなかたろう</th>
-        </tr>
-        <tr>
-          <td>氏名</td>
-          <th>田中太郎</th>
-        </tr>
-        <tr>
-          <td>生年月日</td>
-          <th>19○○年○○月○○日（満○○歳）</th>
-        </tr>
-        <tr>
-          <td>性別</td>
-          <th>男性</th>
-        </tr>
-        <tr>
-          <td>郵便番号</td>
-          <th>100-1000</th>
-        </tr>
-        <tr>
-          <td>ふりがな</td>
-          <th>hogehogehoge</th>
-        </tr>
-        <tr>
-          <td>住所</td>
-          <th>HOGEHOGEHOGE</th>
-        </tr>
-        <tr>
-          <td>TEL</td>
-          <th>09000000000</th>
-        </tr>
-        <tr>
-          <td>email</td>
-          <th>HOGEHOGE@mail.com</th>
-        </tr>
-      </table>
-    </div>
+    <%= form_with model: @applicant, url: user_applicants_path(@applicant), method: :patch, local: true do |f| %>
+      <div class="basic-info" style="height: 600px;">
+        <div>
+          <%= attachment_image_tag current_applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image" %><br>
+          <%= f.attachment_field :image %>
+        </div>
+        <table>
+          <tr>
+            <td>ふりがな</td>
+            <th style="width: 25%;"><%= f.text_field :last_furigana %></th>
+            <th><%= f.text_field :first_furigana %></th>
+          </tr>
+          <tr>
+            <td>氏名</td>
+            <th><%= f.text_field :last_name %></th>
+            <th><%= f.text_field :first_name %></th>
+          </tr>
+          <tr>
+            <td>生年月日</td>
+            <th><%= f.date_select :birth_date, use_month_numbers: true, start_year: 1960, end_year: (Time.now.year - 10) %></th>
+          </tr>
+          <tr>
+            <td>性別</td>
+            <th><%= f.select :gender, Applicant.genders.keys.to_a, include_blank: false %></th>
+          </tr>
+          <tr>
+            <td>郵便番号</td>
+            <th>
+              <%= f.label :postal_code, "(ハイフンなし)", style: 'font-size: 10px;' %><br>
+              <%= f.text_field :postal_code %>
+            </th>
+          </tr>
+          <tr>
+            <td>ふりがな</td>
+            <th><%= f.text_field :prefecture_kana %></th>
+          </tr>
+          <tr>
+            <td>住所</td>
+            <th>
+              都道府県　<%= f.text_field :prefecture %><br>
+              市町村区　<%= f.text_field :manicipal %><br>
+              その他　　<%= f.text_field :address_other %>
+            </th>
+          </tr>
+          <tr>
+            <td>TEL</td>
+            <th><%= f.text_field :phone_number %></th>
+          </tr>
+          <tr>
+            <td>email</td>
+            <th><%= f.text_field :email %></th>
+          </tr>
+        </table>
+      </div>
     <div class="ability">
       <h4>プログラミングスキル</h4>
-      <div class="text-box">
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-      </div>
+        <%= f.text_area :pg_skill %>
     </div>
     <div class="pr">
       <h4>プロフィール（PR）</h4>
       <h6>自己PR</h6>
-      <div class="text-box">
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-      </div>
+        <%= f.text_area :self_pr %>
       <h6>私の将来像</h6>
-      <div class="text-box">
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-      </div>
+        <%= f.text_area :vision %>
     </div>
     <div class="qualification">
-      <h4>語学・資格</h4>
-      <div class="quali-box">
-        <ul>
-          <li>hoge</li>
-          <li>hoge</li>
-          <li>hoge</li>
-          <li>hoge</li>
-          <li>hoge</li>
-        </ul>
-      </div>
+      <h4>語学</h4>
+      <ul>
+        <li><%= f.text_field :english_skill %></li>
+        <li><%= f.text_field :other_lang %></li>
+      </ul>
     </div>
     <div class="desire">
       <h4>希望する企業タイプ</h4>
-      <div class="desire-box">
-        セレクトボックス　メガベンチャー
-      </div>
+      <%= f.select :company_type, Applicant.company_types.keys.to_a, include_blank: false %>
+      <h4>希望勤務地</h4>
+      <%= f.select :work_location, Applicant.work_locations.keys.to_a, include_blank: false %>
+      <h4>勤務開始可能日</h4>
+      <%= f.text_field :start_work %>
     </div>
     <div class="item-6">
       <h4>転職の軸</h4>
-      <div class="desire-box">
-        セレクトボックス
-      </div>
+      <%= f.select :axis, Applicant.axes.keys.to_a, include_blank: false %>
     </div>
     <div class="item-7">
       <h4>転職活動状況</h4>
-      <div class="desire-box">
-        ラジオボタン
-        活動中　活動終了
+      <div class="selection">
+        <%= f.radio_button :is_selection, :true %>
+        <%= f.label :is_selection, "転職活動中" %>  
+        <%= f.radio_button :is_selection, :false %>
+        <%= f.label :is_selection, "活動終了" %>
       </div>
     </div>
-    <div class="submit">
-      登録
+    <div style="width: 50%; margin: 0 auto;">
+      <%= f.submit '保存', class: 'submit' %>
     </div>
+    <% end %>
   </main>
-  <%= render partial: '/template/footer' %>
 </body>

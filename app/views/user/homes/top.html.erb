@@ -2,17 +2,50 @@
   <%= render partial: '/template/header' %>
   <%= render partial: '/template/nav' %>
   <main class="user-top">
-    <div class="job-offer">企業オファー</div>
-    <div class="schedule">メッセージ一覧</div>
+    <div class="job-offer">
+      <h4>企業オファー</h4>
+      <% if @offers.any? %>
+        <% @applicant.offered_corporations.order(update_at: :desc).limit(5).each do |c| %>
+          <table>
+            <tr>
+              <td class="qual-form" style="width: 20%;">
+                <%= l c.created_at, format: :short %>
+              </td>
+              <td class="qual-form">
+                <%= c.name %>
+              </td>
+              <td class="qual-form" style="width: 16%;">
+                <%= link_to '詳しく見る', user_corporation_path(c), style: 'font-size: 12px;' %>
+              </td>
+            </tr>
+          </table>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="schedule">
+      <h4>メッセージ一覧</h4>
+      <% @applicant.room_corporations.order(update_at: :desc).limit(5).each do |r| %>
+        <table>
+          <tr>
+            <td class="qual-form">
+              <%= r.name %>
+            </td>
+            <td class="qual-form" style="width: 16%;">
+              <%= link_to '詳しく見る', room_path(r), style: 'font-size: 12px;' %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
     <div class="study-post">
-      <%= form_with model: @post, url: user_posts_path, method: :post do |f| %>
-        <h4>学習記事投稿</h4>
-        <%= f.label :title, 'タイトル' %>
-        <%= f.text_field :title %>
+      <h4>学習記事投稿</h4>
+      <%= form_with model: @post, url: user_posts_path, method: :post, style: 'height: 400px;' do |f| %>
+        <%= f.label :title, 'タイトル' %><br>
+        <%= f.text_field :title %><br>
         <%= f.hidden_field :applicant_id, :value => current_applicant.id %>
-        <%= f.collection_select :pg_lang_id, PgLang.all, :id, :name %>
-        <%= f.text_area :content, :placeholder =>"ここに記事内容を書いてください" %>
-        <%= f.submit "投稿" %>
+        <%= f.collection_select :pg_lang_id, PgLang.all, :id, :name %><br>
+        <%= f.text_area :content, :placeholder =>"ここに記事内容を書いてください" %><br>
+        <%= f.submit "投稿", style: 'border-radius: 7px; width: 15%;' %>
       <% end %>
     </div>
   </main>
