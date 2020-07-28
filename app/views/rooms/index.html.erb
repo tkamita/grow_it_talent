@@ -1,10 +1,10 @@
 <body class="public-scene">
-  <% if applicant_signed_in? %>
-    <%= render partial: '/template/header' %>
-    <%= render partial: '/template/nav' %>
-  <% else %>
+  <% if corporation_signed_in? %>
     <%= render partial: '/template/public_header' %>
     <%= render partial: '/template/public_nav' %>
+  <% else %>
+    <%= render partial: '/template/header' %>
+    <%= render partial: '/template/nav' %>
   <% end %>
   <main class="post">
     <div class="learn-rec">
@@ -12,7 +12,7 @@
         <ul>
           <li>
             <div class="creat-date">
-              <%= l created_at, format: :short %>
+              <%= l room.created_at, format: :short %>
             </div>
             <div class="messa-ttl">
               <% if applicant_signed_in? %>
@@ -26,6 +26,7 @@
             </div>
           </li>
         </ul>
+      <% end %>
     </div>
   </main>
 </body>
