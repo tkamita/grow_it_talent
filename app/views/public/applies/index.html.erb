@@ -1,22 +1,23 @@
 <body class="public-scene">
-  <%= render partial: '/template/header' %>
-  <%= render partial: '/template/nav' %>
+  <%= render partial: '/template/public_header' %>
+  <%= render partial: '/template/public_nav' %>
   <main class="post">
     <div class="learn-rec">
       <% @corporation.applied_applicants.each do |a| %>
-        <ul>
-          <li>
-            <div class="creat-date">
-              <%= l a.created_at, format: :short %>
-            </div>
-            <div class="creat-ttl">
-              <p><span><%= a.full_name %></span></p>
-            </div>
-            <div class="offer">
-              <%= link_to '詳しく見る', public_applicant_path(a) %>
-            </div>
-          </li>
-        </ul>
+        <table style="border-collapse: collapse">
+          <tr style="border-bottom: solid 1px #E9E9E9;">
+            <td style="width: 15%;">
+              <%= attachment_image_tag a, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image", style: "width: 60px;"  %>
+            </td>
+            <td>
+              <p><%= a.full_name %></p>
+              <p><span><%= l a.created_at, format: :long %></span></p>
+            </td>
+            <td style="width: 12%;">
+              <%= link_to "詳しく見る", public_applicant_path(a), method: :delete %>
+            </td>
+          </tr>
+        </table>
       <% end %>
     </div>
   </main>

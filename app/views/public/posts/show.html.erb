@@ -4,25 +4,20 @@
   <main class="post">
     <div class="learn-rec">
       <div class="prof-box">
-        <img src="https://app.offerbox.jp/assets/img/common/studentnoimage_student.gif">
+        <%= attachment_image_tag @applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image" %>
         <div class="creat-ttl">
-          <p>名前</p>
-          <p><span>created_at</span></p>
+          <p><%= @post.applicant.full_name %> </p>
+          <p><span><%= l @post.created_at %></span></p>
         </div>
       </div>
       <div class="title">
-        <h6>タイトル</h6>
+        <h6><%= @post.title %></h6>
       </div>
       <div class="lang">
-        使用言語　セレクトボックス
+        <%= @post.pg_lang.name %>
       </div>
       <div class="text">
-        <div class="text-box">
-          ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-          ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-          ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-          ここにtextここにtextここにtextここにtextここにtextここにtextここにtextここにtext
-        </div>
+        <%= @post.content %>
       </div>
     </div>
   </main>
