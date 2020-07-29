@@ -63,7 +63,7 @@
     <div class="item-7">
       <h4>転職活動状況</h4>
       <div class="desire-box">
-        <% if current_applicant.is_selection? %>
+        <% if current_applicant.is_selection == true  %>
           <span class="text-active">転職活動中</span>
         <% else %>
           <span class="text-invalid">活動終了</span>							

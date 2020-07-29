@@ -188,7 +188,7 @@
   grid-area: center;
   margin-right: 30px;
   display: grid;
-  grid-template: "item-1" 450px "......" 15px "item-2" auto "......" 15px "item-3" auto "......" 15px "item-4" auto "......" 15px "item-5" auto "......" 15px "item-6" auto "......" 15px "item-7" auto "......" 15px "item-8" auto "......" 15px;
+  grid-template: "item-1" 450px "......" 15px "item-2" auto "......" 15px "item-3" auto "......" 15px "item-4" auto "......" 15px "item-5" auto "......" 15px "item-6" auto "......" 15px "item-7" auto "......" 15px "item-8" auto "......" 15px "item-9" auto "......" 15px;
 }
 
 .public-scene form .user-info .basic-info {
