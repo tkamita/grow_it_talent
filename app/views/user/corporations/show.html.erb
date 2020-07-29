@@ -7,7 +7,14 @@
         <h2><%= @corporation.title %></h2>
         <h6><%= @corporation.name %> </h6>
       </div>
-      <h4>募集要項</h4>
+      <h4>タグ</h4>
+      <table>
+        <tr>
+          <th>タグ</th>
+          <td>タグ内容</td>
+        </tr>
+      </table>
+      <h4>企業情報</h4>
       <table>
         <tr>
           <th>会社名</th>
@@ -27,7 +34,7 @@
       <h4>募集要項</h4>
       <table>
         <tr>
-          <th>仕事の内容</th>
+          <th>仕事内容</th>
           <td>
             <%= @corporation.business_description %>
           </td>

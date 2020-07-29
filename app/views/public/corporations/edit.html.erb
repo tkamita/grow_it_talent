@@ -3,80 +3,100 @@
   <%= render partial: '/template/public_nav' %>
   <main class="offerd">
     <div class="basic-info" style="height: auto;">
-      <h4>企業情報</h4>
-      <table>
+      <%= form_with model: @corporation, url: public_corporations_path, method: :patch, local: true do |f| %>
+        <h4>企業情報</h4>
+        <table>
+          <tr>
+            <th>企業名</th>
+            <td><%= f.text_field :name %></td>
+          </tr>
+          <tr>
+            <th>代表取締役社長</th>
+            <td><%= f.text_field :president_name %></td>
+          </tr>
+          <tr>
+            <th>設立</th>
+            <td><%= f.text_field :establish_day %></td>
+          </tr>
+          <tr>
+            <th>従業員数</th>
+            <td><%= f.text_field :quantity_emp %></td>
+          </tr>
+          <tr>
+            <th>資本金</th>
+            <td><%= f.text_field :capital_stock %>百万円</td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td><%= f.text_field :location %></td>
+          </tr>
+          <tr>
+            <th>企業URL</th>
+            <td><%= f.text_field :company_url %></td>
+          </tr>
+        </table>
+        <h4>制度・福利厚生</h4>
+        <table>
         <tr>
-          <th>企業名</th>
-          <td>株式会社hogehoge</td>
-        </tr>
-        <tr>
-          <th>代表取締役社長</th>
-          <td>田中大輝</td>
-        </tr>
-        <tr>
-          <th>設立</th>
-          <td>19oo年oo月oo日</td>
-        </tr>
-        <tr>
-          <th>従業員数</th>
-          <td>150名</td>
-        </tr>
-        <tr>
-          <th>資本金</th>
-          <td>100百万円</td>
-        </tr>
-        <tr>
-          <th>売上</th>
+          <th>健康保険</th>
           <td>
-            テーブル使いたい
+            <%= f.radio_button :is_health_insurance, :true %>
+            <%= f.label :is_health_insurance, "有" %>  
+            <%= f.radio_button :is_health_insurance, :false %>
+            <%= f.label :is_health_insurance, "無" %>
           </td>
         </tr>
         <tr>
-          <th>所在地</th>
+          <th>厚生年金</th>
           <td>
-            1010031<br>
-            東京都練馬区＝＝＝＝＝＝
+            <%= f.radio_button :is_welfare_pension, :true %>
+            <%= f.label :is_welfare_pension, "有" %>  
+            <%= f.radio_button :is_welfare_pension, :false %>
+            <%= f.label :is_welfare_pension, "無" %>
           </td>
         </tr>
         <tr>
-          <th>株式公開</th>
+          <th>雇用保険</th>
           <td>
-            非公開
+            <%= f.radio_button :is_emp_insurance, :true %>
+            <%= f.label :is_emp_insurance, "有" %>  
+            <%= f.radio_button :is_emp_insurance, :false %>
+            <%= f.label :is_emp_insurance, "無" %>
           </td>
         </tr>
         <tr>
-          <th>企業URL</th>
+          <th>労災保険</th>
           <td>
-            〜〜〜〜〜〜〜〜〜
+            <%= f.radio_button :is_accident_insurance, :true %>
+            <%= f.label :is_accident_insurance, "有" %>  
+            <%= f.radio_button :is_accident_insurance, :false %>
+            <%= f.label :is_accident_insurance, "無" %>
           </td>
         </tr>
-      </table>
-      <table>
-        <tr>
-          <th>電話番号</th>
-          <td>000-000-0000</td>
-        </tr>
-        <tr>
-          <th>email</th>
-          <td>hoge@mail</td>
-        </tr>
-      </table>
-      <h4>制度・福利厚生</h4>
-      <table>
         <tr>
           <th>制度・福利厚生</th>
           <td>
             - 寮・社宅<br>
-            無<br><br>
+              <%= f.radio_button :is_dwelling, :true %>
+              <%= f.label :is_dwelling, "有" %>  
+              <%= f.radio_button :is_dwelling, :false %>
+              <%= f.label :is_dwelling, "無" %>
+              <br><br>
             - 退職金<br>
-            無<br><br>
+              <%= f.radio_button :is_retire_payment, :true %>
+              <%= f.label :is_retire_payment, "有" %>  
+              <%= f.radio_button :is_retire_payment, :false %>
+              <%= f.label :is_retire_payment, "無" %>
+              <br><br>
             - その他制度<br>
-            hogehoge
+            <%= f.text_field :other_welfare %>
           </td>
         </tr>
       </table>
-      <div class="edit">
-      保存する
+        <div>
+          <%= f.submit '保存', class: 'edit' %>
+        </div>
+      <% end %>
     </div>
   </main>
 </body>

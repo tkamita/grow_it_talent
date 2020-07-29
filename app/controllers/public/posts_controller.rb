@@ -8,7 +8,10 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def specific_index
+    @applicant = Applicant.find(params[:id])
+    @posts = @applicant.posts
+  end
   
-  private
 end
 

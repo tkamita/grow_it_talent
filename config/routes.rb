@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     get 'top' => 'homes#top', as: 'top'
     get 'corporations/edit_job' => 'corporations#edit_job', as: 'edit_job_sheet'
     patch 'corporations/update_job' => 'corporations#update_job'
+    get 'posts/applicant:id/specific_index' => 'posts#specific_index'
+    get 'portfolios/applicant:id/specific_index' => 'portfolios#specific_index', as: 'specific_user'
     resource :corporations, only: [:show, :edit, :update]
     resources :applicants, only: [:index, :show] do
       resources :offers, only: [:create, :destroy]
