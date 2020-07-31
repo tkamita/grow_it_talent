@@ -13,6 +13,9 @@ class Applicant < ApplicationRecord
   has_many :applied_corporations, through: :applies, source: :corporation
   has_many :rooms, dependent: :destroy
   has_many :room_corporations, through: :rooms, source: :corporation
+  has_many :user_notices, dependent: :destroy
+  # has_many :active_notifications, class_name: 'UserNotice', foreign_key: 'corporation_id', dependent: :destroy
+  # has_many :passive_notifications, class_name: 'UserNotice', dependent: :destroy
   attachment :image
 
   validates :last_name, presence: true
@@ -36,6 +39,8 @@ class Applicant < ApplicationRecord
   def full_name_kana
     last_furigana + " " + first_furigana
   end
+
+  
 
   enum gender:{
     "": 0,

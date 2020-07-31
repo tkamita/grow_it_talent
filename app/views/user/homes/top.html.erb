@@ -24,11 +24,11 @@
     </div>
     <div class="schedule">
       <h4>メッセージ一覧</h4>
-      <% @applicant.room_corporations.order(update_at: :desc).limit(5).each do |r| %>
+      <% @applicant.rooms.order(update_at: :desc).limit(5).each do |r| %>
         <table>
           <tr>
             <td class="qual-form">
-              <%= r.name %>
+              <%= r.corporation.name %>
             </td>
             <td class="qual-form" style="width: 16%;">
               <%= link_to '詳しく見る', room_path(r), style: 'font-size: 12px;' %>

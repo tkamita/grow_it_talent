@@ -11,6 +11,8 @@ class Corporation < ApplicationRecord
   has_many :applied_applicants, through: :applies, source: :applicant
   has_many :rooms, dependent: :destroy
   has_many :room_applicants, through: :rooms, source: :applicant
+  has_many :user_notice, dependent: :destroy
+  # has_many :active_notifications, class_name: 'UserNotice', dependent: :destroy
 
   def already_offered?(applicant)
     self.offers.exists?(applicant_id: applicant.id)

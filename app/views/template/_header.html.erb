@@ -13,9 +13,11 @@
       <% end %>
     </div>
     <div class="picture">
-      <div class="image-bell">
-      </div>
-      <P>通知</p>
+      <%= link_to user_user_notices_path do %>
+        <div class="image-bell">
+        </div>
+        <P>通知</p>
+      <% end %>
     </div>
     <div class="carender">
       <%= link_to destroy_applicant_session_path, method: :delete do %>

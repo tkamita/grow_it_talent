@@ -46,6 +46,7 @@ Rails.application.routes.draw do
     resources :corporations, only: [:show] do
       resources :applies, only: [:create, :destroy]
     end
+    resources :user_notices, only: [:index]
   end
   
   

@@ -14,11 +14,10 @@ class RoomsController < ApplicationController
       @room = Room.find(params[:id])
     # else
       # @room = Room.find_by(corporation_id: params[:corporation_id], applicant_id: current_applicant.id)
-
-    # end
-    @message = Message.new
-    # byebug
-    # if @room.messages.present?
+      # end
+      @message = Message.new
+      # byebug
+      # if @room.messages.present?
       @messages = @room.messages
     # end
   end

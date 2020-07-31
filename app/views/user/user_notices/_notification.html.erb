@@ -1,0 +1,12 @@
+<% user_notices.each do |un| %>
+  <%= link_to un.corporation.name, user_corporation_path(un.corporation) %>さんが
+
+  <% case un.action %>
+  <% when 'offer' then %>
+    <p>あなたにオファーを送りました</p>
+  <% when 'message' then %>
+    <%= link_to 'あなたにメッセージを送りました', room_path(un) %>
+    <p>あなたにメッセージを送りました</p>
+  <% end %>
+  <%= time_ago_in_words(un.created_at).upcase %><hr>
+<% end %>

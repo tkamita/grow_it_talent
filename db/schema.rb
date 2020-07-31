@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_153708) do
+ActiveRecord::Schema.define(version: 2020_07_31_022906) do
 
   create_table "applicants", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -179,6 +179,22 @@ ActiveRecord::Schema.define(version: 2020_07_28_153708) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "financial_year", default: "", null: false
+  end
+
+  create_table "user_notices", force: :cascade do |t|
+    t.integer "corporation_id", null: false
+    t.integer "applicant_id", null: false
+    t.integer "message_id"
+    t.integer "offer_id"
+    t.string "action", default: "", null: false
+    t.boolean "is_check", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "room_id"
+    t.index ["applicant_id"], name: "index_user_notices_on_applicant_id"
+    t.index ["corporation_id"], name: "index_user_notices_on_corporation_id"
+    t.index ["message_id"], name: "index_user_notices_on_message_id"
+    t.index ["offer_id"], name: "index_user_notices_on_offer_id"
   end
 
 end
