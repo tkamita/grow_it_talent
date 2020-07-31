@@ -1,0 +1,12 @@
+<% corpo_notices.each do |cn| %>
+  <%= link_to cn.applicant.full_name, public_applicant_path(cn.applicant) %>さんが
+
+  <% case cn.action %>
+  <% when 'apply' then %>
+    <p>応募しました</p>
+  <% when 'message' then %>
+    <%= link_to 'あなたにメッセージを送りました', room_path(cn.room) %>
+    <p>あなたにメッセージを送りました</p>
+  <% end %>
+  <%= time_ago_in_words(cn.created_at).upcase %><hr>
+<% end %>

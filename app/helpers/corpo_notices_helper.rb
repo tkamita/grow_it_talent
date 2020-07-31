@@ -1,0 +1,2 @@
+module CorpoNoticesHelper
+end

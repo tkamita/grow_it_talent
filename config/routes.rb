@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :portfolios, only: [:index, :show]
     resources :sales, except: [:show, :new, :edit]
     resources :applies, only: [:index]
+    resources :corpo_notices, only: [:index]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

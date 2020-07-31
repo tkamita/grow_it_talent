@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_31_022906) do
+ActiveRecord::Schema.define(version: 2020_07_31_090310) do
 
   create_table "applicants", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -67,6 +67,22 @@ ActiveRecord::Schema.define(version: 2020_07_31_022906) do
     t.integer "corporation_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "corpo_notices", force: :cascade do |t|
+    t.integer "corporation_id", null: false
+    t.integer "applicant_id", null: false
+    t.integer "room_id"
+    t.integer "message_id"
+    t.integer "apply_id"
+    t.string "action", default: "", null: false
+    t.boolean "is_check", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["applicant_id"], name: "index_corpo_notices_on_applicant_id"
+    t.index ["apply_id"], name: "index_corpo_notices_on_apply_id"
+    t.index ["corporation_id"], name: "index_corpo_notices_on_corporation_id"
+    t.index ["message_id"], name: "index_corpo_notices_on_message_id"
   end
 
   create_table "corporations", force: :cascade do |t|

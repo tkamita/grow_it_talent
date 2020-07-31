@@ -16,6 +16,7 @@ class Applicant < ApplicationRecord
   has_many :user_notices, dependent: :destroy
   # has_many :active_notifications, class_name: 'UserNotice', foreign_key: 'corporation_id', dependent: :destroy
   # has_many :passive_notifications, class_name: 'UserNotice', dependent: :destroy
+  has_many :corpo_notices, dependent: :destroy
   attachment :image
 
   validates :last_name, presence: true

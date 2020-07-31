@@ -14,12 +14,12 @@
     </div>
     <div class="picture">
       <%= link_to user_user_notices_path do %>
-          <div class="image-bell">
-            <% if current_applicant.unchecked_user_notices.any?%>
-              <span style="color: #e59322; width: 10px; font-size: 25px;">●</span>
-            <% end %>
-          </div>
-          <P>通知</p>
+        <div class="image-bell">
+          <% if current_applicant.unchecked_user_notices.any?%>
+            <span style="color: #e59322; width: 10px; font-size: 25px;">●</span>
+          <% end %>
+        </div>
+        <P>通知</p>
       <% end %>
     </div>
     <div class="carender">
