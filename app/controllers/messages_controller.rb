@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
     end
     @message.room_id = @room.id
     @message.save
-    @message.create_notification_message(@room.corporation.id, @message.id, @room.applicant.id)
+    @message.create_notification_message(@room.corporation.id, @message.id, @room.id, @room.applicant.id)
     redirect_to room_path(@room)
   end
   

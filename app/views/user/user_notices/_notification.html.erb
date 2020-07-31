@@ -5,7 +5,7 @@
   <% when 'offer' then %>
     <p>あなたにオファーを送りました</p>
   <% when 'message' then %>
-    <%= link_to 'あなたにメッセージを送りました', room_path(un) %>
+    <%= link_to 'あなたにメッセージを送りました', room_path(un.room) %>
     <p>あなたにメッセージを送りました</p>
   <% end %>
   <%= time_ago_in_words(un.created_at).upcase %><hr>

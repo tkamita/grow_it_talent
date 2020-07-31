@@ -40,6 +40,9 @@ class Applicant < ApplicationRecord
     last_furigana + " " + first_furigana
   end
 
+  def unchecked_user_notices
+    self.user_notices.where(is_check: false)
+  end
   
 
   enum gender:{
