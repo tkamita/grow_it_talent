@@ -21,18 +21,18 @@ class DeviseCreateCorporations < ActiveRecord::Migration[5.2]
       t.integer :capital_stock, default: 0
       t.string :title, default: ""
       t.string :location, default: ""
-      t.text :content, default: ""
+      t.text :content
       t.boolean :is_stock, null: false, default: false
-      t.text :business_description, default: ""
-      t.text :place_info, default: ""
-      t.text :require_competence, default: ""
+      t.text :business_description
+      t.text :place_info
+      t.text :require_competence
       t.string :work_location, default: ""
       t.boolean :is_emp_status, null: false, default: true
       t.integer :salary, default: 300
       t.string :working_hour, default: ""
       t.boolean :is_overtime, null: false, default: false
       t.boolean :is_overtime_pay, null: false, default: true
-      t.text :commute_allowance, default: ""
+      t.text :commute_allowance
       t.string :day_off, default: ""
       t.string :paid_vacation, default: ""
       t.boolean :is_health_insurance, null: false, default: true
@@ -41,10 +41,10 @@ class DeviseCreateCorporations < ActiveRecord::Migration[5.2]
       t.boolean :is_accident_insurance, null: false, default: true
       t.boolean :is_dwelling, null: false, default: false
       t.boolean :is_retire_payment, null: false, default: false
-      t.text :other_welfare, default: ""
+      t.text :other_welfare
       t.integer :recruit_number, default: 1
       t.integer :interview_number, default: 1
-      t.text :company_url, default: ""
+      t.text :company_url
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
