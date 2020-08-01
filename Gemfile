@@ -66,3 +66,9 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'rails-i18n'
 gem 'font-awesome-sass', '~> 5.4.1'
+
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
