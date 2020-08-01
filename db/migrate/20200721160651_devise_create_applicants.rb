@@ -33,25 +33,25 @@ class DeviseCreateApplicants < ActiveRecord::Migration[5.2]
       t.string :academic_decipline, default: ""
       t.string :english_skill, default: ""
       t.string :other_lang, default: ""
-      t.text :overview_w_history, default: ""
+      t.text :overview_w_history
       t.boolean :is_selection, null: false, default: true
       t.string :start_work, default: ""
       t.integer :work_location, default: 0
       t.integer :axis, default: 0
       t.integer :company_type, default: 0
-      t.text :pg_skill, default: ""
-      t.text :self_pr, default: ""
-      t.text :vision, default: ""
+      t.text :pg_skill
+      t.text :self_pr
+      t.text :vision
       t.string :term_1, default: ""
       t.string :term_2, default: ""
       t.string :term_3, default: ""
       t.string :term_4, default: ""
       t.string :term_5, default: ""
-      t.text :work_history_1, default: ""
-      t.text :work_history_2, default: ""
-      t.text :work_history_3, default: ""
-      t.text :work_history_4, default: ""
-      t.text :work_history_5, default: ""
+      t.text :work_history_1
+      t.text :work_history_2
+      t.text :work_history_3
+      t.text :work_history_4
+      t.text :work_history_5
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
