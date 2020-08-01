@@ -1,0 +1,45 @@
+<body class="public-scene">
+  <%= render partial: '/template/public_header' %>
+  <%= render partial: '/template/public_nav' %>
+  <main class="user-top">
+    <div class="job-offer">
+      <h4>最近登録したユーザー</h4>
+      <% @applicants.each do |a| %>
+        <table>
+          <tr>
+            <td>
+              <%= a.full_name %>
+            </td>
+            <td>
+              満<%= @age %>歳
+            </td>
+            <td style="text-align: right;">
+              <%= link_to '詳しく見る', public_applicant_path(a), style: 'font-size: 12px;' %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+    <div class="schedule">
+      <h4>メッセージ一覧</h4>
+      <% @rooms.each do |r| %>
+        <table>
+          <tr>
+            <td>
+              <%= l r.created_at, format: :short %>
+            </td>
+            <td>
+              <%= r.applicant.full_name %>
+            </td>
+            <td style="text-align: right;">
+              <%= link_to 'メッセージを見る', room_path(r), style: 'font-size: 12px;' %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+    <div class="study-post">
+      検索
+    </div>
+  </main>
+</body>

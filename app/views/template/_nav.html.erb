@@ -1,0 +1,50 @@
+<nav>
+  <div class="first-box">
+    <div class="widget-header">
+      <h3>プロフィール</h3>
+    </div>
+    <ul>
+      <li>
+        <%= link_to 'プロフィール編集', edit_user_applicants_path, style: 'color: black; text-decoration: none;' %>
+      </li>
+      <li>
+        <%= link_to '資格情報追加', user_qualifications_path, style: 'color: black; text-decoration: none;' %>
+      </li>
+      <li>
+        <%= link_to '職務経歴確認', user_work_history_path, style: 'color: black; text-decoration: none;' %>
+      </li>
+      <li>
+        <%= link_to '職務経歴編集', user_edit_work_history_path, style: 'color: black; text-decoration: none;' %>
+      </li>
+    </ul>
+  </div>
+  <div class="second-box">
+    <div class="widget-header">
+      <h3>投稿</h3>
+    </div>
+    <ul>
+      <li>
+        <%= link_to '学習記事投稿一覧', user_posts_path, style: 'color: black; text-decoration: none;' %>
+      </li>
+      <li>
+        <%= link_to 'ポートフォリオ投稿', new_user_portfolio_path, style: 'color: black; text-decoration: none;' %>
+      </li>
+      <li>
+        <%= link_to 'ポートフォリオ一覧', user_portfolios_path, style: 'color: black; text-decoration: none;' %>
+      </li>
+    </ul>
+  </div>
+  <div class="third-box">
+    <div class="widget-header">
+      <h3>企業とのコンタクト</h3>
+    </div>
+    <ul>
+      <li>
+        <%= link_to 'オファーリスト', user_offers_path, style: 'color: black; text-decoration: none;' %>
+      </li>
+      <li>
+        <%= link_to 'メッセージリスト', rooms_path, style: 'color: black; text-decoration: none;' %>
+      </li>
+    </ul>
+  </div>
+</nav>

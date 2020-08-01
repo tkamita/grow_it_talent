@@ -1,0 +1,33 @@
+<header>
+  <div class="logo">
+    <%= link_to public_top_path do %>
+      <div class="c-logo">
+      </div>
+    <% end %>
+  </div>
+  <div class="head-item">
+    <div class="notification">
+      <%= link_to public_corporations_path do %>
+        <div class="image-profile">
+        </div>
+      <% end %>
+    </div>
+    <div class="picture">
+      <%= link_to public_corpo_notices_path do %>
+        <div class="image-bell">
+          <% if current_corporation.unchecked_corpo_notices.any? %>
+            <span style="color: #e59322; width: 10px; font-size: 25px;">●</span>
+          <% end %>
+        </div>
+        <P>通知</p>
+      <% end %>
+    </div>
+    <div class="carender">
+      <%= link_to destroy_corporation_session_path, method: :delete do %>
+        <div class="image-logout">
+        </div>
+        <p>ログアウト</p>
+      <% end %>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,222 @@
+<body class="public-scene">
+  <%= render partial: '/template/header' %>
+  <%= render partial: '/template/nav' %>
+  <main class="offerd">
+    <div class="basic-info" style="height: auto;">
+      <div class="title">
+        <h2><%= @corporation.title %></h2>
+        <h6><%= @corporation.name %> </h6>
+      </div>
+      <h4>タグ</h4>
+      <table>
+        <tr>
+          <th>タグ</th>
+          <td>タグ内容</td>
+        </tr>
+      </table>
+      <h4>企業情報</h4>
+      <table>
+        <tr>
+          <th>会社名</th>
+          <td>
+            <%= @corporation.name %>
+          </td>
+        </tr>
+        <tr>
+          <th>創業</th>
+          <td><%= l @corporation.establish_day %></td>
+        </tr>
+        <tr>
+          <th>従業員数</th>
+          <td><%= @corporation.quantity_emp %></td>
+        </tr>
+      </table>
+      <h4>募集要項</h4>
+      <table>
+        <tr>
+          <th>仕事内容</th>
+          <td>
+            <%= @corporation.business_description %>
+          </td>
+        </tr>
+        <tr>
+          <th>配属先情報</th>
+          <td>
+            <%= @corporation.place_info %>
+          </td>
+        </tr>
+        <tr>
+          <th>必要な能力・経験</th>
+          <td>
+            <%= @corporation.require_competence %>
+          </td>
+        </tr>
+      </table>
+      <h4>勤務条件</h4>
+      <table>
+        <tr>
+          <th>雇用形態</th>
+          <td>
+            <% if @corporation.is_emp_status == true %>
+              正社員
+            <% else %>
+              契約社員
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th>年収</th>
+          <td><%= @corporation.salary %>万円</td>
+        </tr>
+        <tr>
+          <th>就業時間</th>
+          <td><%= @corporation.working_hour %></td>
+        </tr>
+        <tr>
+          <th>勤務地</th>
+          <td><%= @corporation.work_location %></td>
+        </tr>
+        <tr>
+          <th>通勤手当</th>
+          <td><%= @corporation.commute_allowance %></td>
+        </tr>
+        <tr>
+          <th>休日・休暇</th>
+          <td><%= @corporation.day_off %></td>
+        </tr>
+      </table>
+      <h4>制度・福利厚生</h4>
+      <table>
+        <tr>
+          <th>健康保険</th>
+          <td>
+            <% if @corporation.is_health_insurance == true %>
+              有
+            <% else %>
+              無
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th>厚生年金</th>
+          <td>
+            <% if @corporation.is_welfare_pension == true %>
+              有
+            <% else %>
+              無
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th>雇用保険</th>
+          <td>
+            <% if @corporation.is_emp_insurance == true %>
+              有
+            <% else %>
+              無
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th>労災保険</th>
+          <td>
+            <% if @corporation.is_accident_insurance == true %>
+              有
+            <% else %>
+              無
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th>制度・福利厚生</th>
+          <td>
+            - 寮・社宅<br>
+            <% if @corporation.is_dwelling == true %>
+              有<br><br>
+            <% else %>
+              無<br><br>
+            <% end %>
+            - 退職金<br>
+            <% if @corporation.is_retire_payment == true %>
+              有<br><br>
+            <% else %>
+              無<br><br>
+            <% end %>
+            - その他制度<br>
+            <%= @corporation.other_welfare %>
+          </td>
+        </tr>
+      </table>
+      <h4>選考内容</h4>
+      <table>
+        <tr>
+          <th>採用人数</th>
+          <td><%= @corporation.recruit_number %>名</td>
+        </tr>
+        <tr>
+          <th>面接回数</th>
+          <td><%= @corporation.interview_number %>回</td>
+        </tr>
+      </table>
+      <h4>企業情報</h4>
+      <table>
+        <tr>
+          <th>企業名</th>
+          <td><%= @corporation.name %></td>
+        </tr>
+        <tr>
+          <th>代表取締役社長</th>
+          <td><%= @corporation.president_name %></td>
+        </tr>
+        <tr>
+          <th>設立</th>
+          <td><%= l @corporation.establish_day %></td>
+        </tr>
+        <tr>
+          <th>従業員数</th>
+          <td><%= @corporation.quantity_emp %></td>
+        </tr>
+        <tr>
+          <th>資本金</th>
+          <td><%= @corporation.capital_stock %>百万円</td>
+        </tr>
+        <tr>
+          <th>売上</th>
+          <td>
+            <% @corporation.sales.each do |sale| %>
+              <table style="margin: 0;">
+                <tr>
+                  <th>年度</th>
+                  <th>売上高</th>
+                </tr>
+                <tr>
+                  <td style="width: 55%;"><%= sale.financial_year %></td>
+                  <td><%= sale.year_sales %>百万円</td>
+                </tr>
+              </table>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>
+            <%= @corporation.location %>
+          </td>
+        </tr>
+        <tr>
+          <th>企業URL</th>
+          <td><%= @corporation.company_url %></td>
+        </tr>
+      </table>
+    </div>
+    <% if current_applicant.already_applied?(@corporation) %>
+      <div class="submit">
+        <%= link_to '辞退する', user_corporation_apply_path(@corporation), method: :delete %>
+      </div>
+    <% else %>
+      <div class="decline">
+        <%= link_to '応募する', user_corporation_applies_path(@corporation), method: :post %>
+      </div>
+    <% end %>
+  </main>
+</body>

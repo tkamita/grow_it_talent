@@ -1,0 +1,75 @@
+<body class="public-scene">
+  <%= render partial: '/template/header' %>
+  <%= render partial: '/template/nav' %>
+  <main class="user-info">
+    <%= render partial: '/template/user_info' %>
+    <div class="ability">
+      <h4>学歴</h4>
+      <table>
+        <tr>
+          <td>学校区分</td>
+          <th><%= current_applicant.school_division %></th>
+        </tr>
+        <tr>
+          <td>学校名</td>
+          <th><%= current_applicant.school_name %></th>
+        </tr>
+        <tr>
+          <td>学部</td>
+          <th><%= current_applicant.faculty %></th>
+        </tr>
+        <tr>
+          <td>学科</td>
+          <th><%= current_applicant.academic_decipline %></th>
+        </tr>
+      </table>
+    </div>
+    <div class="pr">
+      <h4>職務経歴</h4>
+      <h6>職歴要約</h6>
+      <div class="text-box">
+        <%= current_applicant.overview_w_history %>
+      </div>
+      <h6>職務経歴</h6>
+      <table border="1" style="border-collapse: collapse">
+        <tr>
+          <th class="period">期間</th>
+          <th>職務内容</th>
+        </tr>
+        <tr>
+          <td><%= current_applicant.term_1 %> </td>
+          <td>
+            <%= current_applicant.work_history_1 %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= current_applicant.term_2 %> </td>
+          <td>
+            <%= current_applicant.work_history_2 %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= current_applicant.term_3 %> </td>
+          <td>
+            <%= current_applicant.work_history_3 %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= current_applicant.term_4 %> </td>
+          <td>
+            <%= current_applicant.work_history_4 %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= current_applicant.term_5 %> </td>
+          <td>
+            <%= current_applicant.work_history_5 %>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="submit">
+      <%= link_to '編集', user_edit_work_history_path, class: 'submit', style: 'text-decoration: none;' %>
+    </div>
+  </main>
+</body>

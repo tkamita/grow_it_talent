@@ -1,0 +1,134 @@
+<body class="public-scene">
+  <%= render partial: '/template/public_header' %>
+  <%= render partial: '/template/public_nav' %>
+  <main class="user-info">
+    <div class="basic-info">
+      <%= attachment_image_tag @applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image" %>
+      <table>
+        <tr>
+          <td>ふりがな</td>
+          <th><%= @applicant.full_name_kana %></th>
+        </tr>
+        <tr>
+          <td>氏名</td>
+          <th><%= @applicant.full_name %></th>
+        </tr>
+        <tr>
+          <td>生年月日</td>
+          <th><%= l @applicant.birth_date %>（満<%= @age %>歳）</th>
+        </tr>
+        <tr>
+          <td>性別</td>
+          <th><%= @applicant.gender %> </th>
+        </tr>
+        <tr>
+          <td>郵便番号</td>
+          <th><%= @applicant.postal_code %></th>
+        </tr>
+        <tr>
+          <td>ふりがな</td>
+          <th><%= @applicant.prefecture_kana %></th>
+        </tr>
+        <tr>
+          <td>住所</td>
+          <th><%= @applicant.prefecture %><%= @applicant.manicipal %><br><%= @applicant.address_other %></th>
+        </tr>
+        <tr>
+          <td>TEL</td>
+          <th><%= @applicant.phone_number %></th>
+        </tr>
+        <tr>
+          <td>email</td>
+          <th><%= @applicant.email %></th>
+        </tr>
+      </table>
+    </div>
+    <div class="ability">
+      <h4>プログラミングスキル</h4>
+      <div style="margin: 30px 50px; font-size: 20px;">
+        <%= @applicant.pg_skill %>
+      </div>
+    </div>
+    <div class="pr">
+      <h4>プロフィール（PR）</h4>
+      <h6>自己PR</h6>
+      <div style="margin: 30px 50px; font-size: 20px;">
+        <%= @applicant.self_pr %>
+      </div>
+      <h6>私の将来像</h6>
+      <div style="margin: 30px 50px; font-size: 20px;">
+        <%= @applicant.vision %>
+      </div>
+    </div>
+    <div class="qualification">
+      <h4>語学・資格</h4>
+      <div class="quali-box">
+          <ul>
+            <li><%= @applicant.english_skill %></li>
+            <li><%= @applicant.other_lang %></li>
+          </ul>
+        <% @applicant.qualifications.each do |q| %>
+          <ul>
+            <li><%= q.name %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+    <div class="desire">
+      <h4>希望する企業タイプ</h4>
+      <div class="desire-box">
+        <%= @applicant.company_type %>
+      </div>
+      <h4>転職の軸</h4>
+      <div class="desire-box">
+        <%= @applicant.axis %>
+      </div>
+      <h4>希望条件</h4>
+      <div class="desire-box">
+        <%=  %>
+        タグ　チェックボックス
+      </div>
+      <h4>希望勤務地</h4>
+      <div class="desire-box">
+        <%= @applicant.work_location %>
+      </div>
+      <h4>勤務開始可能日</h4>
+      <div class="desire-box">
+        <%= @applicant.start_work %>
+      </div>
+    </div>
+    <div class="item-6">
+      
+    </div>
+    <div class="item-7">
+      <h4>転職活動状況</h4>
+      <div class="desire-box">
+        <% if @applicant.is_selection == true  %>
+          <span class="text-active">転職活動中</span>
+        <% else %>
+          <span class="text-invalid">活動終了</span>							
+        <% end %>
+      </div>
+    </div>
+    <div class="submit">
+      <% if current_corporation.already_offered?(@applicant) %>
+        オファー済
+      <% else %>
+        <%= link_to 'オファー', public_applicant_offers_path(@applicant), method: :post %>
+      <% end %>
+    </div>
+    <% if @applicant.already_applied?(current_corporation) %>
+      <div class="save" style="margin: 40px 90px;">
+        <% if current_corporation.already_room?(@applicant) %>
+          <%= link_to 'メッセージ', room_path(@applicant), style: 'color: white; text-decoration: none;' %>
+        <% else %>
+          <%= form_with model: @room, url: rooms_path, method: :post, local: true do |f| %>
+            <%= f.hidden_field :applicant_id, :value => @applicant.id %>
+            <%= f.hidden_field :corporation_id, :value => current_corporation.id %>
+            <%= f.submit 'メッセージを送る' %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </main>
+</body>

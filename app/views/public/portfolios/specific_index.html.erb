@@ -1,0 +1,17 @@
+<body class="public-scene">
+  <%= render partial: '/template/public_header' %>
+  <%= render partial: '/template/public_nav' %>
+  <main class="offerd">
+    <div class="users">
+      <% @portfolios.each do |port| %>
+        <ul>
+          <%= link_to public_portfolio_path(port), style: 'text-decoration: none;' do %>
+            <li><%= port.applicant.full_name %></li>
+            <li><%= port.pg_lang.name %></li>
+            <li><%= port.theme %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </main>
+</body>

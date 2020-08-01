@@ -1,0 +1,21 @@
+<body class="public-scene"><body class="public-scene">
+  <%= render partial: '/template/public_header' %>
+  <%= render partial: '/template/public_nav' %>
+  <main class="post">
+    <div class="learn-rec">
+      <% @posts.each do |post| %>
+        <ul>
+          <li>
+            <%= link_to public_post_path(post) do %>
+              <%= attachment_image_tag post.applicant.image, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image"  %>
+              <div class="creat-ttl">
+                <p><%= post.title %></p>
+                <p><span><%= l post.created_at, format: :long %></span></p>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </main>
+</body>

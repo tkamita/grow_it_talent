@@ -1,0 +1,5 @@
+<% if @user_notices.exists? %>
+  <%= render 'notification', user_notices: @user_notices  %>
+<% else %>
+  <p>通知はありません</p>
+<% end %>

@@ -1,0 +1,94 @@
+<body class="public-scene", style="height:1900px;">
+  <%= render partial: '/template/header' %>
+  <%= render partial: '/template/nav' %>
+  <main class="user-info">
+    <%= form_with model: @applicant, url: user_applicants_update_work_path(@applicant), method: :patch, local: true do |f| %>
+      <%= render partial: '/template/user_info' %>
+      <div class="ability">
+        <h4>学歴</h4>
+        <table>
+          <tr>
+            <td>学校区分</td>
+            <th>
+              <%= f.select :school_division, Applicant.school_divisions.keys.to_a, include_blank: false %>
+              大学
+            </th>
+          </tr>
+          <tr>
+            <td>学校名</td>
+            <th>
+              <%= f.text_field :school_name, class: 'form' %>
+            </th>
+          </tr>
+          <tr>
+            <td>学部</td>
+            <th>
+              <%= f.text_field :faculty, class: 'form' %>
+            </th>
+          </tr>
+          <tr>
+            <td>学科</td>
+            <th>
+              <%= f.text_field :academic_decipline, class: 'form' %>
+            </th>
+          </tr>
+        </table>
+      </div>
+      <div class="pr">
+        <h4>職務経歴</h4>
+        <h6>職歴要約</h6>
+        <%= f.text_area :overview_w_history, class: 'text-box' %>
+        <h6>職務経歴</h6>
+        <table border="1" style="border-collapse: collapse">
+          <tr>
+            <th class="period">期間</th>
+            <th>職務内容</th>
+          </tr>
+          <tr>
+            <td>
+              <%= f.text_field :term_1 %>
+            </td>
+            <td>
+              <%= f.text_area :work_history_1 %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.text_field :term_2 %>
+            </td>
+            <td>
+              <%= f.text_area :work_history_2 %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.text_field :term_3 %>
+            </td>
+            <td>
+              <%= f.text_area :work_history_3 %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.text_field :term_4 %>
+            </td>
+            <td>
+              <%= f.text_area :work_history_4 %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.text_field :term_5 %>
+            </td>
+            <td>
+              <%= f.text_area :work_history_5 %>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <%= f.submit "保存する", class: 'save' %>
+      </div>
+    <% end %>
+  </main>
+</body>

@@ -1,0 +1,40 @@
+<body class="newreg">
+  <%= render partial: '/template/before_header' %>
+  <main>
+    <h1 class="title">　新規登録</h1>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="formrg" style="width: 1000px;}">
+      <div class="gender">
+        <p>企業名<span>必須</span><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form' %>
+        </p>
+      </div>
+      <div class="gender">
+        <p>メールアドレス<span>必須</span><br>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form' %>
+        </p>
+      </div>
+      <div class="birthd">
+        <p>パスワード<span>必須</span><br>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> 文字以上)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: 'form' %>
+        </p>
+      </div>
+      <div class="birthd">
+        <p>パスワード(確認用)<span>必須</span><br>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form' %>
+        </p>
+      </div>
+      <div style="width: 280px; margin: 0 auto;">
+        <%= f.submit "登録する", class: 'submit' %>
+      </div>
+    </div>
+    <% end %>
+  </main>
+</body>
+
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+

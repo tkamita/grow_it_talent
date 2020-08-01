@@ -1,0 +1,35 @@
+<body class="public-scene">
+  <% if corporation_signed_in? %>
+    <%= render partial: '/template/public_header' %>
+    <%= render partial: '/template/public_nav' %>
+  <% else %>
+    <%= render partial: '/template/header' %>
+    <%= render partial: '/template/nav' %>
+  <% end %>
+  <main class="offerd">
+    <div class="basic-info" style="height: auto;">
+      <%= form_with model: @message, url: room_messages_path(@room), method: :post, local: true do |f| %>
+        <%= f.text_area :content, :placeholder =>"ここに文章を入力", class: 'messa', style: 'margin: 50px 0 20px 110px; width: 70%;' %>
+        <div>
+          <%= f.submit '送信', class: 'transmission', style: 'margin-left: 310px;' %>
+        </div>
+      <% end %>
+      <div class="title">
+        <% if corporation_signed_in? %>
+          <h2><%= current_corporation.name %></h2>
+        <% else %>
+          <h2><%= current_applicant.full_name %></h2>
+        <% end %>
+      </div>
+      <% @messages.order(created_at: :desc).each do |m| %>
+        <% if m.is_corporation == true %>
+          <p><%= m.room.corporation.name %></p>
+        <% elsif m.is_corporation == false %>
+          <p><%= m.room.applicant.full_name %></p>
+        <% end %>
+          <div class="messa">
+            <%= m.content %>
+          </div>
+      <% end %>
+  </main>
+</body>

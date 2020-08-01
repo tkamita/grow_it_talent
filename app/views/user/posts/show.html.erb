@@ -1,0 +1,21 @@
+<body class="public-scene">
+  <%= render partial: '/template/header' %>
+  <%= render partial: '/template/nav' %>
+  <main class="post">
+    <%= form_with model: @post, url: user_post_path(@post), method: :patch, local: true do |f| %>
+    <div class="learn-rec", style="padding-bottom: 100px;">
+      <%= render partial: '/template/post_head', locals: { post: @post } %>
+      <div class="title" style="border: none;">
+        <h6><%= f.text_field :title, style: 'width: 99%; height: 30px;' %></h6>
+      </div>
+      <div class="lang" style="border: none;">
+        <%= f.collection_select :pg_lang_id, PgLang.all, :id, :name %>
+      </div>
+      <div class="text" style="border: none;">
+        <%= f.text_area :content, style: 'width: 99%; height: 200px;' %>
+      </div>
+    </div>
+      <%= f.submit '保存', class: 'submit', style: 'margin-left: 260px;' %>
+    <% end %>
+  </main>
+</body>

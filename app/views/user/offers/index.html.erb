@@ -1,0 +1,24 @@
+<body class="public-scene">
+  <%= render partial: '/template/header' %>
+  <%= render partial: '/template/nav' %>
+  <main class="post">
+    <div class="learn-rec">
+      <% @applicant.offered_corporations.each do |c| %>
+        <table>
+          <tr>
+            <td class="qual-form" style="width: 20%;">
+              <%= l c.created_at, format: :short %>
+            </td>
+            <td class="qual-form">
+              <p><%= c.title %></p>
+              <p><span><%= c.name %></span></p>
+            </td>
+            <td class="qual-form" style="width: 16%;">
+              <%= link_to '詳しく見る', user_corporation_path(c) %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </main>
+</body>

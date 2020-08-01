@@ -1,0 +1,71 @@
+<body class="public-scene">
+  <%= render partial: '/template/public_header' %>
+  <%= render partial: '/template/public_nav' %>
+  <main class="offerd">
+    <div class="basic-info" style="height: auto;">
+    <%= form_with model: @corporation, url: public_corporations_path, method: :patch, local: true do |f| %>
+      <h4>募集要項</h4>
+      <table>
+        <tr>
+          <th>仕事内容</th>
+          <td><%= f.text_area :business_description %></td>
+        </tr>
+        <tr>
+          <th>配属先情報</th>
+          <td><%= f.text_area :place_info %></td>
+        </tr>
+        <tr>
+          <th>必要な能力・経験</th>
+          <td><%= f.text_area :require_competence %></td>
+        </tr>
+      </table>
+      <h4>勤務条件</h4>
+      <table>
+        <tr>
+          <th>雇用形態</th>
+          <td>
+            <%= f.radio_button :is_emp_status, :true %>
+            <%= f.label :is_emp_status, "正社員" %>  
+            <%= f.radio_button :is_emp_status, :false %>
+            <%= f.label :is_emp_status, "契約社員" %>
+          </td>
+        </tr>
+        <tr>
+          <th>想定年収</th>
+          <td><%= f.text_field :salary %>万円</td>
+        </tr>
+        <tr>
+          <th>就業時間</th>
+          <td><%= f.text_field :working_hour %></td>
+        </tr>
+        <tr>
+          <th>勤務地</th>
+          <td><%= f.text_field :work_location %></td>
+        </tr>
+        <tr>
+          <th>通勤手当</th>
+          <td><%= f.text_field :commute_allowance %></td>
+        </tr>
+        <tr>
+          <th>休日・休暇</th>
+          <td><%= f.text_field :working_hour %></td>
+        </tr>
+      </table>
+      <h4>選考内容</h4>
+      <table>
+        <tr>
+          <th>採用人数</th>
+          <td><%= f.text_field :recruit_number %>名</td>
+        </tr>
+        <tr>
+          <th>面接回数</th>
+          <td><%= f.text_field :interview_number %>回</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <%= f.submit '保存', class: 'edit' %>
+    </div>
+    <% end %>
+  </main>
+</body>

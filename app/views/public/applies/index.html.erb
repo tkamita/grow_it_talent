@@ -1,0 +1,24 @@
+<body class="public-scene">
+  <%= render partial: '/template/public_header' %>
+  <%= render partial: '/template/public_nav' %>
+  <main class="post">
+    <div class="learn-rec">
+      <% @corporation.applied_applicants.each do |a| %>
+        <table style="border-collapse: collapse">
+          <tr style="border-bottom: solid 1px #E9E9E9;">
+            <td style="width: 15%;">
+              <%= attachment_image_tag a, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image", style: "width: 60px;"  %>
+            </td>
+            <td>
+              <p><%= a.full_name %></p>
+              <p><span><%= l a.created_at, format: :long %></span></p>
+            </td>
+            <td style="width: 12%;">
+              <%= link_to "詳しく見る", public_applicant_path(a) %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </main>
+</body>

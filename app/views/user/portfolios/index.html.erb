@@ -1,0 +1,26 @@
+<body class="public-scene">
+  <%= render partial: '/template/header' %>
+  <%= render partial: '/template/nav' %>
+  <main class="post">
+    <div class="learn-rec">
+      <% @portfolios.each do |p| %>
+        <table style="border-collapse: collapse">
+          <tr style="border-bottom: solid 1px #E9E9E9;">
+            <td style="width: 15%;">
+              <%= attachment_image_tag current_applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image", style: "width: 60px;"  %>
+            </td>
+            <td>
+              <%= link_to user_portfolio_path(p) do %>
+                <p><%= p.title %></p>
+                <p><span><%= l p.created_at, format: :long %></span></p>
+              <% end %>
+            </td>
+            <td style="width: 12%;">
+              <%= link_to "削除", user_portfolio_path(p), method: :delete %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </main>
+</body>

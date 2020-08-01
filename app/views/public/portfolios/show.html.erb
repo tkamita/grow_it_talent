@@ -1,0 +1,39 @@
+<body class="public-scene">
+  <%= render partial: '/template/public_header' %>
+  <%= render partial: '/template/public_nav' %>
+  <main class="post">
+    <div class="learn-rec">
+      <div class="prof-box">
+        <%= attachment_image_tag @applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image" %>
+        <div class="creat-ttl">
+          <p><%= @portfolio.applicant.full_name %></p>
+          <p><span><%= l @portfolio.created_at %></span></p>
+        </div>
+      </div>
+      <div class="title">
+        <h6><%= @portfolio.title %></h6>
+      </div>
+      <div class="lang">
+        <%= @portfolio.pg_lang.name %>
+      </div>
+      <div class="text">
+        <%= @portfolio.content %>
+      </div>
+      <div class="title">
+        <h6><%= @portfolio.theme %></h6>
+      </div>
+      <div class="title">
+        <h6><%= @portfolio.reason %></h6>
+      </div>
+      <div class="title">
+        <h6><%= @portfolio.target %></h6>
+      </div>
+      <div class="title">
+        <h6><%= @portfolio.scene %></h6>
+      </div>
+      <div class="title">
+        <h6><%= @portfolio.link_url %></h6>
+      </div>
+    </div>
+  </main>
+</body>

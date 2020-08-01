@@ -1,0 +1,78 @@
+<body class="public-scene">
+  <%= render partial: '/template/header' %>
+  <%= render partial: '/template/nav' %>
+  <main class="user-info">
+    <%= render partial: '/template/user_info' %>
+    <div class="ability">
+      <h4>プログラミングスキル</h4>
+      <div style="margin: 30px 50px; font-size: 20px;">
+        <%= current_applicant.pg_skill %>
+      </div>
+    </div>
+    <div class="pr">
+      <h4>プロフィール（PR）</h4>
+      <h6>自己PR</h6>
+      <div style="margin: 30px 50px; font-size: 20px;">
+        <%= current_applicant.self_pr %>
+      </div>
+      <h6>私の将来像</h6>
+      <div style="margin: 30px 50px; font-size: 20px;">
+        <%= current_applicant.vision %>
+      </div>
+    </div>
+    <div class="qualification">
+      <h4>語学・資格</h4>
+      <div class="quali-box">
+          <ul>
+            <li><%= current_applicant.english_skill %></li>
+            <li><%= current_applicant.other_lang %></li>
+          </ul>
+        <% current_applicant.qualifications.each do |q| %>
+          <ul>
+            <li><%= q.name %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+    <div class="desire">
+      <h4>希望する企業タイプ</h4>
+      <div class="desire-box">
+        <%= current_applicant.company_type %>
+      </div>
+      <h4>転職の軸</h4>
+      <div class="desire-box">
+        <%= current_applicant.axis %>
+      </div>
+      <h4>希望条件</h4>
+      <div class="desire-box">
+        <%=  %>
+        タグ　チェックボックス
+      </div>
+      <h4>希望勤務地</h4>
+      <div class="desire-box">
+        <%= current_applicant.work_location %>
+      </div>
+      <h4>勤務開始可能日</h4>
+      <div class="desire-box">
+        <%= current_applicant.start_work %>
+      </div>
+    </div>
+    <div class="item-6">
+      
+    </div>
+    <div class="item-7">
+      <h4>転職活動状況</h4>
+      <div class="desire-box">
+        <% if current_applicant.is_selection == true  %>
+          <span class="text-active">転職活動中</span>
+        <% else %>
+          <span class="text-invalid">活動終了</span>							
+        <% end %>
+      </div>
+    </div>
+    <div class="submit">
+      <%= link_to '編集', edit_user_applicants_path, class: 'submit', style: 'text-decoration: none;' %>
+    </div>
+  </main>
+  <%= render partial: '/template/footer' %>
+</body>
