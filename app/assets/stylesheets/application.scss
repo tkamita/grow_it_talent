@@ -15,7 +15,7 @@
  */
  
 .image-logout {
-  background-image: image-url(logout.jpeg);
+  background-image: image-url("logout.jpeg");
   margin: 0 auto;
   width: 50px;
   height: 50px;
@@ -61,7 +61,7 @@
           width: 400px;
           margin-left: 25px;
           .c-logo {
-            background-image: image-url(logo.jpeg);
+            background-image: image-url("logo.jpeg");
             background-size: cover;
             width: 100%;
             height: 99%;
@@ -78,7 +78,7 @@
             height: 68px;
             padding: 5px;
             .image-profile {
-              background-image: image-url(profile.jpeg);
+              background-image: image-url("profile.jpeg");
               margin: 0 auto;
               width: 65px;
               height: 57px;
@@ -89,7 +89,7 @@
             height: 68px;
             padding: 5px;
             .image-bell {
-              background-image: image-url(bell.jpeg);
+              background-image: image-url("bell.jpeg");
               margin: 0 auto;
               width: 50px;
               height: 50px;
@@ -106,7 +106,7 @@
             height: 68px;
             padding: 5px;
             .image-logout {
-              background-image: image-url(logout.jpeg);
+              background-image: image-url("logout.jpeg");
               margin: 0 auto;
               width: 50px;
               height: 50px;
@@ -1107,7 +1107,7 @@
       "......";
       header {
         grid-area: header;
-        background-image: image-url(ipadman.jpeg);
+        background-image: image-url("ipadman.jpeg");
         background-size: cover;
         background-position: center;
         display: grid;
@@ -1118,7 +1118,7 @@
             / auto auto auto auto ;
             h3 {
               grid-area: header;
-              background-image: image-url(logo.jpeg);
+              background-image: image-url("logo.jpeg");
               background-size: cover;
               margin: 0 50px;
               width: 400px;
@@ -1355,7 +1355,7 @@
             .logo {
               grid-area: center;
               text-align: center;
-              background-image: image-url(logo.jpeg);
+              background-image: image-url("logo.jpeg");
               background-size: cover;
               width: 400px;
               height: 0px;
