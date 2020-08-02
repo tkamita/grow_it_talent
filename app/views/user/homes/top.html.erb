@@ -5,7 +5,7 @@
     <div class="job-offer">
       <h4>企業オファー</h4>
       <% if @offers.any? %>
-        <% @applicant.offered_corporations.order(update_at: :desc).limit(5).each do |c| %>
+        <% @applicant.offered_corporations.order(updated_at: :desc).limit(5).each do |c| %>
           <table>
             <tr>
               <td class="qual-form" style="width: 20%;">
@@ -24,7 +24,7 @@
     </div>
     <div class="schedule">
       <h4>メッセージ一覧</h4>
-      <% @applicant.rooms.order(update_at: :desc).limit(5).each do |r| %>
+      <% @applicant.rooms.order(updated_at: :desc).limit(5).each do |r| %>
         <table>
           <tr>
             <td class="qual-form">
