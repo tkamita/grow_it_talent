@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'user/homes#about'
+
   resources :rooms, only: [:show, :create, :index] do
     resources :messages, only: [:create]
   end
@@ -34,7 +36,6 @@ Rails.application.routes.draw do
   }
 
   namespace :user do
-    root 'homes#about'
     get 'top' => 'homes#top', as: 'top'
     get 'applicants/work' => 'applicants#work', as: 'work_history'
     get 'applicants/edit_work' => 'applicants#edit_work', as: 'edit_work_history'
