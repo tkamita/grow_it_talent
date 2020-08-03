@@ -925,6 +925,15 @@
             border-bottom: solid 1px rgba(197, 196, 196, 0.849);
             padding: 15px;
           }
+          .tag {
+            background-color: royalblue;
+            border-radius: 6px;
+            width: 40%;
+            padding: 0 10px;
+            color: white;
+            font-size: 16px;
+            margin-bottom: 5px;
+          }
         }
         .users {
           grid-area: item-1;

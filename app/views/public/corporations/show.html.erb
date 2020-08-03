@@ -173,7 +173,13 @@
       <table>
         <tr>
           <th>タグ</th>
-          <td>タグ内容</td>
+          <td>
+            <% @corporation.tags.each do |tag| %>
+              <div class="tag">
+                <%= tag.name %>
+              </div>
+            <% end %>
+          </td>
         </tr>
       </table>
       <h4>選考内容</h4>

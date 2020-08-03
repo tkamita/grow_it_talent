@@ -7,6 +7,10 @@
       <h4>募集要項</h4>
       <table>
         <tr>
+          <th>タイトル</th>
+          <td><%= f.text_area :title %></td>
+        </tr>
+        <tr>
           <th>仕事内容</th>
           <td><%= f.text_area :business_description %></td>
         </tr>
@@ -60,6 +64,22 @@
         <tr>
           <th>面接回数</th>
           <td><%= f.text_field :interview_number %>回</td>
+        </tr>
+      </table>
+      <h4>タグ</h4>
+      <table>
+        <tr>
+          <th>タグ</th>
+          <td>
+            <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+              <div class='form-check'>
+                <%= tag.label class: 'form-check-label' do %>
+                  <%= tag.check_box class: 'form-check-input' %>
+                  <%= tag.text %>
+                <% end %>
+              </div>
+            <% end %>
+          </td>
         </tr>
       </table>
     </div>
