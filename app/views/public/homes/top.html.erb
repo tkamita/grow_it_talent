@@ -46,32 +46,40 @@
             <%= f.collection_radio_buttons(:gender, Applicant.genders.drop(1), :second, :first) do |g| %>
               <div>
                 <%= g.label do %>
-                  <%= g.radio_button %>
-                  <%= g.text %>
+                  <table>
+                    <tr>
+                      <td>
+                        <%= g.radio_button %>
+                      </td>
+                      <td>
+                        <%= g.text %>
+                      </td>
+                    </tr>
+                  </table>
                 <% end %>
               </div>
             <% end %>
           </div>
           <div>
-            <%= f.label :birth_date, "年齢" %>
-            <%= f.text_field :search_min_age %>
-            <%= f.text_field :search_max_age %>
+            <%= f.label :birth_date, "年齢" %><br>
+            <%= f.text_field :search_min_age, style: 'width: 30px; margin: 10px 0 20px 0;' %><span style="font-size: 14px;">歳</span>~
+            <%= f.text_field :search_max_age, style: 'width: 30px;' %><span style="font-size: 14px;">歳</span>
           </div>
           <div>
-            <%= f.label :school_division, "学歴" %>
-            <%= f.select :school_division, Applicant.school_divisions.keys.to_a, include_blank: true %>
+            <%= f.label :school_division, "学歴" %><br>
+            <%= f.select :school_division, Applicant.school_divisions.keys.to_a, include_blank: true, style: 'margin-left: 30px;' %>
           </div>
           <div>
-            <%= f.label :work_location, "希望勤務地" %>
-            <%= f.select :work_location, Applicant.work_locations.keys.to_a, include_blank: true %>
+            <%= f.label :work_location, "希望勤務地" %><br>
+            <%= f.select :work_location, Applicant.work_locations.keys.to_a, include_blank: true, style: 'margin-left: 30px;' %>
           </div>
           <div>
-            <%= f.label :axis, "企業選びの軸" %>
-            <%= f.select :axis, Applicant.axes.keys.to_a, include_blank: true %>
+            <%= f.label :axis, "企業選びの軸" %><br>
+            <%= f.select :axis, Applicant.axes.keys.to_a, include_blank: true, style: 'margin-left: 30px;' %>
           </div>
           <div>
-            <%= f.label :company_type, "企業タイプ" %>
-            <%= f.select :company_type, Applicant.company_types.keys.to_a, include_blank: true %>
+            <%= f.label :company_type, "企業タイプ" %><br>
+            <%= f.select :company_type, Applicant.company_types.keys.to_a, include_blank: true, style: 'margin-left: 30px;' %>
           </div>
           <%= f.submit '検索', class: "button" %>
         <% end %>
