@@ -10,3 +10,5 @@
   <% end %>
   <%= time_ago_in_words(un.created_at).upcase %><hr>
 <% end %>
+<%= link_to '戻る', user_top_path %>
+<%= link_to "通知削除", user_user_notice_path(user_notices), method: :delete %>

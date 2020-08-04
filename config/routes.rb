@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     resources :portfolios, only: [:index, :show]
     resources :sales, except: [:show, :new, :edit]
     resources :applies, only: [:index]
-    resources :corpo_notices, only: [:index]
+    resources :corpo_notices, only: [:index, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -49,7 +49,7 @@ Rails.application.routes.draw do
     resources :corporations, only: [:show] do
       resources :applies, only: [:create, :destroy]
     end
-    resources :user_notices, only: [:index]
+    resources :user_notices, only: [:index, :destroy]
   end
   
   

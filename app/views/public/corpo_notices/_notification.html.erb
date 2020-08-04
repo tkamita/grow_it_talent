@@ -8,5 +8,8 @@
     <%= link_to 'あなたにメッセージを送りました', room_path(cn.room) %>
     <p>あなたにメッセージを送りました</p>
   <% end %>
-  <%= time_ago_in_words(cn.created_at).upcase %><hr>
+  <%= time_ago_in_words(cn.created_at).upcase %>
+  <hr>
 <% end %>
+<%= link_to '戻る', public_top_path %>
+<%= link_to "通知削除", public_corpo_notice_path(corpo_notices), method: :delete %>
