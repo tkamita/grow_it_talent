@@ -39,7 +39,42 @@
       <% end %>
     </div>
     <div class="study-post">
-      検索
+      <h4>検索</h4>
+        <%= form_with(scope: :search, url: public_search_path, method: :get, local: true) do |f| %>
+          <div class="field">
+            <%= f.label :gender, "性別" %>
+            <%= f.collection_radio_buttons(:gender, Applicant.genders.drop(1), :second, :first) do |g| %>
+              <div>
+                <%= g.label do %>
+                  <%= g.radio_button %>
+                  <%= g.text %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <div>
+            <%= f.label :birth_date, "年齢" %>
+            <%= f.text_field :search_min_age %>
+            <%= f.text_field :search_max_age %>
+          </div>
+          <div>
+            <%= f.label :school_division, "学歴" %>
+            <%= f.select :school_division, Applicant.school_divisions.keys.to_a, include_blank: true %>
+          </div>
+          <div>
+            <%= f.label :work_location, "希望勤務地" %>
+            <%= f.select :work_location, Applicant.work_locations.keys.to_a, include_blank: true %>
+          </div>
+          <div>
+            <%= f.label :axis, "企業選びの軸" %>
+            <%= f.select :axis, Applicant.axes.keys.to_a, include_blank: true %>
+          </div>
+          <div>
+            <%= f.label :company_type, "企業タイプ" %>
+            <%= f.select :company_type, Applicant.company_types.keys.to_a, include_blank: true %>
+          </div>
+          <%= f.submit '検索', class: "button" %>
+        <% end %>
     </div>
   </main>
 </body>

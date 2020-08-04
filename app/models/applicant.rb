@@ -94,4 +94,22 @@ class Applicant < ApplicationRecord
     "メガベンチャー":3,
     "ベンチャー":4
   }
+
+  scope :search, -> (search_params) do
+    return if search_params.blank?
+    gender_is(search_params[:gender]).
+    school_is(search_params[:school_division]).
+    selection_is(search_params[:is_selection]).
+    location_is(search_params[:work_location]).
+    axis_is(search_params[:axis]).
+    company_is(search_params[:company_type])
+  end
+
+  scope :gender_is, -> (gender) { where(gender: gender) if gender.present? }
+  scope :school_is, -> (school_division) { where(school_division: school_division) if school_division.present? }
+  scope :selection_is, -> (is_selection) { where(is_selection: is_selection) if is_selection.present? }
+  scope :location_is, -> (work_location) { where(work_location: work_location) if work_location.present? }
+  scope :axis_is, -> (axis) { where(axis: axis) if axis.present? }
+  scope :company_is, -> (company_type) { where(company_type: company_type) if company_type.present? }
+
 end
