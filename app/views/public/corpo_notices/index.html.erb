@@ -2,4 +2,5 @@
   <%= render 'notification', corpo_notices: @corpo_notices  %>
 <% else %>
   <p>通知はありません</p>
+  <%= link_to '戻る', public_top_path %>
 <% end %>

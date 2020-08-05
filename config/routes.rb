@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   namespace :public do
     get 'top' => 'homes#top', as: 'top'
+    get 'search' => 'homes#search', as: 'search'
     get 'corporations/edit_job' => 'corporations#edit_job', as: 'edit_job_sheet'
     patch 'corporations/update_job' => 'corporations#update_job'
     get 'posts/applicant:id/specific_index' => 'posts#specific_index'
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
     resources :portfolios, only: [:index, :show]
     resources :sales, except: [:show, :new, :edit]
     resources :applies, only: [:index]
-    resources :corpo_notices, only: [:index]
+    resources :corpo_notices, only: [:index, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -48,7 +49,7 @@ Rails.application.routes.draw do
     resources :corporations, only: [:show] do
       resources :applies, only: [:create, :destroy]
     end
-    resources :user_notices, only: [:index]
+    resources :user_notices, only: [:index, :destroy]
   end
   
   

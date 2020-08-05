@@ -33,7 +33,7 @@ class Public::CorporationsController < ApplicationController
                                         :work_location, :is_emp_status, :salary, :working_hour, :is_overtime, :is_overtime_pay,
                                         :commute_allowance, :day_off, :paid_vacation, :is_health_insurance, :is_welfare_pension,
                                         :is_emp_insurance, :is_accident_insurance, :is_dwelling, :is_retire_payment, :other_welfare,
-                                        :recruit_number, :interview_number, :company_url)
+                                        :recruit_number, :interview_number, :company_url, tag_ids: [])
   end
 
   def ensure_corporation

@@ -1,0 +1,31 @@
+<body class="public-scene">
+  <%= render partial: '/template/public_header' %>
+  <%= render partial: '/template/public_nav' %>
+  <main class="offerd">
+    <div class="users">
+      <% if @applicants.present? %>
+        <% @applicants.each do |applicant| %>
+          <table>
+            <%= link_to public_applicant_path(applicant) do %>
+            <tr>
+                <th>
+                  <%= attachment_image_tag applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image", style: 'width: 80px;'  %>
+                </th>
+                <td>
+                  <%= link_to applicant.full_name, public_applicant_path(applicant) %><br>
+                  <%= @age %>歳<br>
+                  <%= link_to '学習記事一覧へ', public_path(applicant) %> <br>
+                  <%= link_to 'ポートフォリオ一覧へ', public_specific_user_path(applicant) %> <br>
+                </td>
+            </tr>
+            <% end %>
+          </table>
+        <% end %>
+      <% else %>
+        <p>
+          条件に一致する応募者がいませんでした
+        </p>
+      <% end %>
+    </div>
+  </main>
+</body>

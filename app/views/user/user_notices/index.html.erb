@@ -2,4 +2,5 @@
   <%= render 'notification', user_notices: @user_notices  %>
 <% else %>
   <p>通知はありません</p>
+  <%= link_to '戻る', user_top_path %>
 <% end %>
