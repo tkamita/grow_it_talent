@@ -45,7 +45,7 @@
       "...... center center right  ......" 1fr
       "...... ...... ...... ...... ......" 100px
       "footer footer footer footer footer" 50px
-      "...... ...... ...... ...... ......"
+      "btmnav btmnav btmnav btmnav btmnav"
       / 13% 30% 30% 15% 13%;
       header {
         grid-area: header;
@@ -1631,4 +1631,146 @@
           line-height: 32px;
         }
       }
+}
+
+@media screen and (max-width: 1000px) {
+
+  body {
+      height: 1500px;
+      flex-direction: column;
+      width: 100%;
+  }
+  .about {
+    main {
+      width: 100%;
+      flex: 1;
+      .conventional{
+        height: 360px;
+        width: 300px;
+        font-size: 22px;
+      }
+      .gitt {
+        height: 360px;
+        width: 300px;
+        font-size: 22px;
+      }
+      .card-3 {
+        height: 170px;
+      }
+    }
+  }
+  footer {
+      display: block;
+      margin-bottom: 100px;
+  }
+  // div {
+  //     display: none;
+  // }
+  .public-scene {
+    display: grid;
+    grid-template:
+      "...... ...... ...... ...... ......"
+      "header header header header header" 200px
+      "...... ...... ...... ...... ......" 60px
+      "...... center center right  ......" 1fr
+      "...... ...... ...... ...... ......" 100px
+      "footer footer footer footer footer" 50px
+      "btmnav btmnav btmnav btmnav btmnav"
+      / 13% 30% 30% 15% 13%;
+    header {
+      grid-area: header;
+      background-color: white;
+      display: grid;
+      grid-template: 
+      "logo   ...... ...... ...... ......" 20px
+      "logo   ...... ...... ...... ......" 60px
+      "...... ...... ...... item-1 item-1" 60px
+      / 20% 20% 20% 20% 20% ;
+      .logo {
+        grid-area: logo;
+        width: 400px;
+        margin-left: 25px;
+        .c-logo {
+          background-image: image-url("logo.jpeg");
+          background-size: cover;
+          width: 100%;
+          height: 99%;
+        }
+      }
+      .head-item {
+        grid-area: item-1;
+        display: grid;
+        grid-template: 
+        "item-1 item-2 item-3 item-4" 34px
+        / 25% 25% 25% 25% ;
+        .notification {
+          grid-area: item-1;
+          height: 68px;
+          padding: 5px;
+          .image-profile {
+            background-image: image-url("profile.jpeg");
+            margin: 0 auto;
+            width: 65px;
+            height: 57px;
+          }
+        }
+        .picture {
+          grid-area: item-2;
+          height: 68px;
+          padding: 5px;
+          .image-bell {
+            background-image: image-url("bell.jpeg");
+            margin: 0 auto;
+            width: 50px;
+            height: 50px;
+          }
+          p {
+            margin: 0;
+            font-size: 12px;
+            text-align: center;
+            color: black;
+          }
+        }
+        .carender {
+          grid-area: item-3;
+          height: 68px;
+          padding: 5px;
+          .image-logout {
+            background-image: image-url("logout.jpeg");
+            margin: 0 auto;
+            width: 50px;
+            height: 50px;
+          }
+          p {
+            margin: 0;
+            font-size: 12px;
+            text-align: center;
+            color: black;
+          }
+        }
+      }
+    }
+    nav {
+      // position: fixed;
+      // bottom: 0;
+      width: 100%;
+      grid-area: btmnav;
+      display: block;
+      .first-box {
+        height: 90px;
+      }
+      .second-box {
+        height: 90px;
+      }
+      .third-box {
+        height: 90px;
+      }
+      ul {
+          display: flex;
+      }
+      li {
+          flex: 1;
+      }
+    }
+  }
 }
