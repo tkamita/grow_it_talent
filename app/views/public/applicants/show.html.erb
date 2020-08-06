@@ -106,24 +106,19 @@
       </div>
     </div>
     <div class="submit">
-      <% if current_corporation.already_offered?(@applicant) %>
+      <% if current_corporation.already_offered?(@applicant) != @applicant.already_applied?(current_corporation) %>
         オファー済
-      <% else %>
-        <%= link_to 'オファー', public_applicant_offers_path(@applicant), method: :post %>
-      <% end %>
-    </div>
-    <% if @applicant.already_applied?(current_corporation) %>
-      <div class="save" style="margin: 40px 90px;">
-        <% if current_corporation.already_room?(@applicant) %>
-          <%= link_to 'メッセージ', room_path(@applicant), style: 'color: white; text-decoration: none;' %>
-        <% else %>
-          <%= form_with model: @room, url: rooms_path, method: :post, local: true do |f| %>
+      <% elsif @applicant.already_applied?(current_corporation) == current_corporation.already_room?(@applicant) %>
+        <%= link_to 'メッセージ', room_path(@applicant), style: 'color: white; text-decoration: none;' %>
+      <% elsif @applicant.already_applied?(current_corporation) %>
+        <%= form_with model: @room, url: rooms_path, method: :post, local: true do |f| %>
             <%= f.hidden_field :applicant_id, :value => @applicant.id %>
             <%= f.hidden_field :corporation_id, :value => current_corporation.id %>
             <%= f.submit 'メッセージを送る' %>
           <% end %>
-        <% end %>
-      </div>
-    <% end %>
+      <% else %>
+        <%= link_to 'オファー', public_applicant_offers_path(@applicant), method: :post %>
+      <% end %>
+    </div>
   </main>
 </body>

@@ -3,7 +3,7 @@
   <%= render partial: '/template/nav', locals: { applicant: @applicant } %>
   <main class="user-info">
     <%= form_with model: @applicant, url: user_applicants_path(@applicant), method: :patch, local: true do |f| %>
-      <div class="basic-info" style="height: 600px;">
+      <div class="basic-info">
         <div>
           <%= attachment_image_tag current_applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image" %><br>
           <%= f.attachment_field :image %>
@@ -11,7 +11,7 @@
         <table>
           <tr>
             <td>ふりがな</td>
-            <th style="width: 25%;"><%= f.text_field :last_furigana %></th>
+            <th><%= f.text_field :last_furigana %></th>
             <th><%= f.text_field :first_furigana %></th>
           </tr>
           <tr>
@@ -95,7 +95,7 @@
         <%= f.label :is_selection, "活動終了" %>
       </div>
     </div>
-    <div style="width: 50%; margin: 0 auto;">
+    <div class="e-submit">
       <%= f.submit '保存', class: 'submit' %>
     </div>
     <% end %>

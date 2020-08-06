@@ -26,6 +26,16 @@
   }
 }
 
+.e-submit {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.port-submit {
+  width: 30%;
+  margin: 0 auto;
+}
+
 .basic-info {
   height: 430px;
 }
@@ -204,6 +214,7 @@
             grid-area: item-1;
             background-color: white;
             width: 80%;
+            height: 600px;
             display: grid;
             grid-template: 
             "item-1 item-2 item-2" 30px
@@ -229,6 +240,7 @@
             th {
               text-align: left;
               padding: 5px 0;
+              width: 25%;
             }
             
           }
@@ -862,6 +874,15 @@
         .basic-info {
           grid-area: item-1;
           background-color: white;
+          form {
+            .messa {
+              margin: 50px 0 20px 110px;
+              width: 70%;
+            }
+            .transmission {
+              margin-left: 310px;
+            }
+          }
           .title {
             margin: 40px 30px;
             border-bottom: solid 2px #031C38;
@@ -1001,7 +1022,7 @@
           height: 60px;
           font-size: 22px;
           color: white;
-          margin: 40px 0 40px 260px;
+          margin: 40px auto 40px;
           text-align: center;
           line-height: 57px;
         }
@@ -1378,9 +1399,9 @@
         grid-area: center;
         display: grid;
         grid-template:
-            "title  title  title " 35px
-            "form   form   form  " auto
-            / 33% 34% 33% ;
+            "title" 35px
+            "form " auto;
+            // / 33% 34% 33% ;
             .title {
               grid-area: title;
               margin: 0;
@@ -1860,5 +1881,195 @@
         width: 95%;
       }
     }
+    .user-info {
+      width: 100%;
+      form {
+        width: 95%;
+        .basic-info {
+          table {
+            tbody {
+              tr {
+                th {
+                  input {
+                    width: 50%;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .ability {
+          textarea {
+            width: 68%;
+          }
+        }
+        .pr {
+          textarea {
+            width: 68%;
+          }
+        }
+        .desire {
+          select {
+            font-size: 14px;
+            width: 55%;
+          }
+          input {
+            width: 55%;
+            line-height: 20px;
+          }
+        }
+        .e-submit {
+          width: 76%;
+        }
+      }
+      .basic-info {
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+        grid-template:
+        "image" auto
+        "table" auto ;
+        img {
+          grid-area: image;
+          margin: 10px auto;
+        }
+        table {
+          grid-area: table;
+          width: 100%;
+          margin: 5px auto;
+          font-size: 16px;
+          tbody {
+            tr {
+              td {
+                width: 25%;
+              }
+            }
+          }
+        }
+      }
+      .ability {
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+      }
+      .pr {
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+      }
+      .qualification {
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+      }
+      .desire {
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+      }
+      .item-6 {
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+        select {
+          font-size: 16px;
+          width: 65%;
+        }
+      }
+      .item-7 {
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+        .selection {
+          font-size: 16px;
+        }
+      }
+      .save {
+        margin: 40px 0 40px 50px;
+      }
+    }
+    .post {
+      width: 100%;
+      .learn-rec {
+        width: 95%;
+        margin: 0 auto;
+        .qual-form {
+          .form {
+            width: 70%;
+          }
+        }
+        .save {
+          margin: 0 0 40px 140px;
+        }
+        input {
+          width: 70px;
+        }
+        .title {
+          margin: 40px 75px;
+        }
+        .lang {
+          margin: 0 75px 40px;
+        }
+        .text {
+          margin: 0 75px;
+        }
+        .qual-form {
+          font-size: 16px;
+        }
+        li {
+          display: flex;
+          .creat-date {
+            padding-left: 0;
+          }
+          .offer {
+            margin-left: 100px;
+            background-color: white;
+          }
+        }
+      }
+      .port-submit {
+        width: 75%;
+      }
+    }
+    .offerd {
+      width: 100%;
+      grid-template: 
+        "item-1" auto
+        "......" 15px
+        "item-2" auto
+        "......" 15px
+        "item-3" auto
+        "......" 15px;
+        .basic-info {
+          width: 95%;
+          margin: 0 auto;
+          form {
+            margin: 0 auto;
+            width: 80%;
+            .messa {
+              margin: 50px auto 20px;
+              width: 100%;
+            }
+            .transmission {
+              margin: 0 10px;
+            }
+          }
+          table {
+            width: 100%;
+          }
+        }
+        .tag {
+          background-color: royalblue;
+          border-radius: 6px;
+          width: 40%;
+          padding: 0 10px;
+          color: white;
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+        .submit {
+          grid-area: item-3
+        }
+      }
+    }
   }
-}

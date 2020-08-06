@@ -1,9 +1,9 @@
 <nav>
-  <div class="first-box" style="height: 160px;">
-    <div class="widget-header">
+  <div class="first-box">
+    <div id="toggle-prof" class="widget-header">
       <h3>登録情報編集</h3>
     </div>
-    <ul>
+    <ul id="menu-prof">
       <li>
         <%= link_to '企業情報編集', edit_public_corporations_path, style: 'color: black; text-decoration: none;' %>
       </li>
@@ -15,11 +15,11 @@
       </li>
     </ul>
   </div>
-  <div class="second-box" style="height: 180px;">
-    <div class="widget-header">
+  <div class="second-box">
+    <div id="toggle-post" class="widget-header">
       <h3>一覧</h3>
     </div>
-    <ul>
+    <ul id="menu-post">
       <li>
         <%= link_to 'ユーザー一覧', public_applicants_path, style: 'color: black; text-decoration: none;' %>
       </li>
@@ -31,11 +31,11 @@
       </li>
     </ul>
   </div>
-  <div class="third-box" style="margin-top: 50px; height: 140px;">
-    <div class="widget-header">
+  <div class="third-box">
+    <div id="toggle-con" class="widget-header">
       <h3>応募者とのコンタクト</h3>
     </div>
-    <ul>
+    <ul id="menu-con">
       <li>
         <%= link_to '応募者リスト', public_applies_path, style: 'color: black; text-decoration: none;' %>
       </li>

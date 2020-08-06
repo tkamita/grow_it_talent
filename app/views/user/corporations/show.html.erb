@@ -11,7 +11,11 @@
       <table>
         <tr>
           <th>タグ</th>
-          <td>タグ内容</td>
+          <td>
+            <% @corporation.tags.each do |t| %>
+              <span class="tag"><%= t.name %></span><br>
+            <% end %>
+          </td>
         </tr>
       </table>
       <h4>企業情報</h4>
