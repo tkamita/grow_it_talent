@@ -1,4 +1,5 @@
 class Public::ApplicantsController < ApplicationController
+  before_action :authenticate_corporation!
   before_action :calculation_age, except: [:index]  
 
   def index

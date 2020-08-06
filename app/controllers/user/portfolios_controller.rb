@@ -1,4 +1,5 @@
 class User::PortfoliosController < ApplicationController
+  before_action :authenticate_applicant!
 
   def new
     @portfolio = Portfolio.new

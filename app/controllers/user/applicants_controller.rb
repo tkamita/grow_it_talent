@@ -1,4 +1,5 @@
 class User::ApplicantsController < ApplicationController
+  before_action :authenticate_applicant!
   before_action :calculation_age, except: [:update, :update_work]
 
   def show

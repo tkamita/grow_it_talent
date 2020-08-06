@@ -1,4 +1,5 @@
 class Public::CorporationsController < ApplicationController
+  before_action :authenticate_corporation!
   before_action :ensure_corporation
   
   def show
