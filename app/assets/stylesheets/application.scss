@@ -39,13 +39,11 @@
   min-height: 100vh;
   display: grid;
   grid-template:
-      "...... ...... ...... ...... ......"
       "header header header header header" 100px
       "...... ...... ...... ...... ......" 60px
       "...... center center right  ......" 1fr
       "...... ...... ...... ...... ......" 100px
       "footer footer footer footer footer" 50px
-      "btmnav btmnav btmnav btmnav btmnav"
       / 13% 30% 30% 15% 13%;
       header {
         grid-area: header;
@@ -1342,13 +1340,11 @@
   min-height: 100vh;
   display: grid;
   grid-template:
-      "...... ...... ......"
       "header header header" 200px
       "...... ...... ......"
       "...... center ......" auto
       "...... ...... ......" 50px
       "footer footer footer" 50px
-      "...... ...... ......"
       / 15% 70% 15% ;
       header {
         grid-area: header;
@@ -1636,11 +1632,12 @@
 @media screen and (max-width: 1000px) {
 
   body {
-      height: 1500px;
+      // height: 1500px;
       flex-direction: column;
       width: 100%;
   }
   .about {
+    
     main {
       width: 100%;
       flex: 1;
@@ -1663,113 +1660,204 @@
       display: block;
       margin-bottom: 100px;
   }
-  // div {
-  //     display: none;
-  // }
-  .public-scene {
-    display: grid;
+  .newreg {
     grid-template:
-      "...... ...... ...... ...... ......"
-      "header header header header header" 200px
-      "...... ...... ...... ...... ......" 60px
-      "...... center center right  ......" 1fr
-      "...... ...... ...... ...... ......" 100px
-      "footer footer footer footer footer" 50px
-      "btmnav btmnav btmnav btmnav btmnav"
-      / 13% 30% 30% 15% 13%;
+      "header header header" 100px
+      "...... ...... ......" 30px
+      "...... center ......" auto
+      "...... ...... ......" 50px
+      "footer footer footer" 50px
+      / 15% 70% 15% ;
     header {
-      grid-area: header;
-      background-color: white;
-      display: grid;
-      grid-template: 
-      "logo   ...... ...... ...... ......" 20px
-      "logo   ...... ...... ...... ......" 60px
-      "...... ...... ...... item-1 item-1" 60px
-      / 20% 20% 20% 20% 20% ;
+      display: block;
+      height: 100px;
       .logo {
-        grid-area: logo;
-        width: 400px;
-        margin-left: 25px;
-        .c-logo {
-          background-image: image-url("logo.jpeg");
-          background-size: cover;
-          width: 100%;
-          height: 99%;
+        height: 60px;
+        width: 230px;
+        padding: 0;
+        background-size: contain;
+      }
+      .loggin {
+        padding: 0;
+      }
+    }
+    main {
+      grid-template: 
+        "title"35px
+        "form "auto;
+        .formrg {
+          grid-area: form;
+          h2 {
+            padding: 0px;
+          }
+          table {
+            width: 100%;
+          }
+          .gender {
+            padding: 0px;
+            .form {
+              width: 97%;
+              margin: 0;
+            }
+          }
+          .birthd {
+            padding: 0px;
+            .form {
+              width: 97%;
+            }
+          }
+        }
+      .new_applicant {
+        .uselog {
+          grid-template:
+            "firstp" 100px
+            "second" 100px
+            "submit" 100px
+            "bar   " 50px
+            "regest" 100px;
+          .firstp {
+            margin: 0 auto;
+            width: 300px;
+            text-align: center;
+            padding-left: 0px;
+          }
+          .second {
+            margin: 0 auto;
+            width: 300px;
+            text-align: center;
+            padding-left: 0px;
+          }
         }
       }
+    }
+  }
+  .public-scene {
+    width: 100%;
+    display: grid;
+    grid-template:
+      "header" 150px
+      "nav   " auto
+      "center" 1fr
+      "......" 20px
+      "footer" 50px;
+    header {
+      display: block;
+      height: 150px;
+      .logo {
+        height: 60px;
+        width: 230px;
+        padding: 0;
+        background-size: contain;
+      }
       .head-item {
-        grid-area: item-1;
-        display: grid;
-        grid-template: 
-        "item-1 item-2 item-3 item-4" 34px
-        / 25% 25% 25% 25% ;
         .notification {
-          grid-area: item-1;
-          height: 68px;
-          padding: 5px;
+          grid-area: item-2;
           .image-profile {
-            background-image: image-url("profile.jpeg");
-            margin: 0 auto;
-            width: 65px;
-            height: 57px;
+            width: 40px;
+            height: 40px;
+            margin: 20px;
+            background-size: cover;
           }
         }
         .picture {
-          grid-area: item-2;
-          height: 68px;
-          padding: 5px;
+          grid-area: item-3;
           .image-bell {
-            background-image: image-url("bell.jpeg");
-            margin: 0 auto;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
+            margin: 20px;
+            background-size: cover;
           }
           p {
-            margin: 0;
-            font-size: 12px;
-            text-align: center;
-            color: black;
+            display: none;
           }
         }
         .carender {
-          grid-area: item-3;
-          height: 68px;
-          padding: 5px;
+          grid-area: item-4;
           .image-logout {
-            background-image: image-url("logout.jpeg");
-            margin: 0 auto;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
+            margin: 20px;
+            background-size: cover;
           }
           p {
-            margin: 0;
-            font-size: 12px;
-            text-align: center;
-            color: black;
+            display: none;
           }
         }
       }
     }
     nav {
-      // position: fixed;
-      // bottom: 0;
       width: 100%;
-      grid-area: btmnav;
+      grid-area: nav;
       display: block;
       .first-box {
-        height: 90px;
+        height: auto;
+        margin-bottom: 1px;
+        #toggle-prof {
+          display: block;
+          position: relative;
+        }
+        #menu-prof {
+          display: none;
+          li {
+            width: 100%;
+            padding: 0px;
+            text-align: center;
+          }
+        }
       }
       .second-box {
-        height: 90px;
+        height: auto;
+        margin-bottom: 1px;
+        #toggle-post {
+          display: block;
+          position: relative;
+        }
+        #menu-post {
+          display: none;
+          li {
+            width: 100%;
+            padding: 0px;
+            text-align: center;
+          }
+        }
       }
       .third-box {
-        height: 90px;
+        height: auto;
+        margin-bottom: 20px;
+        #toggle-con {
+          display: block;
+          position: relative;
+        }
+        #menu-con {
+          display: none;
+          li {
+            width: 100%;
+            padding: 0px;
+            text-align: center;
+          }
+        }
       }
-      ul {
-          display: flex;
+    }
+    .user-top {
+      grid-template:
+      "item-1" auto
+      "item-2" auto
+      "item-3" auto ;
+      .study-post {
+        grid-area: item-1;
+        margin: 0 auto 10px;
+        width: 95%;
+        padding-bottom: 8px;
       }
-      li {
-          flex: 1;
+      .job-offer {
+        grid-area: item-2;
+        margin: 5px auto;
+        width: 95%;
+      }
+      .schedule {
+        grid-area: item-3;
+        margin: 5px auto;
+        width: 95%;
       }
     }
   }
