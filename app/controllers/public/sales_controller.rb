@@ -1,4 +1,5 @@
 class Public::SalesController < ApplicationController
+  before_action :authenticate_corporation!
 
   def index
     @sales = current_corporation.sales

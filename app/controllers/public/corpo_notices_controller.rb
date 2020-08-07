@@ -1,4 +1,6 @@
 class Public::CorpoNoticesController < ApplicationController
+  before_action :authenticate_corporation!
+  
   def index
     @corpo_notices = current_corporation.corpo_notices
     @corpo_notices.where(is_check: false).each do |cn|

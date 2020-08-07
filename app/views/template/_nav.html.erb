@@ -1,9 +1,12 @@
 <nav>
   <div class="first-box">
-    <div class="widget-header">
+    <div id="toggle-prof" class="widget-header">
       <h3>プロフィール</h3>
     </div>
-    <ul>
+    <div class="widget-header hide-menu">
+      <h3>プロフィール</h3>
+    </div>
+    <ul id="menu-prof" >
       <li>
         <%= link_to 'プロフィール編集', edit_user_applicants_path, style: 'color: black; text-decoration: none;' %>
       </li>
@@ -19,10 +22,13 @@
     </ul>
   </div>
   <div class="second-box">
-    <div class="widget-header">
+    <div id="toggle-post" class="widget-header">
       <h3>投稿</h3>
     </div>
-    <ul>
+    <div class="widget-header hide-menu">
+      <h3>投稿</h3>
+    </div>
+    <ul id="menu-post" >
       <li>
         <%= link_to '学習記事投稿一覧', user_posts_path, style: 'color: black; text-decoration: none;' %>
       </li>
@@ -35,10 +41,13 @@
     </ul>
   </div>
   <div class="third-box">
-    <div class="widget-header">
+    <div id="toggle-con" class="widget-header">
       <h3>企業とのコンタクト</h3>
     </div>
-    <ul>
+    <div class="widget-header hide-menu">
+      <h3>企業とのコンタクト</h3>
+    </div>
+    <ul id="menu-con" >
       <li>
         <%= link_to 'オファーリスト', user_offers_path, style: 'color: black; text-decoration: none;' %>
       </li>

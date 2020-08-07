@@ -1,4 +1,5 @@
 class User::AppliesController < ApplicationController
+  before_action :authenticate_applicant!
 
   def create
     @apply = current_applicant.applies.create(corporation_id: params[:corporation_id])

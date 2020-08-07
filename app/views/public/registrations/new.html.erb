@@ -3,7 +3,7 @@
   <main>
     <h1 class="title">　新規登録</h1>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <div class="formrg" style="width: 1000px;}">
+    <div class="formrg">
       <div class="gender">
         <p>企業名<span>必須</span><br>
           <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form' %>

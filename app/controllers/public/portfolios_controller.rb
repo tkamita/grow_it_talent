@@ -1,5 +1,5 @@
 class Public::PortfoliosController < ApplicationController
-
+  before_action :authenticate_corporation!
 
   def show
     @portfolio = Portfolio.find(params[:id])

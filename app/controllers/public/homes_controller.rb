@@ -1,4 +1,6 @@
 class Public::HomesController < ApplicationController
+  before_action :authenticate_corporation!
+  
   def top
     @applicants = Applicant.all.order(created_at: :desc).limit(5)
     date_format = "%Y%m%d"

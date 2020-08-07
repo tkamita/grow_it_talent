@@ -1,4 +1,5 @@
 class User::PostsController < ApplicationController
+  before_action :authenticate_applicant!
 
   def index
     @posts = current_applicant.posts

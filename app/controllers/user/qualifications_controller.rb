@@ -1,4 +1,5 @@
 class User::QualificationsController < ApplicationController
+  before_action :authenticate_applicant!
 
   def index
     @qualifications = current_applicant.qualifications

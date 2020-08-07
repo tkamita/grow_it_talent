@@ -9,9 +9,9 @@
   <main class="offerd">
     <div class="basic-info" style="height: auto;">
       <%= form_with model: @message, url: room_messages_path(@room), method: :post, local: true do |f| %>
-        <%= f.text_area :content, :placeholder =>"ここに文章を入力", class: 'messa', style: 'margin: 50px 0 20px 110px; width: 70%;' %>
+        <%= f.text_area :content, :placeholder =>"ここに文章を入力", class: 'messa' %>
         <div>
-          <%= f.submit '送信', class: 'transmission', style: 'margin-left: 310px;' %>
+          <%= f.submit '送信', class: 'transmission' %>
         </div>
       <% end %>
       <div class="title">

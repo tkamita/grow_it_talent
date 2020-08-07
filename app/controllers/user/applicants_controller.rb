@@ -1,4 +1,5 @@
 class User::ApplicantsController < ApplicationController
+  before_action :authenticate_applicant!
   before_action :calculation_age, except: [:update, :update_work]
 
   def show
@@ -48,4 +49,5 @@ class User::ApplicantsController < ApplicationController
     birthday = current_applicant.birth_date.to_date
     @age = (Date.today.strftime(date_format).to_i - birthday.strftime(date_format).to_i) / 10000
   end
+
 end
