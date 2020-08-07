@@ -15,10 +15,10 @@
               <%= l room.created_at, format: :short %>
             </div>
             <div class="messa-ttl">
-              <% if applicant_signed_in? %>
-                <p><%= room.corporation.name %></p>
-              <% else %>
+              <% if corporation_signed_in? %>
                 <p><%= room.applicant.full_name %></p>
+              <% else %>
+                <p><%= room.corporation.name %></p>
               <% end %>
             </div>
             <div class="offer">

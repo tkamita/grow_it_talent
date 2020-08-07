@@ -6,9 +6,6 @@
       <% @portfolios.each do |p| %>
         <table style="border-collapse: collapse">
           <tr style="border-bottom: solid 1px #E9E9E9;">
-            <td style="width: 15%;">
-              <%= attachment_image_tag current_applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image", style: "width: 60px;"  %>
-            </td>
             <td>
               <%= link_to user_portfolio_path(p) do %>
                 <p><%= p.title %></p>

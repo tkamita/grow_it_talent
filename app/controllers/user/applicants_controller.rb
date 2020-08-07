@@ -49,4 +49,5 @@ class User::ApplicantsController < ApplicationController
     birthday = current_applicant.birth_date.to_date
     @age = (Date.today.strftime(date_format).to_i - birthday.strftime(date_format).to_i) / 10000
   end
+
 end

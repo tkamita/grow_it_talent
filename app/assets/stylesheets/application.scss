@@ -13,6 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+ #toggle-prof {
+   display: none;
+ }
+ #toggle-post {
+   display: none;
+ }
+ #toggle-con {
+   display: none;
+ }
+ #slide-notice {
+   display: none;
+ }
  
 .image-logout {
   background-image: image-url("logout.jpeg");
@@ -425,6 +438,34 @@
         "......" 15px
         "item-8" auto
         "......" 15px;
+        form {
+          .basic-info {
+            width: 100%;
+            display: flex;
+            height: auto;
+            table {
+              width: 100%;
+            }
+          }
+          .ability {
+            width: 100%;
+          }
+          .pr {
+            width: 100%;
+          }
+          .qualification {
+            width: 100%;
+          }
+          .desire {
+            width: 100%;
+          }
+          .item-6 {
+            width: 100%;
+          }
+          .item-7 {
+            width: 100%;
+          }
+        }
         .basic-info {
           grid-area: item-1;
           background-color: white;
@@ -1022,7 +1063,7 @@
           height: 60px;
           font-size: 22px;
           color: white;
-          margin: 40px auto 40px;
+          margin: 40px 250px;
           text-align: center;
           line-height: 57px;
         }
@@ -1651,6 +1692,10 @@
 }
 
 @media screen and (max-width: 1000px) {
+
+  .hide-menu {
+    display: none;
+  }
 
   body {
       // height: 1500px;
