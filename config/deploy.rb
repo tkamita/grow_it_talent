@@ -2,7 +2,7 @@
 lock "~> 3.14.1"
 
 set :application, "grow-it-talent"
-set :repo_url, "https://github.com/tkamita/Grow-IT-Talent.git"
+set :repo_url, "git@github.com:tkamita/Grow-IT-Talent.git"
 
 set :deploy_to, "/home/ec2-user/Grow-IT-Talent"
 set :rbenv_ruby, '2.5.7'

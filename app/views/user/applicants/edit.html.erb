@@ -5,8 +5,8 @@
     <%= form_with model: @applicant, url: user_applicants_path(@applicant), method: :patch, local: true do |f| %>
       <div class="basic-info">
         <div>
-          <%= attachment_image_tag current_applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image" %><br>
-          <%= f.attachment_field :image %>
+          <%= image_tag current_applicant.image_id.url, class: "item_image" %><br>
+          <%= f.file_field :image_id %>
         </div>
         <table>
           <tr>

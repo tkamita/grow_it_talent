@@ -37,7 +37,7 @@ class User::ApplicantsController < ApplicationController
 
   private
   def applicant_params
-    params.require(:applicant).permit(:email, :last_name, :first_name, :last_furigana, :first_furigana, :gender, :birth_date, :image, :postal_code,
+    params.require(:applicant).permit(:email, :last_name, :first_name, :last_furigana, :first_furigana, :gender, :birth_date, :image_id, :postal_code,
                                       :prefecture, :manicipal, :address_other, :phone_number, :school_division, :school_name, :faculty, :academic_decipline,
                                       :english_skill, :other_lang, :overview_w_history, :is_selection, :start_work, :work_location, :axis,
                                       :company_type, :pg_skill, :self_pr, :vision, :term_1, :term_2, :term_3, :term_4, :term_5, :work_history_1,

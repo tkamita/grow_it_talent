@@ -1,5 +1,5 @@
 <div class="basic-info">
-  <%= attachment_image_tag current_applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image" %>
+  <%= image_tag current_applicant.image_id.url, class: "item_image" %>
   <table>
     <tr>
       <td>ふりがな</td>

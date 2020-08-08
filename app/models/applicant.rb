@@ -6,7 +6,7 @@ class Applicant < ApplicationRecord
   
   
          # image_idかも
-  mount_uploader :image, ImageUploader
+  mount_uploader :image_id, ImageUploader
 
   has_many :qualifications, dependent: :destroy
   has_many :posts, dependent: :destroy
