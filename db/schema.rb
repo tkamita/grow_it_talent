@@ -98,18 +98,18 @@ ActiveRecord::Schema.define(version: 2020_08_03_103840) do
     t.integer "capital_stock", default: 0
     t.string "title", default: ""
     t.string "location", default: ""
-    t.text "content", default: ""
+    t.text "content"
     t.boolean "is_stock", default: false, null: false
-    t.text "business_description", default: ""
-    t.text "place_info", default: ""
-    t.text "require_competence", default: ""
+    t.text "business_description"
+    t.text "place_info"
+    t.text "require_competence"
     t.string "work_location", default: ""
     t.boolean "is_emp_status", default: true, null: false
     t.integer "salary", default: 300
     t.string "working_hour", default: ""
     t.boolean "is_overtime", default: false, null: false
     t.boolean "is_overtime_pay", default: true, null: false
-    t.text "commute_allowance", default: ""
+    t.text "commute_allowance"
     t.string "day_off", default: ""
     t.string "paid_vacation", default: ""
     t.boolean "is_health_insurance", default: true, null: false
@@ -118,14 +118,13 @@ ActiveRecord::Schema.define(version: 2020_08_03_103840) do
     t.boolean "is_accident_insurance", default: true, null: false
     t.boolean "is_dwelling", default: false, null: false
     t.boolean "is_retire_payment", default: false, null: false
-    t.text "other_welfare", default: ""
+    t.text "other_welfare"
     t.integer "recruit_number", default: 1
     t.integer "interview_number", default: 1
-    t.text "company_url", default: ""
+    t.text "company_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_corporations_on_email", unique: true
-    t.index ["president_name"], name: "index_corporations_on_president_name", unique: true
     t.index ["reset_password_token"], name: "index_corporations_on_reset_password_token", unique: true
   end
 

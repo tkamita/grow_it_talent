@@ -68,7 +68,6 @@ class DeviseCreateCorporations < ActiveRecord::Migration[5.2]
       t.timestamps null: false
     end
 
-    add_index :corporations, :president_name,       unique: true
     add_index :corporations, :email,                unique: true
     add_index :corporations, :reset_password_token, unique: true
     # add_index :corporations, :confirmation_token,   unique: true
