@@ -9,7 +9,7 @@
             <%= link_to public_applicant_path(applicant) do %>
             <tr>
                 <th>
-                  <%= attachment_image_tag applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image", style: 'width: 80px;'  %>
+                  <%= image_tag applicant.image_id.url, class: "item_image", style: 'width: 80px;' %>
                 </th>
                 <td>
                   <%= link_to applicant.full_name, public_applicant_path(applicant) %><br>

@@ -3,7 +3,7 @@
   <%= render partial: '/template/public_nav' %>
   <main class="user-info">
     <div class="basic-info">
-      <%= attachment_image_tag @applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image" %>
+      <%= image_tag @applicant.image_id.url, class: "item_image" %>
       <table>
         <tr>
           <td>ふりがな</td>

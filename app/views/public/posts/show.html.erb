@@ -4,7 +4,7 @@
   <main class="post">
     <div class="learn-rec">
       <div class="prof-box">
-        <%= attachment_image_tag @applicant, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image" %>
+        <%= image_tag @applicant.image_id.url, class: "item_image" %>
         <div class="creat-ttl">
           <p><%= @post.applicant.full_name %> </p>
           <p><span><%= l @post.created_at %></span></p>
