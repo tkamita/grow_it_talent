@@ -3,6 +3,10 @@ class Applicant < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  
+         # image_idかも
+  mount_uploader :image, ImageUploader
 
   has_many :qualifications, dependent: :destroy
   has_many :posts, dependent: :destroy
