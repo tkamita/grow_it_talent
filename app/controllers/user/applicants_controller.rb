@@ -13,7 +13,7 @@ class User::ApplicantsController < ApplicationController
   def update
     @applicant = current_applicant
 		if @applicant.update(applicant_params)
-			redirect_to user_applicants_path, notice: 'successfully updated'
+			redirect_to user_applicants_path
 		else
 			render action: :edit
     end
@@ -29,7 +29,7 @@ class User::ApplicantsController < ApplicationController
   def update_work
     @applicant = current_applicant
 		if @applicant.update(applicant_params)
-			redirect_to user_work_history_path, notice: 'successfully updated'
+			redirect_to user_work_history_path
 		else
 			render action: :edit_work
     end

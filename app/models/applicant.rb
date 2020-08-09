@@ -21,7 +21,6 @@ class Applicant < ApplicationRecord
   has_many :corpo_notices, dependent: :destroy
   has_many :tag_relations, dependent: :destroy
   has_many :tags, through: :tag_relations, dependent: :destroy
-  attachment :image
 
   validates :last_name, presence: true
   validates :first_name, presence: true
