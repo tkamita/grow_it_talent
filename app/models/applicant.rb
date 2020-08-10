@@ -50,7 +50,7 @@ class Applicant < ApplicationRecord
   
 
   enum gender:{
-    "": 0,
+    "選択して下さい": 0,
     "男性": 1,
     "女性": 2
   }
