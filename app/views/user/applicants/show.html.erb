@@ -33,11 +33,14 @@
               <%= current_applicant.other_lang %>
             </li>
           </ul>
-        <% current_applicant.qualifications.each do |q| %>
           <ul>
-            <li><%= q.name %></li>
+            <li>
+              <p>資格</p>
+              <% current_applicant.qualifications.each do |q| %>
+                <%= q.name %><br>
+              <% end %>
+            </li>
           </ul>
-        <% end %>
       </div>
     </div>
     <div class="desire">
