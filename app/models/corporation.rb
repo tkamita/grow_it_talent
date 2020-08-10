@@ -16,6 +16,8 @@ class Corporation < ApplicationRecord
   has_many :tag_relations, dependent: :destroy
   has_many :tags, through: :tag_relations, dependent: :destroy
 
+  validates :name, presence: true
+  
   def already_offered?(applicant)
     self.offers.exists?(applicant_id: applicant.id)
   end

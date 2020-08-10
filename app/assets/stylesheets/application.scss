@@ -14,6 +14,22 @@
  *= require_self
  */
 
+ #error_explanation {
+  color: red;
+  padding-bottom: 20px;
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  ul {
+    padding-left: 50px;
+    list-style: circle;
+    li {
+      font-size: 18px;
+    }
+  }
+}
+
  #toggle-prof {
    display: none;
  }
