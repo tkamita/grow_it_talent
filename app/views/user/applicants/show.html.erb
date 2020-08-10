@@ -24,8 +24,14 @@
       <h4>語学・資格</h4>
       <div class="quali-box">
           <ul>
-            <li><%= current_applicant.english_skill %></li>
-            <li><%= current_applicant.other_lang %></li>
+            <li>
+              <p>英語</p>
+              <%= current_applicant.english_skill %>
+            </li>
+            <li>
+              <p>その他語学</p>
+              <%= current_applicant.other_lang %>
+            </li>
           </ul>
         <% current_applicant.qualifications.each do |q| %>
           <ul>
