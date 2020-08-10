@@ -8,7 +8,6 @@
           <tr style="border-bottom: solid 1px #E9E9E9;">
             <td style="width: 15%;">
               <%= image_tag a.image_id.url, class: "item_image", style: "width: 60px;" %>
-              <%= attachment_image_tag a, :image, format: "jpeg", fallback: "no_image.jpeg", class: "item_image", style: "width: 60px;"  %>
             </td>
             <td>
               <p><%= a.full_name %></p>
