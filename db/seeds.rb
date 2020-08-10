@@ -16,9 +16,21 @@ PgLang.create!(
     {
       name:"JavaScript"
     },
-    {
-      name:"Ruby"
-    }
+    { name: "jQuery" },
+    { name:"Ruby" },
+    { name: "Ruby on Rails" },
+    { name: "PHP" },
+    { name: "Java" },
+    { name: "Python" },
+    { name: "Command Line" },
+    { name: "Git" },
+    { name: "SQL" },
+    { name: "Sass" },
+    { name: "Go" },
+    { name: "React" },
+    { name: "Node.js" },
+    { name: "NoCode" },
+    { name: "AWS" }
   ]
   )
 
