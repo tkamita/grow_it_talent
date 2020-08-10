@@ -58,7 +58,7 @@
       </div>
     <div class="ability">
       <h4>プログラミングスキル</h4>
-        <%= f.text_area :pg_skill %>
+        <%= f.text_area :pg_skill, placeholder: "2020年4月~1ヶ月間,progateで独学をした後、（HTML/CSS, JavaScript, jQuery, Ruby, Ruby on Rails, Sass)2020年５月からDMM WEBCAMP専門技術講座を受講 (HTML/CSS, Ruby, Ruby on Rails, JavaScript, Git, AWS)" %>
     </div>
     <div class="pr">
       <h4>プロフィール（PR）</h4>
@@ -70,8 +70,14 @@
     <div class="qualification">
       <h4>語学</h4>
       <ul>
-        <li><%= f.text_field :english_skill %></li>
-        <li><%= f.text_field :other_lang %></li>
+        <li>
+          <p>英語</p>
+          <%= f.text_field :english_skill, placeholder: '例）2017年4月　TOEIC公開テスト　スコア600点取得' %>
+        </li>
+        <li>
+          <p>その他語学</p>
+          <%= f.text_field :other_lang, placeholder: '中国語など' %>
+        </li>
       </ul>
     </div>
     <div class="desire">
@@ -80,7 +86,7 @@
       <h4>希望勤務地</h4>
       <%= f.select :work_location, Applicant.work_locations.keys.to_a, include_blank: false %>
       <h4>勤務開始可能日</h4>
-      <%= f.text_field :start_work %>
+      <%= f.text_field :start_work, placeholder: '例）20XX年○月○日以降になります' %>
     </div>
     <div class="item-6">
       <h4>転職の軸</h4>
