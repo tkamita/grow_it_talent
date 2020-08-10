@@ -1428,6 +1428,9 @@
       "...... ...... ......" 50px
       "footer footer footer" 50px
       / 15% 70% 15% ;
+      li {
+        font-size: 18px;
+      }
       header {
         grid-area: header;
         display: grid;
