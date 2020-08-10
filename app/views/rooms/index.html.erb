@@ -9,23 +9,21 @@
   <main class="post">
     <div class="learn-rec">
       <% @rooms.each do |room| %>
-        <ul>
-          <li>
-            <div class="creat-date">
-              <%= l room.created_at, format: :short %>
-            </div>
-            <div class="messa-ttl">
+        <table style="border-collapse: collapse">
+          <tr style="border-bottom: solid 1px #E9E9E9;">
+            <td>
               <% if corporation_signed_in? %>
                 <p><%= room.applicant.full_name %></p>
-              <% else %>
+              <%else%>
                 <p><%= room.corporation.name %></p>
               <% end %>
-            </div>
-            <div class="offer">
-              <%= link_to '詳細', room_path(room) %>
-            </div>
-          </li>
-        </ul>
+              <p><span><%= l room.updated_at, format: :long %></span></p>
+            </td>
+            <td style="width: 12%;">
+              <%= link_to "詳細", room_path(room) %>
+            </td>
+          </tr>
+        </table>
       <% end %>
     </div>
   </main>
