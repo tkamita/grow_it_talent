@@ -213,14 +213,18 @@
         </tr>
       </table>
     </div>
-    <% if current_applicant.already_applied?(@corporation) %>
-      <div class="submit">
-        <%= link_to '辞退する', user_corporation_apply_path(@corporation), method: :delete %>
-      </div>
-    <% else %>
-      <div class="decline">
-        <%= link_to '応募する', user_corporation_applies_path(@corporation), method: :post %>
-      </div>
-    <% end %>
+    <div class="decline">
+      <% if current_applicant.already_room?(@corporation) %>
+        <%= link_to 'メッセージ', room_path(@corporation), style: 'color: white; text-decoration: none;' %>
+      <% elsif current_applicant.already_applied?(@corporation) %>
+        <div class="decline">
+          応募済
+        </div>
+      <% else %>
+        <div class="decline">
+          <%= link_to '応募する', user_corporation_applies_path(@corporation), method: :post %>
+        </div>
+      <% end %>
+    </div>
   </main>
 </body>
