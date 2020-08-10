@@ -7,7 +7,7 @@ class Public::HomesController < ApplicationController
     @applicants.each do |a|
       @birthday = a.birth_date.to_date
     end
-    @age = (Date.today.strftime(date_format).to_i - @birthday.strftime(date_format).to_i) / 10000
+    age = (Date.today.strftime(date_format).to_i - @birthday.strftime(date_format).to_i) / 10000
     @rooms = current_corporation.rooms
     @search_params = applicant_search_params
   end
