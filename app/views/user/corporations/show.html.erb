@@ -40,19 +40,19 @@
         <tr>
           <th>仕事内容</th>
           <td>
-            <%= @corporation.business_description %>
+            <%= safe_join(@corporation.business_description.split("\n"),tag(:br)) %>
           </td>
         </tr>
         <tr>
           <th>配属先情報</th>
           <td>
-            <%= @corporation.place_info %>
+            <%= safe_join(@corporation.place_info.split("\n"),tag(:br)) %>
           </td>
         </tr>
         <tr>
           <th>必要な能力・経験</th>
           <td>
-            <%= @corporation.require_competence %>
+            <%= safe_join(@corporation.require_competence("\n"),tag(:br)) %>
           </td>
         </tr>
       </table>
@@ -147,7 +147,7 @@
               無<br><br>
             <% end %>
             - その他制度<br>
-            <%= @corporation.other_welfare %>
+            <%= safe_join(@corporation.other_welfare.split("\n"),tag(:br)) %>
           </td>
         </tr>
       </table>
@@ -217,11 +217,11 @@
       <% if current_applicant.already_room?(@corporation) %>
         <%= link_to 'メッセージ', room_path(@corporation), style: 'color: white; text-decoration: none;' %>
       <% elsif current_applicant.already_applied?(@corporation) %>
-        <div class="decline">
+        <div>
           応募済
         </div>
       <% else %>
-        <div class="decline">
+        <div>
           <%= link_to '応募する', user_corporation_applies_path(@corporation), method: :post %>
         </div>
       <% end %>
