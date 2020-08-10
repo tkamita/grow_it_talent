@@ -3,8 +3,7 @@
   <%= render partial: '/template/nav' %>
   <main class="post">
     <%= form_with model: @post, url: user_post_path(@post), method: :patch, local: true do |f| %>
-    <div class="learn-rec", style="padding-bottom: 100px;">
-      <%= render partial: '/template/post_head', locals: { post: @post } %>
+    <div class="learn-rec", style="padding: 50px 0;">
       <div class="title" style="border: none;">
         <h6><%= f.text_field :title, style: 'width: 99%; height: 30px;' %></h6>
       </div>
