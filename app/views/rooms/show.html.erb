@@ -16,9 +16,9 @@
       <% end %>
       <div class="title">
         <% if corporation_signed_in? %>
-          <h2><%= current_corporation.name %></h2>
+          <h2><%= @room.applicant.full_name %></h2>
         <% else %>
-          <h2><%= current_applicant.full_name %></h2>
+          <h2><%= @room.corporation.name %></h2>
         <% end %>
       </div>
       <% @messages.order(created_at: :desc).each do |m| %>
@@ -28,7 +28,7 @@
           <p><%= m.room.applicant.full_name %></p>
         <% end %>
           <div class="messa">
-            <%= m.content %>
+            <%= safe_join(m.content.split("\n"),tag(:br)) %>
           </div>
       <% end %>
   </main>
