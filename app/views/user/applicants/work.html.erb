@@ -28,7 +28,7 @@
       <h4>職務経歴</h4>
       <h6>職歴要約</h6>
       <div class="text-box">
-        <%= current_applicant.overview_w_history %>
+        <%= simple_format(current_applicant.overview_w_history) %>
       </div>
       <h6>職務経歴</h6>
       <table border="1" style="border-collapse: collapse">
@@ -37,34 +37,24 @@
           <th>職務内容</th>
         </tr>
         <tr>
-          <td><%= current_applicant.term_1 %> </td>
-          <td>
-            <%= current_applicant.work_history_1 %>
-          </td>
+          <td><%= simple_format(current_applicant.term_1) %></td>
+          <td><%= simple_format(current_applicant.work_history_1) %></td>
         </tr>
         <tr>
-          <td><%= current_applicant.term_2 %> </td>
-          <td>
-            <%= current_applicant.work_history_2 %>
-          </td>
+          <td><%= simple_format(current_applicant.term_2) %></td>
+          <td><%= simple_format(current_applicant.work_history_2) %></td>
         </tr>
         <tr>
-          <td><%= current_applicant.term_3 %> </td>
-          <td>
-            <%= current_applicant.work_history_3 %>
-          </td>
+          <td><%= simple_format(current_applicant.term_3) %></td>
+          <td><%= simple_format(current_applicant.work_history_3) %></td>
         </tr>
         <tr>
-          <td><%= current_applicant.term_4 %> </td>
-          <td>
-            <%= current_applicant.work_history_4 %>
-          </td>
+          <td><%= simple_format(current_applicant.term_4) %></td>
+          <td><%= simple_format(current_applicant.work_history_4) %></td>
         </tr>
         <tr>
-          <td><%= current_applicant.term_5 %> </td>
-          <td>
-            <%= current_applicant.work_history_5 %>
-          </td>
+          <td><%= simple_format(current_applicant.term_5) %></td>
+          <td><%= simple_format(current_applicant.work_history_5) %></td>
         </tr>
       </table>
     </div>
