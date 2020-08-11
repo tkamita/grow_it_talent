@@ -4,6 +4,9 @@
   <main class="user-top">
     <div class="job-offer">
       <h4>最近登録したユーザー</h4>
+      <%= form_with url: public_pg_search_path, method: :get, class: 'boards__searchForm' do %>
+        <%= select_tag :pg_lang_id, options_from_collection_for_select(PgLang.all, :id, :name, params[:pg_lang_id]), { prompt: '学習言語で検索', onchange: 'submit(this.form);' } %>
+      <% end %>
       <% @applicants.each do |a| %>
         <table>
           <tr>
@@ -86,3 +89,5 @@
     </div>
   </main>
 </body>
+
+

@@ -41,7 +41,7 @@ class User::ApplicantsController < ApplicationController
                                       :prefecture, :manicipal, :address_other, :phone_number, :school_division, :school_name, :faculty, :academic_decipline,
                                       :english_skill, :other_lang, :overview_w_history, :is_selection, :start_work, :work_location, :axis,
                                       :company_type, :pg_skill, :self_pr, :vision, :term_1, :term_2, :term_3, :term_4, :term_5, :work_history_1,
-                                      :work_history_2, :work_history_3, :work_history_4, :work_history_5, :prefecture_kana)
+                                      :work_history_2, :work_history_3, :work_history_4, :work_history_5, :prefecture_kana, pg_lang_ids: [])
   end
 
   def calculation_age

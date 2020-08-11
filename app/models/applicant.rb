@@ -121,6 +121,4 @@ class Applicant < ApplicationRecord
   scope :axis_is, -> (axis) { where(axis: axis) if axis.present? }
   scope :company_is, -> (company_type) { where(company_type: company_type) if company_type.present? }
 
-  
-  
 end
