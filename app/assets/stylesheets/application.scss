@@ -222,6 +222,7 @@
           margin-right: 30px;
           display: grid;
           grid-template: 
+          "item-n" auto
           "item-1" 450px
           "......" 15px
           "item-2" auto
@@ -240,6 +241,11 @@
           "......" 15px
           "item-9" auto
           "......" 15px;
+          .page {
+            grid-area: item-n;
+            a {
+              font-size: 18px;
+            }
           .basic-info {
             grid-area: item-1;
             background-color: white;
