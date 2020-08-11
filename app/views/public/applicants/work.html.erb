@@ -2,7 +2,50 @@
   <%= render partial: '/template/public_header' %>
   <%= render partial: '/template/public_nav' %>
   <main class="user-info">
-    <%= render partial: '/template/user_info' %>
+    <div class="page">
+      <%= link_to 'ユーザー詳細画面', public_applicant_path(@applicant) %>
+    </div>
+    <div class="basic-info">
+      <%= image_tag @applicant.image_id.url, class: "item_image" %>
+      <table>
+        <tr>
+          <td>ふりがな</td>
+          <th><%= @applicant.full_name_kana %></th>
+        </tr>
+        <tr>
+          <td>氏名</td>
+          <th><%= @applicant.full_name %></th>
+        </tr>
+        <tr>
+          <td>生年月日</td>
+          <th><%= l @applicant.birth_date %>（満<%= @age %>歳）</th>
+        </tr>
+        <tr>
+          <td>性別</td>
+          <th><%= @applicant.gender %> </th>
+        </tr>
+        <tr>
+          <td>郵便番号</td>
+          <th><%= @applicant.postal_code %></th>
+        </tr>
+        <tr>
+          <td>ふりがな</td>
+          <th><%= @applicant.prefecture_kana %></th>
+        </tr>
+        <tr>
+          <td>住所</td>
+          <th><%= @applicant.prefecture %><%= @applicant.manicipal %><br><%= @applicant.address_other %></th>
+        </tr>
+        <tr>
+          <td>TEL</td>
+          <th><%= @applicant.phone_number %></th>
+        </tr>
+        <tr>
+          <td>email</td>
+          <th><%= @applicant.email %></th>
+        </tr>
+      </table>
+    </div>
     <div class="ability">
       <h4>学歴</h4>
       <table>
@@ -57,6 +100,21 @@
           <td><%= simple_format(@applicant.work_history_5) %></td>
         </tr>
       </table>
+    </div>
+    <div class="submit">
+      <% if @applicant.already_applied?(current_corporation) && current_corporation.already_room?(@applicant) %>
+        <%= link_to 'メッセージ', room_path(@applicant), style: 'color: white; text-decoration: none;' %>
+      <% elsif @applicant.already_applied?(current_corporation) %>
+        <%= form_with model: @room, url: rooms_path, method: :post, local: true do |f| %>
+          <%= f.hidden_field :applicant_id, :value => @applicant.id %>
+          <%= f.hidden_field :corporation_id, :value => @current_corporation.id %>
+          <%= f.submit 'メッセージを送る', style: 'background-color: #6fab13; border: none; color: white; font-size: 18px;' %>
+        <% end %>
+      <% elsif current_corporation.already_offered?(@applicant) %>
+          オファー済
+      <% else %>
+        <%= link_to 'オファー', public_applicant_offers_path(@applicant), method: :post %>
+      <% end %>
     </div>
   </main>
 </body>
