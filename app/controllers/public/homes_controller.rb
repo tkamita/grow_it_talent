@@ -36,6 +36,10 @@ class Public::HomesController < ApplicationController
     end
   end
 
+  def pg_search
+    
+  end
+
 
   private
   def applicant_search_params

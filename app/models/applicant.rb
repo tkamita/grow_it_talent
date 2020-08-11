@@ -4,8 +4,6 @@ class Applicant < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  
-         # image_idかも
   mount_uploader :image_id, ImageUploader
 
   has_many :qualifications, dependent: :destroy
@@ -21,6 +19,8 @@ class Applicant < ApplicationRecord
   has_many :corpo_notices, dependent: :destroy
   has_many :tag_relations, dependent: :destroy
   has_many :tags, through: :tag_relations, dependent: :destroy
+  has_many :pg_relations, dependent: :destroy
+  has_many :pg_langs, through: :pg_relations, dependent: :destroy
 
   validates :last_name, presence: true
   validates :first_name, presence: true
@@ -121,4 +121,6 @@ class Applicant < ApplicationRecord
   scope :axis_is, -> (axis) { where(axis: axis) if axis.present? }
   scope :company_is, -> (company_type) { where(company_type: company_type) if company_type.present? }
 
+  
+  
 end
