@@ -20,6 +20,14 @@ IT業界未経験者
 就職活動
 
 ## 設計書
+ER図
+https://app.diagrams.net/#G1aQ45UExb540Yo5nYK720kHAONvcpfek3
+
+データベース設計
+https://docs.google.com/spreadsheets/d/1xRLjuntC8iklTHKj-bwFPP4n0dPcwZQG/edit#gid=1687543020
+
+アプリケーション詳細設定
+https://docs.google.com/spreadsheets/d/1PyoHXFVC0cgRgw9A9WETXHPh2zu3_IKA/edit#gid=1856501679
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1T0ycCT5xuryc0fDudG3Jlwze1-XKh1GgYAZ89GjOiWY/edit?usp=sharing
