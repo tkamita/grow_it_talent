@@ -439,6 +439,7 @@
         margin-right: 30px;
         display: grid;
         grid-template: 
+        "item-n" auto
         "item-1" auto
         "......" 15px
         "item-2" auto
@@ -484,6 +485,12 @@
           }
           .item-7 {
             width: 100%;
+          }
+        }
+        .page {
+          grid-area: item-n;
+          a {
+            font-size: 18px;
           }
         }
         .basic-info {

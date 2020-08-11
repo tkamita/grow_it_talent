@@ -3,7 +3,7 @@
   <%= render partial: '/template/public_nav' %>
   <main class="user-info">
     <div class="page">
-      <%=  link_to '職務経歴書を見る', public_work_path(@applicant) %>
+      <%= link_to 'ユーザー詳細画面', public_applicant_path(@applicant) %>
     </div>
     <div class="basic-info">
       <%= image_tag @applicant.image_id.url, class: "item_image" %>
@@ -47,85 +47,59 @@
       </table>
     </div>
     <div class="ability">
-      <h4>学習言語</h4>
+      <h4>学歴</h4>
       <table>
         <tr>
-          <td>
-            <% @applicant.pg_langs.each do |pg| %>
-              <%= pg.name %>,
-            <% end %>      
-          </td>
+          <td>学校区分</td>
+          <th><%= @applicant.school_division %></th>
+        </tr>
+        <tr>
+          <td>学校名</td>
+          <th><%= @applicant.school_name %></th>
+        </tr>
+        <tr>
+          <td>学部</td>
+          <th><%= @applicant.faculty %></th>
+        </tr>
+        <tr>
+          <td>学科</td>
+          <th><%= @applicant.academic_decipline %></th>
         </tr>
       </table>
-      <h4>プログラミングスキル</h4>
-      <div style="margin: 30px 50px; font-size: 20px;">
-        <%= simple_format(@applicant.pg_skill) %>
-      </div>
     </div>
     <div class="pr">
-      <h4>プロフィール（PR）</h4>
-      <h6>自己PR</h6>
-      <div style="margin: 30px 50px; font-size: 20px;">
-        <%= simple_format(@applicant.self_pr) %>
+      <h4>職務経歴</h4>
+      <h6>職歴要約</h6>
+      <div class="text-box">
+        <%= simple_format(@applicant.overview_w_history) %>
       </div>
-      <h6>私の将来像</h6>
-      <div style="margin: 30px 50px; font-size: 20px;">
-        <%= simple_format(@applicant.vision) %>
-      </div>
-    </div>
-    <div class="qualification">
-      <h4>語学・資格</h4>
-      <div class="quali-box">
-          <ul>
-            <li>
-              <p>英語</p>
-              <%= @applicant.english_skill %>
-            </li>
-            <li>
-              <p>その他語学</p>
-              <%= @applicant.other_lang %>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <p>資格</p>
-              <% @applicant.qualifications.each do |q| %>
-                <%= q.name %>
-              <% end %>
-            </li>
-          </ul>
-      </div>
-    </div>
-    <div class="desire">
-      <h4>希望する企業タイプ</h4>
-      <div class="desire-box">
-        <%= @applicant.company_type %>
-      </div>
-      <h4>転職の軸</h4>
-      <div class="desire-box">
-        <%= @applicant.axis %>
-      </div>
-      <h4>希望勤務地</h4>
-      <div class="desire-box">
-        <%= @applicant.work_location %>
-      </div>
-      <h4>勤務開始可能日</h4>
-      <div class="desire-box">
-        <%= @applicant.start_work %>
-      </div>
-    </div>
-    <div class="item-6">
-      
-    </div>
-    <div class="item-7">
-      <h4>転職活動状況</h4>
-      <div class="desire-box">
-        <% if @applicant.is_selection == true  %>
-          <span class="text-active">転職活動中</span>
-        <% else %>
-          <span class="text-invalid">活動終了</span>							
-        <% end %>
-      </div>
+      <h6>職務経歴</h6>
+      <table border="1" style="border-collapse: collapse">
+        <tr>
+          <th class="period">期間</th>
+          <th>職務内容</th>
+        </tr>
+        <tr>
+          <td><%= simple_format(@applicant.term_1) %></td>
+          <td><%= simple_format(@applicant.work_history_1) %></td>
+        </tr>
+        <tr>
+          <td><%= simple_format(@applicant.term_2) %></td>
+          <td><%= simple_format(@applicant.work_history_2) %></td>
+        </tr>
+        <tr>
+          <td><%= simple_format(@applicant.term_3) %></td>
+          <td><%= simple_format(@applicant.work_history_3) %></td>
+        </tr>
+        <tr>
+          <td><%= simple_format(@applicant.term_4) %></td>
+          <td><%= simple_format(@applicant.work_history_4) %></td>
+        </tr>
+        <tr>
+          <td><%= simple_format(@applicant.term_5) %></td>
+          <td><%= simple_format(@applicant.work_history_5) %></td>
+        </tr>
+      </table>
     </div>
     <div class="submit">
       <% if @applicant.already_applied?(current_corporation) && current_corporation.already_room?(@applicant) %>
