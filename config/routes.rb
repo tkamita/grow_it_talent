@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   namespace :public do
     get 'top' => 'homes#top', as: 'top'
     get 'search' => 'homes#search', as: 'search'
+    get 'pg_search' => 'homes#pg_search', as: 'pg_search'
     get 'corporations/edit_job' => 'corporations#edit_job', as: 'edit_job_sheet'
     patch 'corporations/update_job' => 'corporations#update_job'
     get 'posts/applicant:id/specific_index' => 'posts#specific_index'

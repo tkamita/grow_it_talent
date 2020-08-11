@@ -36,6 +36,10 @@ class Public::HomesController < ApplicationController
     end
   end
 
+  def pg_search
+    @applicants = params[:pg_lang_id].present? ? PgLang.find(params[:pg_lang_id]).applicants : Applicant.all
+  end
+
 
   private
   def applicant_search_params

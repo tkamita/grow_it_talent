@@ -44,6 +44,16 @@
       </table>
     </div>
     <div class="ability">
+      <h4>学習言語</h4>
+      <table>
+        <tr>
+          <td>
+            <% @applicant.pg_langs.each do |pg| %>
+              <%= pg.name %>,
+            <% end %>      
+          </td>
+        </tr>
+      </table>
       <h4>プログラミングスキル</h4>
       <div style="margin: 30px 50px; font-size: 20px;">
         <%= simple_format(@applicant.pg_skill) %>

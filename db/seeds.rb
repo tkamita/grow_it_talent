@@ -29,7 +29,6 @@ PgLang.create!(
     { name: "Go" },
     { name: "React" },
     { name: "Node.js" },
-    { name: "NoCode" },
     { name: "AWS" }
   ]
   )

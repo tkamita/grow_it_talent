@@ -4,9 +4,19 @@
   <main class="user-info">
     <%= render partial: '/template/user_info' %>
     <div class="ability">
+      <h4>学習言語</h4>
+      <table>
+        <tr>
+          <td>
+            <% current_applicant.pg_langs.each do |pg| %>
+              <%= pg.name %>,
+            <% end %>      
+          </td>
+        </tr>
+      </table>
       <h4>プログラミングスキル</h4>
       <div style="margin: 30px 50px; font-size: 20px;">
-        <%= simple_format(current_applicant.pg_skill) %>
+        <span class="tag"><%= simple_format(current_applicant.pg_skill) %></span>
       </div>
     </div>
     <div class="pr">
