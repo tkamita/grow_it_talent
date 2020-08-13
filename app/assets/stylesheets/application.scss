@@ -203,9 +203,6 @@
           form {
             width: 90%;
             margin: 0 auto;
-            input {
-              width: 90%;
-            }
             select {
               margin: 20px 0;
             }
@@ -753,10 +750,17 @@
         margin-right: 30px;
         display: grid;
         grid-template: 
+        "item-n" 110px
         "item-1" auto
         "......" 15px
         "item-2" 100px
         "......" 15px;
+        .page {
+          grid-area: item-n;
+          a {
+            font-size: 18px;
+          }
+        }
         .learn-rec {
           grid-area: item-1;
           background-color: white;
@@ -939,6 +943,7 @@
         margin-right: 30px;
         display: grid;
         grid-template: 
+        "item-n item-n" 110px
         "item-1 item-1" auto
         "...... ......" 15px
         "item-2 item-2" auto
@@ -1027,6 +1032,12 @@
             color: white;
             font-size: 16px;
             margin-bottom: 5px;
+          }
+        }
+        .page {
+          grid-area: item-n;
+          a {
+            font-size: 18px;
           }
         }
         .users {

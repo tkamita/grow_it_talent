@@ -3,7 +3,9 @@
   <%= render partial: '/template/public_nav' %>
   <main class="user-info">
     <div class="page">
-      <%=  link_to '職務経歴書を見る', public_work_path(@applicant) %>
+      <%=  link_to '職務経歴書を見る', public_work_path(@applicant) %> 
+      <%= link_to '学習記事一覧へ', public_path(@applicant) %>
+      <%= link_to 'ポートフォリオ一覧へ', public_specific_user_path(@applicant) %> <br>
     </div>
     <div class="basic-info">
       <%= image_tag @applicant.image_id.url, class: "item_image" %>

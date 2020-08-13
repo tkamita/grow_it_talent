@@ -2,13 +2,18 @@
   <%= render partial: '/template/header' %>
   <%= render partial: '/template/nav' %>
   <main class="post">
-    <%= form_with model: @post, url: user_post_path(@post), method: :patch, local: true do |f| %>
     <div class="learn-rec", style="padding: 50px 0;">
+    <%= form_with model: @post, url: user_post_path(@post), method: :patch, local: true do |f| %>
       <div class="title" style="border: none;">
         <h6><%= f.text_field :title, style: 'width: 99%; height: 30px;' %></h6>
       </div>
       <div class="lang" style="border: none;">
-        <%= f.collection_select :pg_lang_id, PgLang.all, :id, :name %>
+        <%= f.collection_check_boxes(:pg_lang_ids, PgLang.all, :id, :name) do |tag| %>
+          <%= tag.label do %>
+            <%= tag.check_box %>
+            <%= tag.text %>
+          <% end %>
+        <% end %> 
       </div>
       <div class="text" style="border: none;">
         <%= f.text_area :content, style: 'width: 99%; height: 200px;' %>

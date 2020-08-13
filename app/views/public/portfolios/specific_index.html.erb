@@ -2,12 +2,24 @@
   <%= render partial: '/template/public_header' %>
   <%= render partial: '/template/public_nav' %>
   <main class="offerd">
+    <div class="page">
+      <%= link_to '職務経歴書を見る', public_work_path(@applicant) %> 
+      <%= link_to 'ユーザー詳細画面', public_applicant_path(@applicant) %>
+      <%= link_to '学習記事へ', public_path(@applicant) %> <br>
+      <%= form_with url: public_specific_user_path(@applicant), method: :get, class: 'boards__searchForm' do %>
+        <%= select_tag :pg_lang_id, options_from_collection_for_select(PgLang.all, :id, :name, params[:pg_lang_id]), { prompt: '学習言語で検索', onchange: 'submit(this.form);' } %>
+      <% end %>
+    </div>
     <div class="users">
       <% @portfolios.each do |port| %>
         <ul>
           <%= link_to public_portfolio_path(port), style: 'text-decoration: none;' do %>
             <li><%= port.applicant.full_name %></li>
-            <li><%= port.pg_lang.name %></li>
+            <li>
+              <% port.pg_langs.each do |pg| %>
+                <%= pg.name %>
+              <% end %>
+            </li>
             <li><%= port.theme %></li>
           <% end %>
         </ul>
