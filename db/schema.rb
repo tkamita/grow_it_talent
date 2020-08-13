@@ -161,7 +161,6 @@ ActiveRecord::Schema.define(version: 2020_08_11_062613) do
 
   create_table "portfolios", force: :cascade do |t|
     t.integer "applicant_id", null: false
-    t.integer "pg_lang_id", null: false
     t.string "title", null: false
     t.text "content", null: false
     t.string "theme"
@@ -175,7 +174,6 @@ ActiveRecord::Schema.define(version: 2020_08_11_062613) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "applicant_id", null: false
-    t.integer "pg_lang_id", null: false
     t.string "title", null: false
     t.text "content", null: false
     t.datetime "created_at", null: false

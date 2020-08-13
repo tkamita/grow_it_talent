@@ -14,7 +14,9 @@
         <h6><%= @portfolio.title %></h6>
       </div>
       <div class="lang">
-        <%= @portfolio.pg_lang.name %>
+        <% @portfolio.pg_langs.each do |pg| %>
+          <%= pg.name %>
+        <% end %>
       </div>
       <div class="text">
         <%= safe_join(@portfolio.content.split("\n"),tag(:br)) %>

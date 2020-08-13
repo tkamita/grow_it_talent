@@ -11,8 +11,13 @@ class Public::PostsController < ApplicationController
 
   def specific_index
     @applicant = Applicant.find(params[:id])
-    @posts = @applicant.posts
+    if params[:pg_lang_id].present?
+      @posts = PgLang.find(params[:pg_lang_id]).posts
+    else
+      @posts = @applicant.posts
+    end
   end
+
   
 end
 

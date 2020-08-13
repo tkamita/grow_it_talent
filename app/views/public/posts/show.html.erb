@@ -14,7 +14,9 @@
         <h6><%= @post.title %></h6>
       </div>
       <div class="lang">
-        <%= @post.pg_lang.name %>
+        <% @post.pg_langs.each do |pg| %>
+          <%= pg.name %>
+        <% end %>
       </div>
       <div class="text">
         <%= simple_format(@post.content) %>

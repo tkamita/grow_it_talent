@@ -39,7 +39,7 @@ class User::PortfoliosController < ApplicationController
   
   private
   def portfolio_params
-    params.require(:portfolio).permit(:applicant_id, :pg_lang_id, :title, :content, :theme,
-                                      :reason, :target, :scene, :link_url)
+    params.require(:portfolio).permit(:applicant_id, :title, :content, :theme,
+                                      :reason, :target, :scene, :link_url, pg_lang_ids: [])
   end
 end

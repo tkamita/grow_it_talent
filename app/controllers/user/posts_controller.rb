@@ -36,7 +36,7 @@ class User::PostsController < ApplicationController
   
   private
   def post_params
-    params.require(:post).permit(:applicant_id, :pg_lang_id, :title, :content)
+    params.require(:post).permit(:applicant_id, :pg_lang_id, :title, :content, pg_lang_ids: [])
   end
 end
 

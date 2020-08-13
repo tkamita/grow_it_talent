@@ -12,6 +12,10 @@ class Public::PortfoliosController < ApplicationController
   
   def specific_index
     @applicant = Applicant.find(params[:id])
-    @portfolios = @applicant.portfolios
+    if params[:pg_lang_id].present?
+      @portfolios = PgLang.find(params[:pg_lang_id]).portfolios
+    else
+      @portfolios = @applicant.portfolios
+    end
   end
 end
