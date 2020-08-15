@@ -13,7 +13,7 @@
                 </th>
                 <td>
                   <%= link_to applicant.full_name, public_applicant_path(applicant) %><br>
-                  <%= @age %>歳<br>
+                  <%= applicant.age %>歳<br>
                   <%= link_to '学習記事一覧へ', public_path(applicant) %> <br>
                   <%= link_to 'ポートフォリオ一覧へ', public_specific_user_path(applicant) %> <br>
                 </td>

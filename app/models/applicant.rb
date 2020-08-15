@@ -48,7 +48,7 @@ class Applicant < ApplicationRecord
     self.user_notices.where(is_check: false)
   end
 
-  def calculation_age
+  def age
     date_format = "%Y%m%d"
     birthday = self.birth_date.to_date
     age = (Date.today.strftime(date_format).to_i - birthday.strftime(date_format).to_i) / 10000
