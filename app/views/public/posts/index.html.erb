@@ -7,7 +7,6 @@
         <ul>
           <li>
             <%= link_to public_post_path(post) do %>
-              <%= image_tag post.applicant.image_id.url, class: "item_image" %>
               <div class="creat-ttl">
                 <p><%= post.title %></p>
                 <p><span><%= l post.created_at, format: :long %></span></p>
