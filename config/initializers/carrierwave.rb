@@ -9,6 +9,6 @@ unless Rails.env.development? || Rails.env.test?
 
     config.fog_directory = ENV['S3_BUCKET']
     config.cache_storage = :fog
-    config.asset_host = ENV['CLOUD_FRONT']
+    # config.asset_host = ENV['CLOUD_FRONT']
   end
 end
