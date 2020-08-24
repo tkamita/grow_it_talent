@@ -44,6 +44,7 @@ group :development, :test do
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
   gem 'rspec-rails', '~> 3.6'
+  gem 'factory_bot_rails'
 end
 
 group :development do

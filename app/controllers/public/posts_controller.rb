@@ -17,7 +17,6 @@ class Public::PostsController < ApplicationController
       @posts = @applicant.posts
     end
   end
-
   
 end
 
