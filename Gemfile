@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
+  gem 'rspec-rails', '~> 3.6'
 end
 
 group :development do
