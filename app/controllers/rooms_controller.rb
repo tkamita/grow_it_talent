@@ -9,27 +9,13 @@ class RoomsController < ApplicationController
   end
   
   def show
-    # if corporation_signed_in?
-      # @room = Room.find_by(applicant_id: params[:applicant_id], corporation_id: current_corporation.id)
-      @room = Room.find(params[:id])
-    # else
-      # @room = Room.find_by(corporation_id: params[:corporation_id], applicant_id: current_applicant.id)
-      # end
-      @message = Message.new
-      # byebug
-      # if @room.messages.present?
-      @messages = @room.messages
-    # end
+    @room = Room.find(params[:id])
+    @message = Message.new
+    @messages = @room.messages
   end
   
   def create
-    # @room = Room.new(room_params)
     @room = Room.new(applicant_id: params[:applicant_id], corporation_id: params[:corporation_id])
-    # if applicant_signed_in?
-    #   @room.applicant_id = current_applicant
-    # elsif corporation_signed_in?
-    # @room.corporation_id = current_corporation.id
-    # end
     @room.save
     redirect_to room_path(@room)
   end

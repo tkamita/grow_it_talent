@@ -18,4 +18,5 @@ class Public::PortfoliosController < ApplicationController
       @portfolios = @applicant.portfolios
     end
   end
+  
 end
