@@ -109,6 +109,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
+    database_cleaner (1.8.5)
     devise (4.7.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -130,6 +131,8 @@ GEM
     factory_bot_rails (6.1.0)
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
+    faker (2.14.0)
+      i18n (>= 1.6, < 2)
     ffi (1.13.1)
     fog-aws (3.6.6)
       fog-core (~> 2.1)
@@ -352,9 +355,11 @@ DEPENDENCIES
   carrierwave
   chromedriver-helper
   coffee-rails (~> 4.2)
+  database_cleaner
   devise
   dotenv-rails
   factory_bot_rails
+  faker
   fog-aws
   font-awesome-sass (~> 5.4.1)
   jbuilder (~> 2.5)
@@ -367,7 +372,7 @@ DEPENDENCIES
   rails-i18n
   refile!
   refile-mini_magick
-  rspec-rails (~> 3.6)
+  rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
