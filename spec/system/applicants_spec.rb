@@ -13,7 +13,7 @@ describe 'ユーザー認証のテスト' do
         fill_in 'applicant[first_furigana]', with: "たろう"
         fill_in 'applicant[email]', with: 'test@mail.com'
         fill_in 'applicant[password]', with: 'password'
-        fill_in 'applicant[password_confirmation]', with 'password'
+        fill_in 'applicant[password_confirmation]', with: 'password'
         click_button "登録する"
 
         expect(current_path).to eq(user_top_path)
@@ -25,7 +25,7 @@ describe 'ユーザー認証のテスト' do
         fill_in 'applicant[first_furigana]', with: ''
         fill_in 'applicant[email]', with: ''
         fill_in 'applicant[password]', with: ''
-        fill_in 'applicant[password_confirmation]', with ''
+        fill_in 'applicant[password_confirmation]', with: ''
         click_button "登録する"
 
         expect(page).to have_content 'error'
